@@ -1,7 +1,7 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/521xueweihan/img/master/hellogithub/logo/readme.gif"/>
   <br><strong>HelloGitHub-Article</strong><br>
-  开源项目深入讲解系列文章库，跟着文章的内容体验开源项目的魅力<br>
+  讲解开源项目系列文章库，跟着文章的内容体验开源项目的魅力<br>
   使用、参与、贡献开源就是这么简单！
 </p>
 <p align="center">
@@ -10,7 +10,7 @@
 </p>
 
 ## 目录
-开源项目深入讲解系列，[创作须知和流程](创作须知和流程.md)。本系列文章旨在让对开源项目感兴趣的人不再畏惧、让开源项目的发起者不再孤单。跟着我们的文章，你会发现编程的乐趣、使用和参与参与开源项目如此简单。
+讲解开源项目系列，[创作须知和流程](创作须知和流程.md)。本系列文章旨在让对开源项目感兴趣的人不再畏惧、让开源项目的发起者不再孤单。跟着我们的文章，你会发现编程的乐趣、使用和发现参与开源项目如此简单。欢迎联系我们给我们投稿，让更多人爱上开源、贡献开源～​
 
 #### Python 系列
 1. Python 命令行之旅
@@ -41,7 +41,7 @@
 </table>
 
 ## 公众号
-希望 HG 这个平台能让好的项目被更多人了解、使用、参与。只要你的项目够好，HelloGitHub 会全力、无偿推荐。关注公众号，直接留言联系我们吧！
+希望 HG 这个平台能让好的项目被更多人了解、使用、参与。只要你的项目够好，HelloGitHub 会全力、无偿推荐。关注公众号，直接留言给我们投稿吧！
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/521xueweihan/img/master/hellogithub/logo/weixin.png" style="max-width:70%;"><br>
