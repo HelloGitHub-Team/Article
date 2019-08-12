@@ -14,7 +14,7 @@
 
 #### Python 系列
 1. Python 命令行之旅
-    1.1 [初探 argparse](content/python/cmdline/argparse-1.md)
+    - 1.1 [初探 argparse](content/python/cmdline/argparse-1.md)
 
 #### Java 系列
 1. [超简单的博客系统-Tale](content/java/超简单的Tale博客系统.md)
