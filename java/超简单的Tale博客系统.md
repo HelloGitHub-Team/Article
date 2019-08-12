@@ -130,7 +130,7 @@ Tale 的项目的结构很简单，当然它运行起来超级简单，你是不
 
    ![](./images/H636b04d1a2484a778b0de24c870b611fx.png)
 
-  3. ####  在 Idea 的 Terminal 窗口执行打包命令
+   3. ####  在 Idea 的 Terminal 窗口执行打包命令
 
   Idea 的 Terminal 窗口与 cmd 窗口的功能是相同的。可以执行
 
