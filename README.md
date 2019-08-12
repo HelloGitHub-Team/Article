@@ -1,27 +1,26 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/521xueweihan/img/master/hellogithub/logo/readme.gif"/>
-  <br><strong>HelloGitHub-Article </strong>开源项目深入讲解系列文章库，跟着文章的内容体验开源项目的魅力<br>使用、参与、贡献开源就是这么简单！
+  <br><strong>HelloGitHub-Article</strong><br>
+  开源项目深入讲解系列文章库，跟着文章的内容体验开源项目的魅力<br>
+  使用、参与、贡献开源就是这么简单！
 </p>
 <p align="center">
   <a href="https://hellogithub.com/weixin.png"><img src="https://img.shields.io/badge/Talk-%E5%BE%AE%E4%BF%A1%E7%BE%A4-brightgreen.svg?style=popout-square" alt="WeiXin"></a>
-  <a href="https://github.com/521xueweihan/HelloGitHub/stargazers"><img src="https://img.shields.io/github/stars/521xueweihan/HelloGitHub.svg?style=popout-square" alt="GitHub stars"></a>
-    <a href="https://weibo.com/hellogithub"><img src="https://img.shields.io/badge/%E6%96%B0%E6%B5%AA-Weibo-red.svg?style=popout-square" alt="Sina Weibo"></a>
+  <a href="https://weibo.com/hellogithub"><img src="https://img.shields.io/badge/%E6%96%B0%E6%B5%AA-Weibo-red.svg?style=popout-square" alt="Sina Weibo"></a>
 </p>
 
 ## 目录
-[创作须知和流程](创作须知和流程.md)
-
-### 开源项目深入讲解系列
-让有一定编程基础的用户可以通过文章可以
+开源项目深入讲解系列，[创作须知和流程](创作须知和流程.md)。本系列文章旨在让对开源项目感兴趣的人不再畏惧、让开源项目的发起者不再孤单。跟着我们的文章，你会发现编程的乐趣、使用和参与参与开源项目如此简单。
 
 #### Python 系列
 1. Python 命令行之旅
-    - 1.1 [初探 argparse](cmdline/argparse-1.md)
+    1.1 [初探 argparse](content/python/cmdline/argparse-1.md)
+
 #### Java 系列
-1. [超简单的博客系统-Tale](超简单的Tale博客系统.md)
+1. [超简单的博客系统-Tale](content/java/超简单的Tale博客系统.md)
 
 
-## 作者
+## 贡献者
 <table>
   <tbody>
     <tr>
@@ -42,7 +41,7 @@
 </table>
 
 ## 公众号
-希望 HG 这个平台能让好的项目被更多人了解、使用、参与。只要你的项目够好，HelloGitHub 会全力、无偿推荐。来联系我们吧！
+希望 HG 这个平台能让好的项目被更多人了解、使用、参与。只要你的项目够好，HelloGitHub 会全力、无偿推荐。关注公众号，直接留言联系我们吧！
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/521xueweihan/img/master/hellogithub/logo/weixin.png" style="max-width:70%;"><br>
