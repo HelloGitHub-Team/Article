@@ -4,7 +4,7 @@
 
 想要快速搭建一套自己的博客，跟着本文的教程，你只需要花 5 分钟。下面是搭建完成的效果图：
 
-![](https://pic1.superbed.cn/item/5d4c42a2451253d178012702.png)
+![](.\images\H9f12a57df066491c8d7bd1a9750222a1o.png)
 
 ## 技术栈
 
@@ -20,35 +20,37 @@ Tale 这个项目采用：
 
 项目结构如下图：
 
-![](https://b2.bmp.ovh/imgs/2019/08/ff12dd72b6cd4ff2.png)
+![](./images/ff12dd72b6cd4ff2.png)
+
+项目采用MVC模式：Model数据层，view展现层，controller逻辑层。
 
 1. 后台代码目录说明
 
-   annotation：自定义注解目录
+   annotation：自定义注解目录，包括系统日志的注解类。
 
-   bootstarp：初始化操作目录，项目启动的初始化操作
+   bootstarp：初始化操作目录，包括初始化进程类， sqlite数据库初始化类，公共常量类等。
 
-   controller：业务的控制器目录
+   controller：业务的控制器目录，包括文章控制器，分类控制器，初始化博客的控制器等。
 
-   extension：底层公用代码目录，包括后台公共函数，主题公共函数
+   extension：底层公用代码目录，包括后台公共函数，主题公共函数。
 
-   hooks：拦截器/过滤器目录，做一些拦截器的操作
+   hooks：拦截器/过滤器目录，做一些拦截器的操作。
 
-   model：数据模型目录
+   model：数据模型目录，包括数据库模型，参数模型，业务模型。
 
-   service：业务层目录，实现具体的业务代码
+   service：业务层目录，包括站点，系统配置，分类，标签，文章，评论的业务类。
 
-   task：定时任务目录
+   task：定时任务目录，可自定时添加定时任务。
 
-   utils：业务层工具类目录
+   utils：业务层工具类目录，包括图像工具类，缓存工具类，公用工具类。
 
-   validators：验证器目录
+   validators：验证器目录，包括保存文章的校验，添加评论的校验功能。
 
    Application：入口类，在 IDE 中可直接运行。
 
 2. 前台代码目录说明
 
-   plugins：此目录作者废弃了
+   plugins：插架存放目录，此目录作者废弃了
 
    static：静态资源目录，包括 css,images,js 和第三方插件
 
@@ -58,67 +60,66 @@ Tale 这个项目采用：
 
    
 
-Tale 的项目的结构很简单，当然它运行起来超级简单，你是不是开始手痒痒了，你接下来我们一起让项目运行起来。
+Tale 的项目的结构很简单，当然它运行起来超级简单，你是不是开始手痒痒了，那接下来我们一起让项目运行起来。
 
 ## 实战操作
 
-1. 准备工作
+1. ### 准备工作
 
    1.确保本地已安装 Java8 开发环境；
 
-   ![](https://pic.superbed.cn/item/5d4c3fe9451253d17801138c.png)
+   ![](./images/Hc38322206f8c4d29841c776e9ba9ecaf9.png)
 
    
 
    2.确保本地已安装 maven 工具；
 
-   ![](https://pic.superbed.cn/item/5d4c3fe9451253d17801138e.png)
+   ![](./images/Hbce92da808824d00818339da055633d70.png)
 
    
 
-2. 下载项目
+2. ### 下载项目
 
    ```shell
    git clone https://github.com/otale/tale.git
    ```
 
-3. 运行项目
+3. ### 运行项目
 
-   1. IDE 里面运行
+   1. #### IDE 里面运行
 
       a.将项目导入到 IDE 中，这里我使用的是 Idea
 
-      ![](https://pic3.superbed.cn/item/5d4c4136451253d178011e5e.png)
+      ![](./images/H6edffc6a8b1740f2b5ffda60b6f73088r.png)
 
       b.找到 com.tale.Application 类，直接运行
 
-      ![](https://pic.superbed.cn/item/5d4c4240451253d178012472.png)
+      ![](./images/Hf0aed32cf4444589b80d5f751707b820C.png)
 
       c.运行成功如下图
 
-      ![](https://pic.superbed.cn/item/5d4c4240451253d178012476.png)
+      ![](./images/H1bf66f23b3d8477ba09ff4b5074be45cT.png)
 
-   2.命令行运行项目
+   #### 2.命令行运行项目
 
-      a.切换到项目源码路径,编译源码
+   #####    a.切换到项目源码路径,编译源码
 
    ```shell
    mvn clean package -Pprod -Dmaven.test.skip=true
    ```
 
    编译成功如下图：
-![](https://ae01.alicdn.com/kf/H43fd1ae8a5c6425cae89b125736d9cec6.png)
+   ![](./images/H43fd1ae8a5c6425cae89b125736d9cec6.png)
 
+#####    b.切换路径到 tale\target\dist\ 
 
-   b.切换路径到 tale\target\dist\ 
+   ![](./images/Hee56560f221a4953b311a4f71c51f815W.png)
 
-   ![](https://pic3.superbed.cn/item/5d4c3fd0451253d178011289.png)
+#####    c.解压 tale.zip 压缩文件
 
-   c.解压 tale.zip 压缩文件
+   ![](./images/H6c20314a208041de9931ede998e621fcr.png)
 
-   ![](https://ae01.alicdn.com/kf/H6c20314a208041de9931ede998e621fcr.png)
-
-   d.运行 tale-latest.jar
+#####    d.运行 tale-latest.jar
 
    ```shell
    java -jar  tale-latest.jar
@@ -126,9 +127,9 @@ Tale 的项目的结构很简单，当然它运行起来超级简单，你是不
 
    启动成功如下图：
 
-   ![](https://ae01.alicdn.com/kf/H636b04d1a2484a778b0de24c870b611fx.png)
+   ![](./images/H636b04d1a2484a778b0de24c870b611fx.png)
 
-   3.在 Idea 的 Terminal 窗口执行打包命令
+####    3.在 Idea 的 Terminal 窗口执行打包命令
 
   Idea 的 Terminal 窗口与 cmd 窗口的功能是相同的。可以执行
 
@@ -138,29 +139,29 @@ Tale 的项目的结构很简单，当然它运行起来超级简单，你是不
 
    对源码进行打包，然后也可以在命令行启动项目。
 
-4. 项目启动成功
+4. #### 项目启动成功
 
-   1.首次登录，需要填写配置信息
+   ##### 1.首次登录，需要填写配置信息
 
-   ![](https://pic.superbed.cn/item/5d4c4240451253d17801247e.png)
+   ![](./images/Haf67bf902f1143aca3a79ca177a4d2847.png)
 
-   2.登录后台管理系统
+   ##### 2.登录后台管理系统
 
    后台系统链接：<http://127.0.0.1:9000/admin/login> 
 
    输入管理员账号和密码即可登录
 
-   ![](https://pic.superbed.cn/item/5d4c4240451253d178012481.png)
+   ![](./images/H2c9755074dcd4a39950dbfa5be368506X.png)
 
    后台管理页面
 
-   ![](https://pic1.superbed.cn/item/5d4c42a2451253d178012700.png)
+   ![](./images/H6b3532b500d345829b30b43c0054c69e6.png)
 
-   3.博客前台页面
+   ##### 3.博客前台页面
 
    博客前台链接：<http://127.0.0.1:9000/> 
 
-   ![](https://pic1.superbed.cn/item/5d4c42a2451253d178012702.png)
+   ![](.\images\H9f12a57df066491c8d7bd1a9750222a1o.png)
 
    
 
