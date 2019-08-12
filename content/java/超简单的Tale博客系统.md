@@ -7,13 +7,14 @@
 ![](https://pic1.superbed.cn/item/5d4c42a2451253d178012702.png)
 
 ## 技术栈
+
 Tale 这个项目采用：
 
 - **Blade 框架**：快速搭建 Web 应用程序的开源框架，该框架代码简洁、风格优雅。 
 
 - **Jetbrick-template 模板引擎**：适合于动态 HTML 页面输出或者代码生成，可替代 JSP 页面或者 Velocity 等模板。 指令和 Velocity 相似，表达式和 Java 保持一致，易学易用。
 
-- **Sqlite数据库**：是一种嵌入式数据库,它的数据库就是一个文件。
+- **Sqlite 数据库**：是一种嵌入式数据库,它的数据库就是一个文件。
 
 ## 项目结构简介
 
@@ -43,13 +44,13 @@ Tale 这个项目采用：
 
    validators：验证器目录
 
-   Application：入口类，在IDE中可直接运行。
+   Application：入口类，在 IDE 中可直接运行。
 
 2. 前台代码目录说明
 
    plugins：此目录作者废弃了
 
-   static：静态资源目录，包括css,images,js和第三方插件
+   static：静态资源目录，包括 css,images,js 和第三方插件
 
    templates：模板资源目录，包括后台管理界面，公共模板和主题模板，支持扩展主题
 
@@ -57,19 +58,19 @@ Tale 这个项目采用：
 
    
 
-Tale的项目的结构很简单，当然它运行起来超级简单，你是不是开始手痒痒了，你接下来我们一起让项目运行起来。
+Tale 的项目的结构很简单，当然它运行起来超级简单，你是不是开始手痒痒了，你接下来我们一起让项目运行起来。
 
 ## 实战操作
 
 1. 准备工作
 
-   1.确保本地已安装Java8开发环境；
+   1.确保本地已安装 Java8 开发环境；
 
    ![](https://pic.superbed.cn/item/5d4c3fe9451253d17801138c.png)
 
    
 
-   2.确保本地已安装maven工具；
+   2.确保本地已安装 maven 工具；
 
    ![](https://pic.superbed.cn/item/5d4c3fe9451253d17801138e.png)
 
@@ -77,19 +78,19 @@ Tale的项目的结构很简单，当然它运行起来超级简单，你是不�
 
 2. 下载项目
 
-   ```
+   ```shell
    git clone https://github.com/otale/tale.git
    ```
 
 3. 运行项目
 
-   1. IDE里面运行
+   1. IDE 里面运行
 
-      a.将项目导入到IDE中，这里我使用的是Idea
+      a.将项目导入到 IDE 中，这里我使用的是 Idea
 
       ![](https://pic3.superbed.cn/item/5d4c4136451253d178011e5e.png)
 
-      b.找到 com.tale.Application类，直接运行
+      b.找到 com.tale.Application 类，直接运行
 
       ![](https://pic.superbed.cn/item/5d4c4240451253d178012472.png)
 
@@ -101,7 +102,7 @@ Tale的项目的结构很简单，当然它运行起来超级简单，你是不�
 
       a.切换到项目源码路径,编译源码
 
-   ```
+   ```shell
    mvn clean package -Pprod -Dmaven.test.skip=true
    ```
 
@@ -119,7 +120,7 @@ Tale的项目的结构很简单，当然它运行起来超级简单，你是不�
 
    d.运行 tale-latest.jar
 
-   ```
+   ```shell
    java -jar  tale-latest.jar
    ```
 
@@ -127,11 +128,11 @@ Tale的项目的结构很简单，当然它运行起来超级简单，你是不�
 
    ![](https://ae01.alicdn.com/kf/H636b04d1a2484a778b0de24c870b611fx.png)
 
-   3.在Idea的Terminal窗口执行打包命令
+   3.在 Idea 的 Terminal 窗口执行打包命令
 
-  Idea的Terminal窗口与cmd窗口的功能是相同的。可以执行
+  Idea 的 Terminal 窗口与 cmd 窗口的功能是相同的。可以执行
 
-   ```
+   ```shell
    mvn clean package -Pprod -Dmaven.test.skip=true
    ```
 
