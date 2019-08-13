@@ -17,7 +17,7 @@
     - 1.1 [初探 argparse](content/python/cmdline/argparse-1.md)
 
 #### Java 系列
-1. [超简单的博客系统-Tale](content/java/超简单的Tale博客系统.md)
+1. [5分钟搭建私人博客系统：Tale](content/java/5分钟搭建私人博客系统：Tale/content.md)
 
 
 ## 贡献者
