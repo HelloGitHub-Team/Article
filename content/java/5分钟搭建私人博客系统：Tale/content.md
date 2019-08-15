@@ -1,8 +1,11 @@
-5分钟搭建私人Java博客系统——Tale
+# 5分钟搭建私人Java博客系统——Tale
 
-> 本文适用于刚学习完 Java 语言基础的人群，跟着本文可了解和运行 Tale 项目。注意：本文的示例是在 Windows 操作系统下演示
+> 本文适合刚学习完 Java 语言基础的人群，跟着本文可了解和运行 Tale 项目。示例均在 Windows 操作系统下演示
 
 ![](./images/0.png)
+
+<p align="center">本文作者：HelloGitHub-<strong>秦人</strong></p>
+
 
 HelloGitHub 推出的[《讲解开源项目》](https://github.com/HelloGitHub-Team/Article)系列，今天给大家带来一款基于 Java 语言的轻量级博客开源项目——**Tale** 
 
