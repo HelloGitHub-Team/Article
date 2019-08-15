@@ -1,4 +1,4 @@
-# 5分钟搭建私人博客系统：Tale
+5分钟搭建私人Java博客系统——Tale
 
 > 本文适用于刚学习完 Java 语言基础的人群，跟着本文可了解和运行 Tale 项目。注意：本文的示例是在 Windows 操作系统下演示
 
@@ -61,7 +61,7 @@ Tale 的项目的结构很简单和清晰，想把它运行起来也超级简单
 
     ![](./images/3.png)
 
-2. 确保本地已安装 maven 工具；
+2. 确保本地已安装 maven 工具：
 
     ![](./images/4.png)
 
@@ -124,7 +124,7 @@ git clone https://github.com/otale/tale.git
 
    ![](./images/12.png)
 
-2. 登录后台管理系统，后台系统链接：<http://127.0.0.1:9000/admin/login> 输入管理员账号和密码：amdin/admin 即可登录：
+2. 登录后台管理系统，后台系统链接：<http://127.0.0.1:9000/admin/login> 输入管理员账号和密码：admin 即可登录：
 
    ![](./images/13.png)
 
