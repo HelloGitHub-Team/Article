@@ -15,6 +15,7 @@
 #### Python 系列
 1. Python 命令行之旅
     - 1.1 [初探 argparse](content/python/cmdline/argparse-1.md)
+    - 1.2 [深入 argparse （一）](content/python/cmdline/argparse-2.md)
 
 #### Java 系列
 1. [5分钟搭建私人博客系统：Tale](content/java/5分钟搭建私人博客系统：Tale/content.md)
