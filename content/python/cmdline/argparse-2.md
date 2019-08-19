@@ -94,12 +94,15 @@ Namespace(increase=2)
 Namespace(increase=3)
 ```
 
-- `help` \_ 打印解析器中所有选项和参数的完整帮助信息，然后退出，如：
+- `help` —— 打印解析器中所有选项和参数的完整帮助信息，然后退出。
+
+- `version` —— 打印命令行版本，通过指定 `version` 入参来指定版本，调用后退出。如：
 
 ```python
-parser = argparse.ArgumentParser(prog='CMD')
-parser.parse_args(['--version'])
-%(CMD)s 1.0
+>>> parser = argparse.ArgumentParser(prog='CMD')
+>>> parser.add_argument('--version', action='version', version='%(prog)s 1.0')
+>>> parser.parse_args(['--version'])
+CMD 1.0
 ```
 
 ## 参数类别
