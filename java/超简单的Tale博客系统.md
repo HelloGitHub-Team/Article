@@ -86,7 +86,7 @@ Tale 的项目的结构很简单，当然它运行起来超级简单，你是不
 
 3. ### 运行项目
 
-   1. #### IDE 里面运行
+   1. ####  IDE 里面运行
 
       a.将项目导入到 IDE 中，这里我使用的是 Idea
 
@@ -100,7 +100,7 @@ Tale 的项目的结构很简单，当然它运行起来超级简单，你是不
 
       ![](./images/H1bf66f23b3d8477ba09ff4b5074be45cT.png)
 
-   #### 2.命令行运行项目
+   2. ####  命令行运行项目
 
    #####    a.切换到项目源码路径,编译源码
 
@@ -111,25 +111,26 @@ Tale 的项目的结构很简单，当然它运行起来超级简单，你是不
    编译成功如下图：
    ![](./images/H43fd1ae8a5c6425cae89b125736d9cec6.png)
 
-#####    b.切换路径到 tale\target\dist\ 
+   #####    b.切换路径到 tale\target\dist\ 
 
    ![](./images/Hee56560f221a4953b311a4f71c51f815W.png)
 
-#####    c.解压 tale.zip 压缩文件
+   #####    c.解压 tale.zip 压缩文件
 
    ![](./images/H6c20314a208041de9931ede998e621fcr.png)
 
-#####    d.运行 tale-latest.jar
+   #####    d.运行 tale-latest.jar
 
    ```shell
    java -jar  tale-latest.jar
    ```
 
    启动成功如下图：
+   
 
    ![](./images/H636b04d1a2484a778b0de24c870b611fx.png)
 
-####    3.在 Idea 的 Terminal 窗口执行打包命令
+   3. ####  在 Idea 的 Terminal 窗口执行打包命令
 
   Idea 的 Terminal 窗口与 cmd 窗口的功能是相同的。可以执行
 
@@ -139,7 +140,7 @@ Tale 的项目的结构很简单，当然它运行起来超级简单，你是不
 
    对源码进行打包，然后也可以在命令行启动项目。
 
-4. #### 项目启动成功
+  4. ####  项目启动成功
 
    ##### 1.首次登录，需要填写配置信息
 
