@@ -1,61 +1,44 @@
-# JavaScript上传库：FilePond
+# 功能强大的 JS 文件上传库：FilePond
 
-**这是HelloGitHub 推出的[《讲解开源项目》](https://github.com/HelloGitHub-Team/Article)系列，今天给大家推荐JavaScript开源项目——FilePond**
+![](images/0.png)
+
+<p align="center">本文作者：HelloGitHub-<strong>kalifun</strong></p>
+
+这是 HelloGitHub 推出的[《讲解开源项目》](https://github.com/HelloGitHub-Team/Article)系列，今天给大家推荐一个 JavaScript 开源的文件上传库项目——FilePond
 
 ## 一、介绍
 
-### 1.1 Filepond
+### 1.1 FilePond
+它是一个 JavaScript 文件上传库。可以拖入上传文件，并且会对图像进行优化以加快上传速度。让用户体验到出色、进度可见、如丝般顺畅的用户体验。
 
-> Filepond是一个JavaScript文件上传库，可以上传你投入的任何内容，优化图像以加快上传速度，并提供出色的，可访问的，如丝般顺畅的用户体验。
+> FilePond 项目地址：https://github.com/pqina/filepond
 
-![](images/filepond.png)
+![](images/1.gif)
 
 ### 1.2 特点和优势
+- 上传内容：支持目录、文件、多个文件、本地路径、远程 URL 等。
+- 文件管理：删除文件、选择文件、复制和粘贴文件、或使用 API 方式添加文件。
+- 上传方式：使用 AJAX 进行异步上传、或将文件编码为 base64 数据用表单发送。
+- 图像优化：自动调整图像大小、裁剪和修复 EXIF 方向。
+- 响应式：可在移动和桌面设备上使用。
 
-- 接受目录，文件，blob，本地URL，远程URL和数据URI。
-- 删除文件，选择文件系统，复制和粘贴文件，或使用API添加文件。
-- 使用AJAX进行异步上传，或将文件编码为base64数据并沿表单发送。
-- 图像优化，自动调整图像大小，裁剪和修复EXIF方向。
-- 响应式，自动扩展到可用空间，可在移动和桌面设备上使用。
+看了效果图和功能介绍，是不是有些手痒了。接下来就是实战操作部分，大家可以跟着文章一步步的把这个库使用起来，点亮你的文件上传技能点！
 
-### 1.3 插件
-
-* File Rename  (重命名客户端上的文件)
-* File Encode (将文件编码为base64数据)
-* File size Validation   (文件大小验证工具) 
-* File Type Validation  （文件类型验证工具）
-* File Metadata    （限制要添加的文件类型）
-* File Poster  （在文件项目中显示图像）
-* Image Preview  (显示图像文件的预览)
-* Image Edit   （手动编辑图像文件）
-* Image Crop  （设置图像文件的裁剪比例）
-* Image Resize  （设置图像文件的输出尺寸）
-* Image Transform  （上传之前在客户端上图像变换）
-* Image EXIF Orientation (提取[EXIF](https://baike.baidu.com/item/Exif/422825?fr=aladdin)方向信息)
-* Image Size Validation (限制要添加的图像的尺寸)
-* Image Filter  (将颜色矩阵应用于图像像素)
-
-### 1.4 推荐组件
-
-> Doka.js -- A JavaScript Image Editor for your Website
-
-Doka.js可能就是你想要的。它是一个现代JavaScript图像编辑器，多卡支持设置裁剪宽高比，调整大小，旋转，裁剪和翻转图像。最重要的是，它与FilePond完美结合。
-
-![](images/doka.png)
-
-
-
-需要注意的是Doka.js是一个收费组件，如果感兴趣可以前往Doka.js官网：https://pqina.nl/doka/#pricing
 
 ## 二、实战操作
 
+下面我们将一步步的讲解如何使用 FilePond 这个库。我们采用的是最简单的 CDN 引用方式，方便大家能够快速体检其魅力（复制代码便可查看效果），接着会深入讲解每个插件的功能，最终编写了一个组合了几个插件的示例及运行效果展示。
+
+**Tips：** 解释说明均在代码中以注释方式展示，请大家注意阅读。
+
 ### 2.1 快速使用（CDN）
+示例代码：
 
 ```html
 <!DOCTYPE html>
 <html>
 <head>
-  // html 标题
+    <!-- html 标题 -->
     <title>FilePond from CDN</title>
 
     <!-- 引入Filepond的css -->
@@ -81,14 +64,33 @@ Doka.js可能就是你想要的。它是一个现代JavaScript图像编辑器，
 </html>
 ```
 
-![](images/WX.png)
+展示效果：
+
+![](images/3.png)
 
 ### 2.2 引入插件
 
-似乎单纯的上传功能是否无法满足我们的需求，FilePond可以根据自己的需求结合上面的插件一起来使用哦。下面我来介绍如何引入插件吧！
+似乎单纯的上传功能是否无法满足我们的需求，FilePond 该库拥有多样、强大的插件部分。可以根据自己的需求结合上面的插件一起来使用哦，下面先简单的了解一下每个插件的功能：
+* File Rename：重命名客户端上的文件
+* File Encode：将文件编码为 base64 数据
+* File size Validation：文件大小验证工具
+* File Type Validation：文件类型验证工具
+* File Metadata：限制要添加的文件类型
+* File Poster：在文件项目中显示图像
+* Image Preview：显示图像文件的预览
+* Image Edit：手动编辑图像文件
+* Image Crop：设置图像文件的裁剪比例
+* Image Resize：设置图像文件的输出尺寸
+* Image Transform：上传之前在客户端上图像变换
+* Image EXIF Orientation：提取 [EXIF](https://baike.baidu.com/item/Exif/422825?fr=aladdin) 方向信息
+* Image Size Validation：限制要添加的图像的尺寸
+* Image Filter：将颜色矩阵应用于图像像素
+
+下面我来介绍如何引入插件吧！
+
+**坑！：** 使用插件前，一定要查阅清楚该插件是否有 CSS 文件，如果有请在`<head><link href="xxx.css" rel="stylesheet"></head>`标签中引入哦
 
 ```html
-// 一定要查阅清楚是否有css文件，如果有请在<head><link href="xxx.css" rel="stylesheet"></head>标签中引入哦
 <head>
   <!-- 引入图像预览插件的css文件 -->
   <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
@@ -103,17 +105,15 @@ FilePond.registerPlugin(FilePondPluginImagePreview);
 </script>
 ```
 
-我们真理一下引入插件的步骤：
-
-​		1.引入css文件（部分插件有css文件）
-
-​		2.引入js文件
-
-​		3.注册插件
-
-​		4.配置插件（部分插件需配置）
+我们梳理一下引入插件的步骤：
+1. 引入 CSS 文件（部分插件有 CSS 文件）
+2. 引入 JS 文件
+3. 注册插件
+4. 配置插件（部分插件需配置）
 
 ### 2.3 配合插件使用
+
+完整示例代码：
 
 ```html
 <!DOCTYPE html>
@@ -121,15 +121,14 @@ FilePond.registerPlugin(FilePondPluginImagePreview);
 <head>
     <title>FilePond from CDN</title>
 
-    <!-- Filepond css -->
+    <!-- Filepond CSS -->
     <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
-    <!--    FilePondPluginImagePreview 插件css-->
+    <!--    FilePondPluginImagePreview 插件 CSS-->
     <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
-    <!--    FilePondPluginImageEdit 插件css-->
+    <!--    FilePondPluginImageEdit 插件 CSS-->
     <link href="https://unpkg.com/filepond-plugin-image-edit/dist/filepond-plugin-image-edit.css" rel="stylesheet">
-
-
 </head>
+
 <body>
 
 <!-- 我们将把这个输入框变成上传文件框 -->
@@ -149,7 +148,6 @@ FilePond.registerPlugin(FilePondPluginImagePreview);
 <script src="https://unpkg.com/filepond-plugin-image-exif-orientation/dist/filepond-plugin-image-exif-orientation.js"></script>
 <!--引入Filepond的js-->
 <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
-
 
 <script>
     // querySelector() 方法返回文档中匹配指定 CSS 选择器的一个元素。
@@ -197,15 +195,25 @@ FilePond.registerPlugin(FilePondPluginImagePreview);
 </html>
 ```
 
-上面引用了常用的FilePond方法，FilePond还有其他方法destroys(销毁FilePond实例),find(返回附加提供的元素的FilePond实例),getOptions(返回当前的配置项),supported(鉴别浏览器是否支持FilePond)
+上面的示例展示了 FilePond 常用插件的方法，效果展示如下：
+![](images/4.png)
 
-![](images/upload.png)
+当然还有其它方法如：
+- destroys：销毁实例
+- find：返回附加提供的元素的实例
+- getOptions：返回当前的配置项
+- supported：鉴别浏览器是否支持 FilePond
+
+这里就不做完整的讲解了，有兴趣的可以自行尝试使用这些方法。
 
 ## 三、总结
 
-这是一款很轻便的上传插件，并没有太多繁琐的配置，这里并没有针对所以插件引入进行演示，FilePond还是一款很值得参考使用的JavaScript库，如果想让自己网站快速加入上传功能，不妨试试它吧。
+以上就是讲解的全部内容，FilePond 是一款很轻便的上传插件。并没有太多繁琐的配置，这里我并没有逐一针对每个插件引入进行演示，只展示了常用的部分。留意上面提示的坑，掌握上面讲解的方法，其它的插件你便可自行学习。
+
+FilePond 是一款很值得参考和使用的 JavaScript 库，如果想让自己网站快速加入上传功能，不妨试试它吧。
+
 
 ## 四、参考资料
 
-- **[FilePond 官方文档](https://pqina.nl/filepond/docs/)**
-- **[FilePond Plugins List](https://pqina.nl/filepond/plugins.html)**
+- [FilePond 官方文档](https://pqina.nl/filepond/docs/)
+- [FilePond Plugins List](https://pqina.nl/filepond/plugins.html)
