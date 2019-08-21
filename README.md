@@ -14,15 +14,15 @@
 
 #### Python 系列
 1. Python 命令行之旅
-    - 1.1 [初探 argparse](content/Python/cmdline/argparse-1.md)
-    - 1.2 [深入 argparse （一）](content/Python/cmdline/argparse-2.md)
+    - 1.1 [初探 argparse](contents/Python/cmdline/argparse-1.md)
+    - 1.2 [深入 argparse （一）](contents/Python/cmdline/argparse-2.md)
 
 #### Java 系列
-1. [5分钟搭建私人博客系统：Tale](content/Java/Tale/content.md)
+1. [5分钟搭建私人博客系统：Tale](contents/Java/Tale/content.md)
 
 
 #### JS 系列
-1. [功能强大的 JS 文件上传库：FilePond](content/JavaScript/FilePond/content.md)
+1. [功能强大的 JS 文件上传库：FilePond](contents/JavaScript/FilePond/content.md)
 
 
 ## 贡献者
