@@ -10,7 +10,7 @@ HelloGitHub 推出的[《讲解开源项目》](https://github.com/HelloGitHub-T
 > 微人事的项目地址：https://github.com/hellowHuaairen/vhr
 
 想要快速搭建一套自己的博客，那就跟着本文的步骤。你只需要花 10 分钟，就能拥有一个属于自己的微人事管理系统，并且可以对整个项目有一个完成的概念和感觉。下面是搭建完成的效果图：
-![](./images1/1.png)
+![](./images/1.png)
 
 ## 一、技术栈
 
@@ -40,7 +40,7 @@ HelloGitHub 推出的[《讲解开源项目》](https://github.com/HelloGitHub-T
 
 ### 2.1 后端项目 hrserver 项目结构如下图：
 
-![](./images1/2.png)
+![](./images/2.png)
 
 
 后端项目采用 MVC 模式，使用现在流行的 SpringBoot 框架。SpringBoot 是基于 SpringMVC 衍生出来的框架。宗旨是较少配置，让开发者快速上手做项目。
@@ -63,7 +63,7 @@ HelloGitHub 推出的[《讲解开源项目》](https://github.com/HelloGitHub-T
 
 ### 2.2 前端项目 vuehr 项目结构如下图：
 
-![](./images1/3.png)
+![](./images/3.png)
 
 
 前端项目采用MVVM架构，就是MVC架构中多了一个ViewModel，ViewModel，是Model和Controller之间的一座桥梁。
@@ -89,15 +89,15 @@ HelloGitHub 推出的[《讲解开源项目》](https://github.com/HelloGitHub-T
 
 1.确保本地已安装 Java8 开发环境；
 
-![](./images1/4.png)
+![](./images/4.png)
 
 2.确保本地以安装 maven 工具；
 
-![](./images1/5.png)
+![](./images/5.png)
 
 3.确保本地以安装 Node.js；
 
-![](./images1/6.png)
+![](./images/6.png)
 
 
 ### 3.2 下载项目
@@ -112,12 +112,12 @@ git clone https://github.com/lenve/vhr.git
 
 数据库脚本存放的路径在：hrserver\src\main\resources\vhr.sql，我本地使用的可视化工具 Navcat。新建一个名称为vhr的数据库。
 
-![](./images1/7.png)
+![](./images/7.png)
 
 
 导入 vhr.sql 文件数据到 mysql 数据库。
 
-![](./images1/8.png)
+![](./images/8.png)
 
 
 #### 2.修改后台项目的环境配置文件
@@ -138,28 +138,28 @@ spring.datasource.password=root
 
    1.导入后端项目到 Idea 开发工具
 
-   ![](./images1/9.png)
+   ![](./images/9.png)
 
    2.运行后端项目
 
    打开后台项目的入口类 HrserverApplication.java 
    
-   ![](./images1/10.png)
+   ![](./images/10.png)
 
    3.项目启动成功如下图
    
-   ![](./images1/11.png)
+   ![](./images/11.png)
 
 2. 运行前端项目
 
    1.导入前端项目到 VSCode 开发工具
-   ![](./images1/12.png)
+   ![](./images/12.png)
 
    2.运行前端项目
 
    1.在 VSCode 左侧导航栏，NPM SCRIPTS中直接运行 dev 。
    
-   ![](./images1/13.png)
+   ![](./images/13.png)
 
    2.Ctrl+shift+Y 呼出控制台，在控制台终端依次执行如下命令：
 
@@ -171,11 +171,11 @@ spring.datasource.password=root
    npm run dev
    ```
 
-   ![](./images1/14.png)
+   ![](./images/14.png)
 
    3.项目运行成功如下图
 
-   ![](./images1/15.png)
+   ![](./images/15.png)
 
 
 
@@ -187,7 +187,7 @@ Win + R 打开 Wndows 命令行窗口
 
    1.切换目录到 vhr\hrserver\ 下
 
-   ![](./images1/16.png)
+   ![](./images/16.png)
 
    2.打包后台项目
 
@@ -205,13 +205,13 @@ Win + R 打开 Wndows 命令行窗口
 
    4.项目运行成功成功入下图
 
-   ![](./images1/17.png)
+   ![](./images/17.png)
 
 2. 运行前端项目
 
    1.切换目录到 vhr\vuehr\ 下
 
-   ![](./images1/17.png)
+   ![](./images/17.png)
 
    2.在命令行依次执行如下命令
 
@@ -225,17 +225,17 @@ Win + R 打开 Wndows 命令行窗口
 
    3.项目运行成功成功入下图
 
-   ![](./images1/19.png)
+   ![](./images/19.png)
 
 ### 5.项目启动成功效果
 
    1.员工基本信息维护
 
-![](./images1/20.png)
+![](./images/20.png)
 
    2.基础信息设置
 
-   ![](./images1/21.png)
+   ![](./images/21.png)
 
 ## 参考文章：
 
