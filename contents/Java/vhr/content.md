@@ -1,13 +1,15 @@
-### 前后端分离的  Java 人力资源管理系统：微人事
+### 前后端分离的 Java 人力资源管理系统：微人事
 > 本文适合刚学习完 Java 语言基础的人群，跟着本文可了解和运行微人事项目。示例均在 Windows 操作系统下演示
+
+![](./images/0.jpg)
 
 <p align="center">本文作者：HelloGitHub-<strong>秦人</strong></p>
 
-HelloGitHub 推出的[《讲解开源项目》](https://github.com/HelloGitHub-Team/Article)系列，今天给大家带来一款基于 Java 语言的轻量级博客开源项目——**微人事** 
+HelloGitHub 推出的[《讲解开源项目》](https://github.com/HelloGitHub-Team/Article)系列，今天给大家带来一款基于 Java 语言的人力资源管理开源项目——**微人事** 
 
 微人事是一个前后端分离的人力资源管理系统，项目采用 SpringBoot + Vue 架构。该系统是管理员对员工信息的一些列的操作。首先管理员需要登入系统，可对员工信息进行增删查改操作，也可以对员工进行奖罚，工资等信息的增删查改。然后实现对部门员工信息的统计和修改。所有的操作都在系统中有日志记录。下面是项目搭建完成的效果图：
 
-> 微人事的项目地址：<https://github.com/lenve/vhr> 
+> 微人事的项目地址：https://github.com/lenve/vhr
 
 想要快速搭建一套微人事管理系统，那就跟着本文的步骤。你只需要花 10 分钟，就能拥有一个属于自己的微人事管理系统，并且可以对前后端分离的项目有一个完成的概念和感觉。下面是搭建完成的效果图：
 ![](./images/1.png)
@@ -66,15 +68,15 @@ HelloGitHub 推出的[《讲解开源项目》](https://github.com/HelloGitHub-T
 ![](./images/3.png)
 
 
-前端项目采用MVVM架构，就是MVC架构中多了一个ViewModel，ViewModel，是Model和Controller之间的一座桥梁。
+前端项目采用 MVVM 架构，就是 MVC 架构中多了一个 ViewMode。它是 Model 和 Controller 之间的一座桥梁。
 
 目录说明：
 
-1. build：vue 项目构建配置目录，包括vue加载器的基础配置，webpack的环境配置。
-2. config：web 项目的环境配置目录，包括代理配置，开发环境配置，生成环境配置。
+1. build：vue 项目构建配置目录，包括vue加载器的基础配置，webpack 的环境配置。
+2. config：web 项目的环境配置目录，包括代理配置、开发环境配置、生成环境配置。
 3. node_modules：第三方依赖目录，包括项目引用的三方依赖模块。
-4. src/components：前端组件目录，包括聊天组件，员工组件，个人组件，统计组件等。
-5. src/lib：三方依赖目录，包括 SockJS，SockJS 是一个浏览器J avaScript 库，提供类似 WebSocket 的对象。
+4. src/components：前端组件目录，包括聊天组件、员工组件、个人组件、统计组件等。
+5. src/lib：三方依赖目录，包括 SockJS，SockJS 是一个浏览器 JavaScript 库，提供类似 WebSocket 的对象。
 6. src/router：路由目录，包括项目前端路由的配置信息。
 7. src/store：全局数据商店，存放供全局使用的一些数据。
 8. src/utils：工具包路径，包括前台 api 接口和常用的工具类。
@@ -108,9 +110,9 @@ git clone https://github.com/lenve/vhr.git
 
 ### 3.3 运行项目
 
-#### 1.初始化数据库
+#### 3.3.1 初始化数据库
 
-数据库脚本存放的路径在：hrserver\src\main\resources\vhr.sql，我本地使用的可视化工具 Navcat。新建一个名称为vhr的数据库。
+数据库脚本存放的路径在：hrserver\src\main\resources\vhr.sql，我本地使用的可视化工具 Navcat。新建一个名称为 vhr 的数据库。
 
 ![](./images/7.png)
 
@@ -120,7 +122,7 @@ git clone https://github.com/lenve/vhr.git
 ![](./images/8.png)
 
 
-#### 2.修改后台项目的环境配置文件
+#### 3.3.2 修改后台项目的环境配置文件
 
 修改后台项目的环境配置文件 hrserver\src\main\resources\application.properties
 
@@ -132,36 +134,36 @@ spring.datasource.username=root
 spring.datasource.password=root
 ```
 
-#### 3.IDE里运行项目
+#### 3.3.3 IDE里运行项目
 
 1. 运行后端项目
 
-   1.导入后端项目到 Idea 开发工具
+   a.导入后端项目到 Idea 开发工具
 
    ![](./images/9.png)
 
-   2.运行后端项目
+   b.运行后端项目
 
    打开后台项目的入口类 HrserverApplication.java 
    
    ![](./images/10.png)
 
-   3.项目启动成功如下图
+   c.项目启动成功如下图
    
    ![](./images/11.png)
 
 2. 运行前端项目
 
-   1.导入前端项目到 VSCode 开发工具
+   a.导入前端项目到 VSCode 开发工具
    ![](./images/12.png)
 
-   2.运行前端项目
+   b.运行前端项目
 
-   1.在 VSCode 左侧导航栏，NPM SCRIPTS中直接运行 dev 。
+   c.在 VSCode 左侧导航栏，NPM SCRIPTS中直接运行 dev 。
    
    ![](./images/13.png)
 
-   2.Ctrl+shift+Y 呼出控制台，在控制台终端依次执行如下命令：
+   d.Ctrl+shift+Y 呼出控制台，在控制台终端依次执行如下命令：
 
    ```
    # 安装依赖
@@ -173,29 +175,29 @@ spring.datasource.password=root
 
    ![](./images/14.png)
 
-   3.项目运行成功如下图
+3. 项目运行成功如下图
 
    ![](./images/15.png)
 
 
 
-#### 4.命令行运行项目
+#### 3.3.4 命令行运行项目
 
 Win + R 打开 Wndows 命令行窗口
 
 1. 运行后端项目
 
-   1.切换目录到 vhr\hrserver\ 下
+   a.切换目录到 vhr\hrserver\ 下
 
    ![](./images/16.png)
 
-   2.打包后台项目
+   b.打包后台项目
 
    ```
    mvn clean package
    ```
 
-   3.命令行运行微人事后台项目
+   c.命令行运行微人事后台项目
 
    切换目录到 hrserver\target\，执行如下命令可启动项目
 
@@ -203,17 +205,17 @@ Win + R 打开 Wndows 命令行窗口
    java -jar hrserver-0.0.1-SNAPSHOT.jar
    ```
 
-   4.项目运行成功成功入下图
+   d.项目运行成功成功入下图
 
    ![](./images/17.png)
 
 2. 运行前端项目
 
-   1.切换目录到 vhr\vuehr\ 下
+   a.切换目录到 vhr\vuehr\ 下
 
-   ![](./images/17.png)
+   ![](./images/18.png)
 
-   2.在命令行依次执行如下命令
+   b.在命令行依次执行如下命令
 
    ```
    # 安装依赖
@@ -223,21 +225,24 @@ Win + R 打开 Wndows 命令行窗口
    npm run dev
    ```
 
-   3.项目运行成功成功入下图
+   c.项目运行成功成功入下图
 
    ![](./images/19.png)
 
-### 5.项目启动成功效果
+### 3.3.5 项目启动成功效果
 
    1.员工基本信息维护
 
-![](./images/20.png)
+   ![](./images/20.png)
 
    2.基础信息设置
 
    ![](./images/21.png)
 
-## 参考文章：
+
+## 四、最后
+
+## 五、参考文章：
 
 - [SpringBoot wiki](https://www.jianshu.com/p/350972a3a258)
 
