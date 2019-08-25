@@ -9,11 +9,11 @@
 ## 1.1 推荐理由
 为什么需要使用到这个二维码生成器来生成二维码呢?
 
-- **理由一: 快速上手, 仅需2行代码, 即可开始食用!**
+- **理由一: 快速上手, 仅需 2 行代码, 即可开始食用!**
 
 - **理由二: 彩色二维码和 动态二维码可以让用户很直观的知道二维码的内容**
   
-  如下, 左图=.=#, 右图可以直观的看出是与 GitHub 相关的二维码 (HelloGithub项目的地址, 喜欢的话就关注一下)
+  如下, 左图=.=#, 右图可以直观的看出是与 GitHub 相关的二维码 ( HelloGithub 项目的地址, 喜欢的话就关注一下)
 
     ![hellogithub](_v_images/20190824101910088_8760.png)
     ![mix](_v_images/20190824101921343_7146.png)
@@ -25,7 +25,7 @@
 
 - **理由四: 使用方式多样**
 
-    有以下的3种方式
+    有以下的 3 种方式
   1. 命令行方式
   2. 导入文件方式 
   3. [exe](https://github.com/sylnsfar/qrcode_win)
@@ -37,7 +37,7 @@
 # 二、快速上手
 
 - 操作系统: windows
-- Python版本: 3.5
+- Python 版本: 3.5
 - 运行方式：命令行
 
 ## 2.1 安装
@@ -46,9 +46,9 @@
 ```shell
 pip install -r requirements.txt
 ```
-> 注：此处可能需要升级pip, 输入`pip install --upgrade pip`
+> 注：此处可能需要升级 pip, 输入`pip install --upgrade pip`
 
-2. 安装MyQR
+2. 安装 MyQR
 ```shell
 pip install myqr
 ```
@@ -90,7 +90,7 @@ myqr https://github.com -n mypicture.png -p github.jpg -c
 ```
 参数:
    - **参数`-n`**: 图片名字 (name)
-   - **参数`-p`**: 图片 (picture), 支持jpg, gif, png格式
+   - **参数`-p`**: 图片 (picture), 支持 jpg, gif, png 格式
    - **参数`-c`**: 彩色 (colorized) , 如果不设置, 默认黑白
    - **其他参数请看附录**
 
@@ -101,7 +101,7 @@ myqr https://github.com -n mypicture.png -p github.jpg -c
 
 
 # 三、附录
-## 3.1 MyQR参数
+## 3.1 MyQR 参数
 
 官方文档参数比较乱, 于是整理了一下
 
@@ -114,7 +114,7 @@ myqr https://github.com -n mypicture.png -p github.jpg -c
 - **参数`-con`**: 用以调节图片的对比度 (constrast)，1.0 表示原始图片，更小的值表示更低对比度，更大反之。默认为 1.0
 - **参数`-bri`**: 用来调节图片的亮度 (brightness)，其余用法和取值与 `-con` 相同
 
-## 3.2 cmd切换盘符
+## 3.2 cmd 切换盘符
 
 打开命令行有个小技巧, 可以将 cmd 迅速切换到想要的目录, 避免了切换盘符的麻烦
 
@@ -160,5 +160,5 @@ myqr https://github.com -n mypicture.png -p github.jpg -c
 
 ## 参考资料
 1. [小技巧｜还在用黑白二维码？弱爆了！教你点新的技能！](https://www.jianshu.com/p/5f8df373be7a)
-2. [PDF淺談QR Code](https://www.csie.ntu.edu.tw/~kmchao/bcc15spr/20150325_QR_Code.pdf)
+2. [PDF 淺談 QR Code](https://www.csie.ntu.edu.tw/~kmchao/bcc15spr/20150325_QR_Code.pdf)
 3. [QRcode](https://github.com/sylnsfar/qrcode/blob/master/README-cn.md)
