@@ -1,4 +1,4 @@
-# Python 命令行之旅 —— 初探 argparse
+# Python 命令行之旅：初探 argparse
 
 ## 前言
 
