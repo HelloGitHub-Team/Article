@@ -13,7 +13,7 @@
 ### 自动生成帮助
 当你在命令行程序中指定 `-h` 或 `--help` 参数时，都会输出帮助信息。而 `argparse` 可通过指定 `add_help` 入参为 `True` 或不指定，以达到自动输出帮助信息的目的。
 
-```python
+```shell
 >>> import argparse
 >>> parser = argparse.ArgumentParser(add_help=True)
 >>> parser.add_argument('--foo')
@@ -27,19 +27,20 @@ optional arguments:
 
 如果 `add_help=False`，那么在命令行中指定 `-h` 则会报错：
 
-```python
+```shell
 >>> import argparse
 >>> parser = argparse.ArgumentParser(add_help=False)
 >>> parser.add_argument('--foo')
 >>> parser.parse_args(['-h'])
 usage: [--foo FOO]
+: error: unrecognized arguments: -h
 ```
 
 ### 自定义帮助
 `ArgumentParser` 使用 `formatter_class` 入参来控制所输出的帮助格式。
 比如，通过指定 `formatter_class=argparse.RawTextHelpFormatter`，我们可以让帮助内容遵循原始格式：
 
-```python
+```shell
 >>> import argparse
 >>> parser = argparse.ArgumentParser(
 ...     add_help=True,
@@ -73,7 +74,7 @@ optional arguments:
 
 对比下不指定 `formatter_class` 的帮助输出，就可以发现 descirption 和 -a 两个帮助内容上的差异：
 
-```python
+```shell
 >>> import argparse
 >>> parser = argparse.ArgumentParser(
 ...     add_help=True,
@@ -104,7 +105,7 @@ optional arguments:
 
 比如某命令行支持三个参数选项 `--user`、`--password`和`--push`，前两者需要放在一个名为 `authentication` 的分组中以表示它们是身份认证信息。那么我们可以用 `ArgumentParser.add_argument_group` 来满足：
 
-```python
+```shell
 >>> import argparse
 >>> parser = argparse.ArgumentParser()
 >>> group = parser.add_argument_group('authentication')
@@ -163,7 +164,7 @@ Namespace(power=True, win=True)
 
 
 ## 共享解析器
-有些时候我们需要共享解析器，以共享里面的参数配置。比如，我们的命令行工具需要支持对阿里云和AWS进行操作，两类操作都需要指定 `AccessKeyId` 和 `AccessKeySecret` 来表明用户身份和权限。那么共享解析器就显得尤为必要，这样就可以少去重复代码。
+有些时候我们需要共享解析器，以共享里面的参数配置。比如，我们的命令行工具需要支持对阿里云和 AWS 进行操作，两类操作都需要指定 `AccessKeyId` 和 `AccessKeySecret` 来表明用户身份和权限。那么共享解析器就显得尤为必要，这样就可以少去重复代码。
 
 我们可以这样做，在 `base.py` 中定义一个父解析器，存放 `AccessKey` 相关参数配置，作为公用的解析器。由于后续的子解析器会自动生成帮助信息，这里的父解析器指定 `add_help=False` 以不自动生成帮助信息：
 ```python
@@ -309,10 +310,10 @@ optional arguments:
 在上一篇“深入 argparse （一）”的文章中介绍过8种参数动作，可以说是覆盖了绝大部分场景。但是也会有一些特定需求无法被满足，比如希望获取到的参数值都是大写。在这种情况下，自定义动作就派上了用场。
 
 实现一个自定义动作类，需继承自 `argparse.Action`，这个自定义动作类要传入到 `ArgumentParser.add_argument` 的 `action` 入参。当解析器解析参数时，会调用该类的 `__call__` 方法，该方法的签名为 `__call__(self, parser, namespace, values, option_string=None) `，其中：
-    - parser 为解析器实例
-    - namespace 存放解析结果
-    - values 即命令行中传入的参数值
-    - option_string 为参数选项
+- parser 为解析器实例
+- namespace 存放解析结果
+- values 即命令行中传入的参数值
+- option_string 为参数选项
 
 在下面的例子中，我们通过 `--words` 传入单词，并在自定义动作类中将其值转换为大写：
 
