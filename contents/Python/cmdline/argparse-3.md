@@ -13,7 +13,7 @@
 ### 自动生成帮助
 当你在命令行程序中指定 `-h` 或 `--help` 参数时，都会输出帮助信息。而 `argparse` 可通过指定 `add_help` 入参为 `True` 或不指定，以达到自动输出帮助信息的目的。
 
-```shell
+```bash
 >>> import argparse
 >>> parser = argparse.ArgumentParser(add_help=True)
 >>> parser.add_argument('--foo')
@@ -27,7 +27,7 @@ optional arguments:
 
 如果 `add_help=False`，那么在命令行中指定 `-h` 则会报错：
 
-```shell
+```bash
 >>> import argparse
 >>> parser = argparse.ArgumentParser(add_help=False)
 >>> parser.add_argument('--foo')
@@ -40,7 +40,7 @@ usage: [--foo FOO]
 `ArgumentParser` 使用 `formatter_class` 入参来控制所输出的帮助格式。
 比如，通过指定 `formatter_class=argparse.RawTextHelpFormatter`，我们可以让帮助内容遵循原始格式：
 
-```shell
+```bash
 >>> import argparse
 >>> parser = argparse.ArgumentParser(
 ...     add_help=True,
@@ -74,7 +74,7 @@ optional arguments:
 
 对比下不指定 `formatter_class` 的帮助输出，就可以发现 descirption 和 -a 两个帮助内容上的差异：
 
-```shell
+```bash
 >>> import argparse
 >>> parser = argparse.ArgumentParser(
 ...     add_help=True,
@@ -105,7 +105,7 @@ optional arguments:
 
 比如某命令行支持三个参数选项 `--user`、`--password`和`--push`，前两者需要放在一个名为 `authentication` 的分组中以表示它们是身份认证信息。那么我们可以用 `ArgumentParser.add_argument_group` 来满足：
 
-```shell
+```bash
 >>> import argparse
 >>> parser = argparse.ArgumentParser()
 >>> group = parser.add_argument_group('authentication')
@@ -215,7 +215,7 @@ print(parser.parse_args())
 
 最终通过 `-h` 参数分别看 `ali.py` 和 `aws.py` 所支持的参数，其中共同参数为 `--ak-id` 和 `--ak-secret`，特定参数分别为 `--ros` 和 `--cloudformation`：
 
-```console
+```bash
 $ python3 ali.py -h
 
 usage: ali.py [-h] [--ak-id AK_ID] [--ak-secret AK_SECRET] [--ros]
@@ -227,7 +227,7 @@ optional arguments:
   --ros                 Using ROS service to orchestrate cloud resources
 ```
 
-```console
+```bash
 $ python3 aws.py -h
 
 usage: aws.py [-h] [--ak-id AK_ID] [--ak-secret AK_SECRET] [--cloudformation]
@@ -278,7 +278,7 @@ print(parser.parse_args())
 ```
 
 直接指定 `-h` 来查看所支持的子命令和参数选项：
-```console
+```bash
 $ python3 cli.py -h
 
 usage: cli.py [-h] {create,delete} ...
@@ -293,7 +293,7 @@ optional arguments:
 ```
 
 直接指定 `delete -h` 来查看 `delete` 子命令支持的参数选项：
-```console
+```bash
 $ python3 cli.py delete -h
 
 usage: cli.py delete [-h] [--recursive] dirname
@@ -340,7 +340,7 @@ results = parser.parse_args()
 print(results)
 ```
 
-```console
+```bash
 $ python3 cli.py --words foo bar
 
 parser = ArgumentParser(prog='cli.py', usage=None, description=None, formatter_class=<class 'argparse.HelpFormatter'>, conflict_handler='error', add_help=True)
