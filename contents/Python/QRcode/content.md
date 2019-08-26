@@ -36,7 +36,7 @@
 
 # 二、快速上手
 
-- 操作系统: windows
+- 操作系统: Windows
 - Python 版本: 3.5
 - 运行方式：命令行
 
@@ -46,13 +46,12 @@
 ```shell
 pip install -r requirements.txt
 ```
-> 注：此处可能需要升级 pip, 输入`pip install --upgrade pip`
+> 注：此处可能需要升级 pip, 输入 `pip install --upgrade pip`
 
 2. 安装 MyQR
 ```shell
 pip install myqr
 ```
-
 
 安装完成之后, 就可以直接在命令行中使用了! 下面逐一讲解各种二维码的生成方法
 
@@ -72,7 +71,7 @@ myqr https://github.com -n helloword.png
 - **参数`-n`**: 文件重命名
 - **其他参数请看附录**
 
-> 默认保存路径为 cmd 所在目录 ( cmd 切换盘符的技巧, 请看附录)
+> 默认保存路径为 cmd 所在目录 (cmd 切换盘符的技巧, 请看附录)
 
 ## 2.3 彩色二维码
 
