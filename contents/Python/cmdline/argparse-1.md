@@ -99,21 +99,21 @@ print(result)
 
 若我们需要对一组数字求和，只需执行：
 
-```console
+```bash
 $ python3 cmd.py --sum -1 0 1
 0
 ```
 
 若我们需要对一组数字求最大值，只需执行：
 
-```console
+```bash
 $ python3 cmd.py -1 0 1
 1
 ```
 
 如果给定的参数不是数字，则会报错提示：
 
-```console
+```bash
 $ python3 cmd.py a b c
 usage: cmd.py [-h] [--sum] num [num ...]
 cmd.py: error: argument num: invalid int value: 'a'
@@ -121,7 +121,7 @@ cmd.py: error: argument num: invalid int value: 'a'
 
 我们还可以通过 `-h` 或 `--help` 参数查看其自动生成的使用说明和帮助：
 
-```console
+```bash
 usage: cmd.py [-h] [--sum] num [num ...]
 
 My Cmd Line Program

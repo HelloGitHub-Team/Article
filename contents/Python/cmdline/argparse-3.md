@@ -132,7 +132,7 @@ authentication:
 
 在 `argparse` 中，选项参数前缀默认采用 Unix 命令行约定，也就是 `-`。但它也支持自定义前缀，下面是一个例子：
 
-```python
+```bash
 >>> import argparse
 >>> 
 >>> parser = argparse.ArgumentParser(

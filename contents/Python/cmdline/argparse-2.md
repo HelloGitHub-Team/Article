@@ -29,7 +29,7 @@ parser.add_argument('--sum', dest='accumulate', action='store_const',
 
 - `store` —— 保存参数的值，这是默认的参数动作。它通常用于给一个参数指定值，如指定名字：
 
-```python
+```bash
 >>> parser.add_argument('--name')
 >>> parser.parse_args(['--name', 'Eric'])
 Namespace(name='Eric')
@@ -37,7 +37,7 @@ Namespace(name='Eric')
 
 - `store_const` —— 保存被 `const` 命名的固定值。当我们想通过是否给定参数来起到标志的作用，给定就取某个值，就可以使用该参数动作，如：
 
-```python
+```bash
 >>> parser.add_argument('--sum', action='store_const', const=sum)
 >>> parser.parse_args(['--sum'])
 Namespace(sum=<built-in function sum>)
@@ -47,7 +47,7 @@ Namespace(sum=None)
 
 - `store_true` 和 `store_false` —— 是 `store_const` 的特殊情况，用来分别保存 True 和 False。如果为指定参数，则其默认值分别为 False 和 True，如：
 
-```python
+```bash
 >>> parser.add_argument('--use', action='store_true')
 >>> parser.add_argument('--nouse', action='store_false')
 >>> parser.parse_args(['--use', '--nouse'])
@@ -58,7 +58,7 @@ Namespace(nouse=True, use=False)
 
 - `append` —— 将参数值追加保存到一个列表中。它常常用于命令行中允许多个相同选项，如：
 
-```python
+```bash
 >>> parser.add_argument('--file', action='append')
 >>> parser.parse_args(['--file', 'f1', '--file', 'f2'])
 Namespace(file=['f1', 'f2'])
@@ -68,7 +68,7 @@ Namespace(file=['f1', 'f2'])
 
 不指定 `dest` 入参，则固定值保存在以参数名命名的变量中
 
-```python
+```bash
 >>> parser.add_argument('--int', action='append_const', const=int)
 >>> parser.add_argument('--str', action='append_const', const=str)
 >>> parser.parse_args(['--int', '--str'])
@@ -77,7 +77,7 @@ Namespace(int=[<class 'int'>], str=[<class 'str'>])
 
 指定 `dest` 入参，则固定值保存在 `dest` 命名的变量中
 
-```python
+```bash
 >>> parser.add_argument('--int', dest='types', action='append_const', const=int)
 >>> parser.add_argument('--str', dest='types', action='append_const', const=str)
 >>> parser.parse_args(['--int', '--str'])
@@ -86,7 +86,7 @@ Namespace(types=[<class 'int'>, <class 'str'>])
 
 - `count` —— 计算参数出现次数，如：
 
-```python
+```bash
 >>> parser.add_argument('--increase', '-i', action='count')
 >>> parser.parse_args(['--increas', '--increase'])
 Namespace(increase=2)
@@ -98,7 +98,7 @@ Namespace(increase=3)
 
 - `version` —— 打印命令行版本，通过指定 `version` 入参来指定版本，调用后退出。如：
 
-```python
+```bash
 >>> parser = argparse.ArgumentParser(prog='CMD')
 >>> parser.add_argument('--version', action='version', version='%(prog)s 1.0')
 >>> parser.parse_args(['--version'])
@@ -119,7 +119,7 @@ CMD 1.0
 
 可选参数通常用于：用户提供一个参数以及对应值，则使用该值；若不提供，则使用默认值。如：
 
-```python
+```bash
 >>> parser.add_argument('--name', '-n')
 >>> parser.parse_args(['--name', 'Eric'])  # 通过长参数指定名称
 Namespace(name='Eric')
@@ -135,7 +135,7 @@ Namespace(name=None)
 
 `argparse` 所支持的参数类型多种多样，可以是 `int`、`float`、`bool`等，比如：
 
-```python
+```bash
 >>> parser.add_argument('-i', type=int)
 >>> parser.add_argument('-f', type=float)
 >>> parser.add_argument('-b', type=bool)
@@ -147,7 +147,7 @@ Namespace(b=False, f=2.1, i=1)
 
 作为文件进行处理：
 
-```python
+```bash
 >>> parser.add_argument('--file', type=open)
 >>> parser.parse_args(['--file', 'README.md'])
 Namespace(b=None, f=None, file=<_io.TextIOWrapper name='README.md' mode='r' encoding='cp936'>, i=None)
@@ -156,7 +156,7 @@ Namespace(b=None, f=None, file=<_io.TextIOWrapper name='README.md' mode='r' enco
 使用自定义函数进行处理，入参为参数值，需返回转换后的结果。
 比如，对于参数 `--num`，我们希望当其值小于 1 时则返回 1，大于 10 时则返回 10：
 
-```python
+```bash
 >>> def limit(string):
 ...   num = int(string)
 ...   if num < 1:
@@ -180,7 +180,7 @@ Namespace(num=5)
 
 比如：
 
-```python
+```bash
 >>> parser.add_argument('-i', default=0, type=int)
 >>> parser.add_argument('-f', default=3.14, type=float)
 >>> parser.add_argument('-b', default=True, type=bool)
@@ -194,7 +194,7 @@ Namespace(b=True, f=3.14, i=0)
 
 比如，我们可以指定两个位置参数 `x` 和 `y` ，先添加的 `x` 位于第一个位置，后加入的 `y` 位于第二个位置。那么在命令行中输入 `1 2`的时候，分别对应到的就是 `x` 和 `y`：
 
-```python
+```bash
 >>> parser.add_argument('x')
 >>> parser.add_argument('y')
 >>> parser.parse_args(['1', '2'])
@@ -209,7 +209,7 @@ Namespace(x='1', y='2')
 
 比如，指定文件读取方式限制为 `read-only` 和 `read-write`：
 
-```python
+```bash
 >>> parser.add_argument('--mode', choices=('read-only', 'read-write'))
 >>> parser.parse_args(['--mode', 'read-only'])
 Namespace(mode='read-only')
@@ -224,7 +224,7 @@ usage: [-h] [--mode {read-only,read-write}]
 
 比如，我们希望通过命令行来告知乘坐的交通工具，要么是汽车，要么是公交，要么是自行车，那么就可以这么写：
 
-```python
+```bash
 >>> group = parser.add_mutually_exclusive_group()
 >>> group.add_argument('--car', action='store_true')
 >>> group.add_argument('--bus', action='store_true')
@@ -246,7 +246,7 @@ usage: [-h] [--car | --bus | --bike]
 
 若 `nargs=N`，`N`为一个数字，则要求该参数提供 N 个值，如：
 
-```python
+```bash
 >>> parser.add_argument('--foo', nargs=2)
 >>> print(parser.parse_args(['--foo', 'a', 'b']))
 Namespace(foo=['a', 'b'])
@@ -257,7 +257,7 @@ usage: [-h] [--foo FOO FOO]
 
 若 `nargs=?`，则要求改参数提供 0 或 1 个值，如：
 
-```python
+```bash
 >>> parser.add_argument('--foo', nargs='?')
 >>> parser.parse_args(['--foo'])
 Namespace(foo=None)
@@ -270,7 +270,7 @@ usage: [-h] [--foo [FOO]]
 
 若 `nargs=*`，则要求改参数提供 0 或多个值，如：
 
-```python
+```bash
 >>> parser.add_argument('--foo', nargs='*')
 >>> parser.parse_args(['--foo'])
 Namespace(foo=[])
@@ -282,7 +282,7 @@ Namespace(foo=['a', 'b', 'c', 'd', 'e'])
 
 若 `nargs=?`，则要求改参数至少提供 1 个值，如：
 
-```python
+```bash
 >>> parser.add_argument('--foo', nargs='+')
 >>> parser.parse_args(['--foo', 'a'])
 Namespace(foo=['a'])
