@@ -26,11 +26,11 @@ HelloGitHub 推出的[《讲解开源项目》](https://github.com/HelloGitHub-T
 
 - **MyBatis**：MyBatis 是一款优秀的持久层框架，它支持定制化 SQL、存储过程以及高级映射。MyBatis 避免了几乎所有的 JDBC 代码和手动设置参数以及获取结果集。
 
-- **MySQL**：MySQL 是一个轻量级关系型数据库管理系统，由瑞典MySQL AB公司开发，目前属于Oracle公司。
+- **MySQL**：MySQL 是一个轻量级关系型数据库管理系统，由瑞典 MySQL AB 公司开发，目前属于 Oracle 公司。
 
 ### 1.2 前端技术栈
 
-- **Vue**：Vue 是一套构建用户界面的渐进式框架。 数据驱动，组件化是Vue的两大核心思想。
+- **Vue**：Vue 是一套构建用户界面的渐进式框架。 数据驱动，组件化是 Vue 的两大核心思想。
 
 - **ElementUI**： ElementUI 时一套基于 Vue 2.0 的组件库，提供了配套设计资源。由饿了么公司前端团队开源。 
 
@@ -56,9 +56,9 @@ HelloGitHub 推出的[《讲解开源项目》](https://github.com/HelloGitHub-T
 5. exception：自定义异常目录。公用的异常处理实现类。
 6. mapper：数据库操作层目录。包括数据接口的定义，查询 sql 的业务实现。
 7. service：业务层目录，包括部门，员工，菜单，角色，工资等业务的业务类。 
-8. HrserverApplication：SpringBoot 框架的入口类，在 IDE 中可直接运行main方法。 
+8. HrserverApplication：SpringBoot 框架的入口类，在 IDE 中可直接运行 main 方法。 
 9. resources/static：静态资源存放目录
-10. resources/templates：前台页面模板路径，包括email模板。
+10. resources/templates：前台页面模板路径，包括 email 模板。
 11. resources/application.properties：环境配置文件，包括关系型数据库 mysql 连接信息，mybatis 配置文件路径，非关系型数据 redis 的连接信息，邮件服务的配置等。
 12. resources/mybatis-config.xml：mybatis 配置文件，目前包括日志带引的配置。
 13. resources/vhr.sql：mysql数据库脚本，（注：数据库表有外键约束，适当修改sql遇见的执行顺序 ）
@@ -104,7 +104,7 @@ HelloGitHub 推出的[《讲解开源项目》](https://github.com/HelloGitHub-T
 
 ### 3.2 下载项目
 
-```
+```shell
 git clone https://github.com/lenve/vhr.git
 ```
 
@@ -138,7 +138,7 @@ spring.datasource.password=root
 
 1. 运行后端项目
 
-   a.导入后端项目到 Idea 开发工具
+   a.导入后端项目到 IDEA 开发工具
 
    ![](./images/9.png)
 
@@ -165,7 +165,7 @@ spring.datasource.password=root
 
    d.Ctrl+shift+Y 呼出控制台，在控制台终端依次执行如下命令：
 
-   ```
+   ```shell
    # 安装依赖
    npm install
    
@@ -193,7 +193,7 @@ Win + R 打开 Wndows 命令行窗口
 
    b.打包后台项目
 
-   ```
+   ```shell
    mvn clean package
    ```
 
@@ -201,7 +201,7 @@ Win + R 打开 Wndows 命令行窗口
 
    切换目录到 hrserver\target\，执行如下命令可启动项目
 
-   ```
+   ```shell
    java -jar hrserver-0.0.1-SNAPSHOT.jar
    ```
 
@@ -217,7 +217,7 @@ Win + R 打开 Wndows 命令行窗口
 
    b.在命令行依次执行如下命令
 
-   ```
+   ```shell
    # 安装依赖
    npm install
    
