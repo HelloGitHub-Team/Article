@@ -3,7 +3,7 @@
 ![](images/1.png)
 
 <p align="center">本文作者：HelloGitHub-<strong>kalifun</strong></p>
-这是 HelloGitHub 推出的[《讲解开源项目》](https://github.com/HelloGitHub-Team/Article)系列，今天给大家推荐一个 JavaScript 开源的web3D模型项目——Zdog
+这是 HelloGitHub 推出的 [《讲解开源项目》](https://github.com/HelloGitHub-Team/Article) 系列，今天给大家推荐一个 JavaScript 开源的web3D模型项目——Zdog
 
 ## 一、介绍
 
@@ -11,7 +11,7 @@
 
 > Zdog 项目地址：https://github.com/metafizzy/zdog
 
-**Tips:**本文出现的所有作品都是通过Zdog完成的。
+**Tips:** 本文出现的所有作品都是通过Zdog完成的。
 
 ![](images/2.gif)
 
