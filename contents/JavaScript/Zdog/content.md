@@ -3,7 +3,7 @@
 ![](images/1.png)
 
 <p align="center">本文作者：HelloGitHub-<strong>kalifun</strong></p>
-这是 HelloGitHub 推出的 [《讲解开源项目》](https://github.com/HelloGitHub-Team/Article) 系列，今天给大家推荐一个 JavaScript 开源的web3D模型项目——Zdog
+这是 HelloGitHub 推出的[《讲解开源项目》](https://github.com/HelloGitHub-Team/Article)系列，今天给大家推荐一个 JavaScript 开源的web3D模型项目——Zdog
 
 ## 一、介绍
 
