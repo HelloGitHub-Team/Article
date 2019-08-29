@@ -3,7 +3,7 @@
 ![](images/1.png)
 
 <p align="center">本文作者：HelloGitHub-<strong>kalifun</strong></p>
-这是 HelloGitHub 推出的[《讲解开源项目》](https://github.com/HelloGitHub-Team/Article)系列，今天给大家推荐一个 JavaScript 开源的web3D模型项目——Zdog
+这是 HelloGitHub 推出的 [ 《讲解开源项目》 ](https://github.com/HelloGitHub-Team/Article) 系列，今天给大家推荐一个 JavaScript 开源的 web 3D 模型项目——Zdog
 
 ## 一、介绍
 
@@ -17,11 +17,11 @@
 
 圆形，扁平，设计师友好用于canvas和SVG的伪3D引擎。
 
-使用Zdog，您可以在Web上设计和渲染简单的3D模型。Zdog是一个伪3D引擎。它的几何形状存在于3D空间中，但呈现为扁平形状,这使Zdog特别。
+使用 Zdog，您可以在 Web上设计和渲染简单的3D模型。Zdog是一个伪3D引擎。它的几何形状存在于 3D空间中，但呈现为扁平形状,这使 Zdog特别。
 
 ### 1.2 Zdog特点
 
--  Zdog很小。整个库的2,100行代码，最小体积为28KB。
+- Zdog很小。整个库的2,100行代码，最小体积为28KB。
 - Zdog是圆滑。所有的圆形都呈现为圆边，没有多边形锯齿。
 - Zdog很友好。使用API完成建模。
 
