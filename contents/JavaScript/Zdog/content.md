@@ -2,8 +2,9 @@
 
 ![](images/1.png)
 
-<p align="center">本文作者：HelloGitHub-<strong>kalifun</strong></p>
-这是 HelloGitHub 推出的 [《讲解开源项目》](https://github.com/HelloGitHub-Team/Article) 系列，今天给大家推荐一个 JavaScript 开源的 web 3D 模型项目——Zdog
+<p align="center">本文作者：HelloGitHub-<strong>kalifun</strong></p>  
+
+HelloGitHub 推出的[《讲解开源项目》](https://github.com/HelloGitHub-Team/Article)系列，今天给大家推荐一个 JavaScript 开源的 web 3D 模型项目——Zdog
 
 ## 一、介绍
 
@@ -17,7 +18,7 @@
 
 圆形，扁平，设计师友好用于canvas和SVG的伪3D引擎。
 
-使用 Zdog，您可以在 Web上设计和渲染简单的3D模型。Zdog是一个伪3D引擎。它的几何形状存在于 3D空间中，但呈现为扁平形状,这使 Zdog特别。
+使用 Zdog，您可以在 Web上设计和渲染简单的3D模型。Zdog 是一个伪 3D 引擎。它的几何形状存在于 3D 空间中，但呈现为扁平形状,这使 Zdog 特别。
 
 ### 1.2 Zdog特点
 
@@ -103,7 +104,7 @@ let illo = new Zdog.Illustration({
 
 ### 2.3 放大
 
-Zdog需要设置大量数字。设置zoom将按比例缩放整个场景。
+Zdog 需要设置大量数字。设置 zoom 将按比例缩放整个场景。
 
 ```javascript
 // Illustration是顶级类，用于处理<canvas>或<svg>元素，保存场景中的所有形状，并在元素中显示这些形状。
@@ -131,7 +132,7 @@ Zdog需要设置大量数字。设置zoom将按比例缩放整个场景。
 
 ### 2.4 拖动旋转
 
-通过在插图上设置dragRotate：true来拖动来启用旋转。
+通过在插图上设置 dragRotate：true 来拖动来启用旋转。
 
 ```javascript
 let newcanvas2 = new Zdog.Illustration({
@@ -175,11 +176,11 @@ let newcanvas2 = new Zdog.Illustration({
 
 ## 三、快速入手
 
-下面我们将一步步的讲解如何使用Zdog 这个库。我们采用的是最简单的 CDN 引用方式，方便大家能够快速体检其魅力（复制代码便可查看效果）。
+下面我们将一步步的讲解如何使用 Zdog 这个库。我们采用的是最简单的 CDN 引用方式，方便大家能够快速体检其魅力（复制代码便可查看效果）。
 
 **Tips：** 解释说明均在代码中以注释方式展示，请大家注意阅读。
 
-```html
+```
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -271,7 +272,7 @@ let newcanvas2 = new Zdog.Illustration({
 
 ## 四、总结
 
-Zdog，可以设计和显示简单的3D模型而不需要很多开销。这让我们成为一个灵魂画手简单了很多，如果你想给自己的网站增添色彩，不妨试试Zdog吧。如果各位感兴趣的话，下一期我将带领大家成为一位代码上的灵魂画手！
+Zdog，可以设计和显示简单的 3D 模型而不需要很多开销。这让我们成为一个灵魂画手简单了很多，如果你想给自己的网站增添色彩，不妨试试 Zdog 吧。如果各位感兴趣的话，下一期我将带领大家成为一位代码上的灵魂画手！
 
 ## 五、参考资料
 
