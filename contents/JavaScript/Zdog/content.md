@@ -4,7 +4,7 @@
 
 <p align="center">本文作者：HelloGitHub-<strong>kalifun</strong></p>  
 
-HelloGitHub 推出的[《讲解开源项目》](https://github.com/HelloGitHub-Team/Article)系列，今天给大家推荐一个 JavaScript 开源的 web 3D 模型项目——Zdog
+今天给大家推荐一个使用 JavaScript 语言编写的开源 web 3D 模型项目——Zdog。
 
 ## 一、介绍
 
@@ -12,25 +12,25 @@ HelloGitHub 推出的[《讲解开源项目》](https://github.com/HelloGitHub-T
 
 > Zdog 项目地址：https://github.com/metafizzy/zdog
 
-**Tips:** 本文出现的所有作品都是通过Zdog完成的。
+**Tips:** 本文出现的所有作品都是通过 Zdog 完成的。
 
 ![](images/2.gif)
 
-圆形，扁平，设计师友好用于canvas和SVG的伪3D引擎。
+圆形，扁平，设计师友好用于 canvas 和 SVG 的伪 3D 引擎。
 
-使用 Zdog，您可以在 Web上设计和渲染简单的3D模型。Zdog 是一个伪 3D 引擎。它的几何形状存在于 3D 空间中，但呈现为扁平形状,这使 Zdog 特别。
+使用 Zdog，您可以在 Web 上设计和渲染简单的 3D 模型。Zdog 是一个伪 3D 引擎。它的几何形状存在于 3D 空间中，但呈现为扁平形状,这使 Zdog 特别。
 
-### 1.2 Zdog特点
+### 1.2 Zdog 特点
 
-- Zdog很小。整个库的2,100行代码，最小体积为28KB。
-- Zdog是圆滑。所有的圆形都呈现为圆边，没有多边形锯齿。
-- Zdog很友好。使用API完成建模。
+- Zdog 很小。整个库只有 2100 行代码，最小体积为 28 KB。
+- Zdog 是圆滑。所有的圆形都呈现为圆边，没有多边形锯齿。
+- Zdog 很友好。使用 API 完成建模。
 
 ## 二、方法介绍
 
 > 解释说明均在代码中以注释方式展示，请大家注意阅读。
 
-###  2.1初始静态演示
+###  2.1 初始静态演示
 
 让我们进入一个基本的非动画演示。
 
@@ -132,7 +132,7 @@ Zdog 需要设置大量数字。设置 zoom 将按比例缩放整个场景。
 
 ### 2.4 拖动旋转
 
-通过在插图上设置 dragRotate：true 来拖动来启用旋转。
+通过在插图上设置 `dragRotate：true` 来拖动来启用旋转。
 
 ```javascript
 let newcanvas2 = new Zdog.Illustration({
