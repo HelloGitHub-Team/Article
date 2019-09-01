@@ -17,6 +17,7 @@
     - 1.1 [初探 argparse](contents/Python/cmdline/argparse-1.md)
     - 1.2 [深入 argparse（一）](contents/Python/cmdline/argparse-2.md)
     - 1.3 [深入 argparse（二）](contents/Python/cmdline/argparse-3.md)
+    - 1.4 [深入 argparse（二）](contents/Python/cmdline/argparse-4.md)
 2. [简单方便的二维码生成器：QRcode（未审核）](https://github.com/HelloGitHub-Team/Article/blob/master/contents/Python/QRcode/content.md)
 
 #### Java 系列
