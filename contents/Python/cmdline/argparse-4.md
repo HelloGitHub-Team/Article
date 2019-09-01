@@ -311,7 +311,7 @@ These are common Git commands used in various situations:
 
 想看整个源码，请戳 [argparse-git.py](https://github.com/HelloGitHub-Team/Article/blob/master/contents/Python/cmdline/argparse-git.py) 。
 
-## 小节
+## 小结
 
 本文简单介绍了日常工作中常用的 `git` 命令，然后提出实现它的思路，最终一步步地使用 `argparse` 和 `gitpython` 实现了 `git` 程序。是不是很有成就感呢？
 
