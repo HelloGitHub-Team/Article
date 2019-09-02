@@ -1,7 +1,8 @@
-### 前后端分离的 Java 人力资源管理系统：微人事
-> 本文适合刚学习完 Java 语言基础的人群，跟着本文可了解和运行微人事项目。示例均在 Windows 操作系统下演示
+### Java 前后端分离项目：微人事
 
-![](./images/0.jpg)
+> 本文适合刚学习完 Java 语言基础的人群，跟着本文可了解和运行项目，本示例是在 Windows 操作系统下演示。
+
+![](./images/cover.jpg)
 
 <p align="center">本文作者：HelloGitHub-<strong>秦人</strong></p>
 
@@ -54,14 +55,14 @@
 3. config：基础配置目录，包括权限认证，安全认证，菜单权限等类。
 4. controller：业务的控制器目录，包括员工信息，工资，系统公共功能等控制器。 
 5. exception：自定义异常目录。公用的异常处理实现类。
-6. mapper：数据库操作层目录。包括数据接口的定义，查询 sql 的业务实现。
-7. service：业务层目录，包括部门，员工，菜单，角色，工资等业务的业务类。 
+6. mapper：数据库操作层目录。包括数据接口的定义，查询 SQL 的业务实现。
+7. service：业务层目录，包括部门、员工、菜单、角色、工资等业务的业务类。 
 8. HrserverApplication：SpringBoot 框架的入口类，在 IDE 中可直接运行 main 方法。 
 9. resources/static：静态资源存放目录
 10. resources/templates：前台页面模板路径，包括 email 模板。
 11. resources/application.properties：环境配置文件，包括关系型数据库 mysql 连接信息，mybatis 配置文件路径，非关系型数据 redis 的连接信息，邮件服务的配置等。
 12. resources/mybatis-config.xml：mybatis 配置文件，目前包括日志带引的配置。
-13. resources/vhr.sql：mysql数据库脚本，（注：数据库表有外键约束，适当修改sql遇见的执行顺序 ）
+13. resources/vhr.sql：MySQL 数据库脚本，（注：数据库表有外键约束，适当修改sql遇见的执行顺序 ）
 
 ### 2.2 前端项目 vuehr 项目结构如下图：
 
@@ -72,18 +73,18 @@
 
 目录说明：
 
-1. build：vue 项目构建配置目录，包括vue加载器的基础配置，webpack 的环境配置。
-2. config：web 项目的环境配置目录，包括代理配置、开发环境配置、生成环境配置。
+1. build：Vue 项目构建配置目录，包括vue加载器的基础配置，webpack 的环境配置。
+2. config：Web 项目的环境配置目录，包括代理配置、开发环境配置、生成环境配置。
 3. node_modules：第三方依赖目录，包括项目引用的三方依赖模块。
 4. src/components：前端组件目录，包括聊天组件、员工组件、个人组件、统计组件等。
 5. src/lib：三方依赖目录，包括 SockJS，SockJS 是一个浏览器 JavaScript 库，提供类似 WebSocket 的对象。
 6. src/router：路由目录，包括项目前端路由的配置信息。
 7. src/store：全局数据商店，存放供全局使用的一些数据。
-8. src/utils：工具包路径，包括前台 api 接口和常用的工具类。
-9. src/App.vue：vue 前端的入口组件。
-10. src/main.js：vue 前端入口js事件定义的文件。
+8. src/utils：工具包路径，包括前台 API 接口和常用的工具类。
+9. src/App.vue：Vue 前端的入口组件。
+10. src/main.js：Vue 前端入口 JS 事件定义的文件。
 11. src/index.html：微人事前端首页。
-12. src/package*.json：vue 前端项目打包的配置文件，类似于 maven 项目的 pom.xml 文件。声明了项目需要的三方依赖。
+12. src/package*.json：Vue 前端项目打包的配置文件，类似于 maven 项目的 pom.xml 文件。声明了项目需要的三方依赖。
 
 ## 三、实战操作
 
@@ -104,7 +105,7 @@
 
 ### 3.2 下载项目
 
-```shell
+```bash
 git clone https://github.com/lenve/vhr.git
 ```
 
@@ -127,7 +128,7 @@ git clone https://github.com/lenve/vhr.git
 修改后台项目的环境配置文件 hrserver\src\main\resources\application.properties
 
 ```
-#MySQL配置
+# MySQL 配置
 spring.datasource.type=com.alibaba.druid.pool.DruidDataSource
 spring.datasource.url=jdbc:mysql://IP:3306/vhr?useUnicode=true&characterEncoding=UTF-8
 spring.datasource.username=root
@@ -159,13 +160,13 @@ spring.datasource.password=root
 
    b.运行前端项目
 
-   c.在 VSCode 左侧导航栏，NPM SCRIPTS中直接运行 dev 。
+   c.在 VSCode 左侧导航栏，NPM SCRIPTS中直接运行 dev。
    
    ![](./images/13.png)
 
    d.Ctrl+shift+Y 呼出控制台，在控制台终端依次执行如下命令：
 
-   ```shell
+   ```bash
    # 安装依赖
    npm install
    
@@ -193,7 +194,7 @@ Win + R 打开 Wndows 命令行窗口
 
    b.打包后台项目
 
-   ```shell
+   ```bash
    mvn clean package
    ```
 
@@ -201,7 +202,7 @@ Win + R 打开 Wndows 命令行窗口
 
    切换目录到 hrserver\target\，执行如下命令可启动项目
 
-   ```shell
+   ```bash
    java -jar hrserver-0.0.1-SNAPSHOT.jar
    ```
 
@@ -217,7 +218,7 @@ Win + R 打开 Wndows 命令行窗口
 
    b.在命令行依次执行如下命令
 
-   ```shell
+   ```bash
    # 安装依赖
    npm install
    
