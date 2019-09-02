@@ -18,12 +18,12 @@
     - 1.2 [深入 argparse（一）](contents/Python/cmdline/argparse-2.md)
     - 1.3 [深入 argparse（二）](contents/Python/cmdline/argparse-3.md)
     - 1.4 [深入 argparse（二）](contents/Python/cmdline/argparse-4.md)
-2. [简单方便的二维码生成器：QRcode（未审核）](https://github.com/HelloGitHub-Team/Article/blob/master/contents/Python/QRcode/content.md)
+2. [简单方便的二维码生成器：QRcode](https://github.com/HelloGitHub-Team/Article/blob/master/contents/Python/QRcode/content.md)
 
 #### Java 系列
 1. [5分钟搭建私人博客系统：Tale](contents/Java/Tale/content.md)
 
-2. [前后端分离的人力资源管理系统：微人事（未审核）](contents/Java/vhr/content.md)
+2. [前后端分离的人力资源管理系统：微人事](contents/Java/vhr/content.md)
 
 #### JS 系列
 1. [功能强大的 JS 文件上传库：FilePond](contents/JavaScript/FilePond/content.md)
