@@ -6,7 +6,7 @@
 
 本文将以我们日常工作中最常见的 `git` 命令为例，讲解如何使用 `argparse` 库来实现一个真正可用的命令行程序。
 
-```
+```plain
 本系列文章默认使用 Python 3 作为解释器进行讲解。
 若你仍在使用 Python 2，请注意两者之间语法和库的使用差异哦~
 ```
@@ -257,7 +257,9 @@ def handle_commit(git, args):
 def cli():
     ...
     # push
-    push_parser = subparsers.add_parser('push', help='Update remote refs along with associated objects')
+    push_parser = subparsers.add_parser(
+      'push',
+      help='Update remote refs along with associated objects')
     push_parser.set_defaults(handle=handle_push)
 ```
 
