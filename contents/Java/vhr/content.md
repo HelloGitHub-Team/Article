@@ -5,7 +5,7 @@
 
 <p align="center">本文作者：HelloGitHub-<strong>秦人</strong></p>
 
-HelloGitHub 推出的[《讲解开源项目》](https://github.com/HelloGitHub-Team/Article)系列，今天给大家带来一款基于 Java 语言的人力资源管理开源项目——**微人事** 
+大家好！这里是 HelloGitHub 推出的[《讲解开源项目》](https://github.com/HelloGitHub-Team/Article)系列，今天给大家带来一款基于 Java 语言的人力资源管理开源项目——**微人事** 
 
 微人事是一个前后端分离的人力资源管理系统，项目采用 SpringBoot + Vue 架构。该系统是管理员对员工信息的一些列的操作。首先管理员需要登入系统，可对员工信息进行增删查改操作，也可以对员工进行奖罚，工资等信息的增删查改。然后实现对部门员工信息的统计和修改。所有的操作都在系统中有日志记录。下面是项目搭建完成的效果图：
 
