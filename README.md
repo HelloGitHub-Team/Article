@@ -52,6 +52,11 @@
           <sub>kalifun</sub>
         </a><br>
       </th>
+      <th align="center" style="width: 80px;">
+        <a href="https://github.com/LITTLECHIEH">
+          <img src="https://avatars1.githubusercontent.com/u/45623023?s=50&v=4" style="width: 50px;"><br>
+          <sub>kalifun</sub>
+        </a><br>
     </tr>
   </tbody>
 </table>
