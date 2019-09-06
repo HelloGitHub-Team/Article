@@ -18,7 +18,7 @@
     - 1.2 [深入 argparse（一）](contents/Python/cmdline/argparse-2.md)
     - 1.3 [深入 argparse（二）](contents/Python/cmdline/argparse-3.md)
     - 1.4 [使用 argparse 实现 git 命令](contents/Python/cmdline/argparse-4.md)
-2. [简单方便的二维码生成器：QRcode](https://github.com/HelloGitHub-Team/Article/blob/master/contents/Python/QRcode/content.md)
+2. [简单方便的二维码生成器：QRcode](contents/Python/QRcode/content.md)
 
 #### Java 系列
 1. [5分钟搭建私人博客系统：Tale](contents/Java/Tale/content.md)
@@ -27,7 +27,7 @@
 
 #### JS 系列
 1. [功能强大的 JS 文件上传库：FilePond](contents/JavaScript/FilePond/content.md)
-2. [成为灵魂画手的引擎: Zdog](contents/JavaScript/Zdog/content.md)
+2. [成为灵魂画手的引擎：Zdog](contents/JavaScript/Zdog/content.md)
 
 
 ## 贡献者
@@ -55,7 +55,7 @@
       <th align="center" style="width: 80px;">
         <a href="https://github.com/LITTLECHIEH">
           <img src="https://avatars1.githubusercontent.com/u/45623023?s=50&v=4" style="width: 50px;"><br>
-          <sub>kalifun</sub>
+          <sub>LITTLECHIEH</sub>
         </a><br>
     </tr>
   </tbody>
