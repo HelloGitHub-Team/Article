@@ -10,27 +10,34 @@
 </p>
 
 ## 目录
-讲解开源项目系列，[创作须知和流程](创作须知.md)。本系列文章旨在让对开源项目感兴趣的人不再畏惧、让开源项目的发起者不再孤单。跟着我们的文章，你会发现编程的乐趣、使用和发现参与开源项目如此简单。欢迎联系我们给我们投稿，让更多人爱上开源、贡献开源～​
+
+讲解开源项目系列，[创作须知和流程](创作须知.md)。本系列文章旨在让对开源项目感兴趣的人不再畏惧、让开源项目的发起者不再孤单。跟着我们的文章，你会发现编程的乐趣、使用和发现参与开源项目如此简单。欢迎联系我们给我们投稿，让更多人爱上开源、贡献开源～ ​
 
 #### Python 系列
+
 1. Python 命令行之旅
-    - 1.1 [初探 argparse](contents/Python/cmdline/argparse-1.md)
-    - 1.2 [深入 argparse（一）](contents/Python/cmdline/argparse-2.md)
-    - 1.3 [深入 argparse（二）](contents/Python/cmdline/argparse-3.md)
-    - 1.4 [使用 argparse 实现 git 命令](contents/Python/cmdline/argparse-4.md)
+   - 1.1 [初探 argparse](contents/Python/cmdline/argparse-1.md)
+   - 1.2 [深入 argparse（一）](contents/Python/cmdline/argparse-2.md)
+   - 1.3 [深入 argparse（二）](contents/Python/cmdline/argparse-3.md)
+   - 1.4 [使用 argparse 实现 git 命令](contents/Python/cmdline/argparse-4.md)
 2. [用 Python 生成有“灵魂”的二维码：QRcode](contents/Python/QRcode/content.md)
+3. 说说 Python 的单元测试框架
+   - 3.1 [unittest](contents/Python/unittest/unittest.md)
+   - 3.2 [nose 和它的继任者 nose2](contents/Python/unittest/nose.md)
+   - 3.3 [pytest](contents/Python/unittest/pytest.md)
 
 #### Java 系列
-1. [5分钟搭建私人博客系统：Tale](contents/Java/Tale/content.md)
 
+1. [5 分钟搭建私人博客系统：Tale](contents/Java/Tale/content.md)
 2. [前后端分离的人力资源管理系统：微人事](contents/Java/vhr/content.md)
 
 #### JS 系列
+
 1. [功能强大的 JS 文件上传库：FilePond](contents/JavaScript/FilePond/content.md)
 2. [成为灵魂画手的引擎：Zdog](contents/JavaScript/Zdog/content.md)
 
-
 ## 贡献者
+
 <table>
   <tbody>
     <tr>
@@ -62,6 +69,7 @@
 </table>
 
 ## 公众号
+
 希望 HG 这个平台能让好的项目被更多人了解、使用、参与。只要你的项目够好，HelloGitHub 会全力、无偿推荐。关注公众号，直接留言给我们投稿吧！
 
 <p align="center">
