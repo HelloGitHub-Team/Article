@@ -1,12 +1,12 @@
 # 说说 Python 的单元测试框架（二）：nose 和它的继任者 nose2
 
-## nose
+## 一、nose
 
 [nose](https://nose.readthedocs.io/en/latest/) 是一个第三方单元测试框架，它**完全兼容 `unittest`**，并且号称是一个更好用的测试框架。
 
 那么 `nose` 除了具备 `unittest` 的所有功能外，还具有哪些优势呢？
 
-### 用例编写
+### 1.1 用例编写
 
 用例的编写方式除了编写继承于 [unittest.TestCase](https://docs.python.org/3/library/unittest.html#unittest.TestCase) 的测试类外，还可以编写成**没有继承的测试类**。比如，写成如下形式也会被 `nose` 视作一个测试类：
 
@@ -39,7 +39,7 @@ def test_upper():
     assert 'foo'.upper() == 'FOO'
 ```
 
-### 用例发现和执行
+### 1.2 用例发现和执行
 
 `unittest` 所支持的用例发现和执行能力，`nose` 均支持。
 `nose` 支持用例自动（递归）发现：
@@ -64,7 +64,7 @@ def test_upper():
   - `nosetests /path/to/test/file.py:TestCase.test_method`
   - `nosetests /path/to/test/file.py:test_function`
 
-### 测试夹具（Fixtures）
+### 1.3 测试夹具（Fixtures）
 
 `nose` 除了支持 `unittest` 所支持的定义测试前置和清理方式，还支持一种更为简单的定义方式：
 
@@ -82,7 +82,7 @@ def test():
 
 只需定义两个函数用来表示前置和清理方法，通过 [nose.tools.with_setup](https://nose.readthedocs.io/en/latest/testing_tools.html?highlight=with_setup#nose.tools.with_setup) 装饰器装饰测试函数，`nose` 便会在执行测试用例前后分别执行所定义的前置和清理函数。
 
-### 子测试/测试生成器
+### 1.4 子测试/测试生成器
 
 `nose` 除了支持 `unittest` 中的 `TestCase.subTest`，还支持一种更为强大的子测试编写方式，也就是 `测试生成器（Test generators）`，通过 `yield` 实现。
 
@@ -109,7 +109,7 @@ def func(arg):
     assert something_about(arg)
 ```
 
-### 插件体系
+### 1.5 插件体系
 
 `nose` 相较于 `unittest` 一个最大的优势就是插件体系，自带了很多有用的插件，也有丰富的第三方插件。这样就能做更多的事情。
 
@@ -137,7 +137,7 @@ def func(arg):
 得益于 `nose` 丰富的插件生态，当 `nose` 本身不能够完全满足我们的测试需求时，可以通过安装插件，并在 `nosetests` 命令行指定该插件所提供的特定参数即可非常容易的使用插件。
 相较于 `unittest`，就能省去很多自己开发额外测试逻辑的精力。
 
-## nose2
+## 二、nose2
 
 [nose2](https://github.com/nose-devs/nose2) 是 [nose](https://nose.readthedocs.io/en/latest/) 的继任者。
 它们的理念都是让编写和运行测试用例变得更容易。
@@ -169,7 +169,7 @@ def func(arg):
 
 更多对比详见 [官方文档](https://docs.nose2.io/en/latest/differences.html)。
 
-## 小结
+## 三、小结
 
 `nose` 和 `nose2` 在做到兼容 `unittest` 上就足以看出它们的目标，那便是要吸引原来那些使用 `unittest` 的用户来使用它们。它们确实做到了！
 

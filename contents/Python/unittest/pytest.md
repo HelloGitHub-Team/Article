@@ -1,6 +1,6 @@
 # 说说 Python 的单元测试框架（三）：pytest
 
-## 介绍
+## 一、介绍
 
 [pytest](https://github.com/pytest-dev/pytest) 是 Python 世界中最火的第三方单元测试框架。
 
@@ -14,7 +14,7 @@
 
 和前面介绍 `unittest` 和 `nose` 一样，我们将从如下几个方面介绍 `pytest` 的特性。
 
-## 用例编写
+## 二、用例编写
 
 同 `nose` 一样，`pytest` 支持函数、测试类形式的测试用例。最大的不同点是，你可以尽情地使用 `assert` 语句进行断言，丝毫不用担心它会在 `nose` 或 `unittest` 中产生的缺失详细上下文信息的问题。
 
@@ -64,7 +64,7 @@ test.py:4: AssertionError
 
 不难看到，`pytest` 既输出了测试代码上下文，也输出了被测变量值的信息。相比于 `nose` 和 `unittest`，`pytest` 允许用户使用更简单的方式编写测试用例，又能得到一个更丰富和友好的测试结果。
 
-## 用例发现和执行
+## 三、用例发现和执行
 
 `unittest` 和 `nose` 所支持的用例发现和执行能力，`pytest` 均支持。
 `pytest` 支持用例自动（递归）发现：
@@ -84,11 +84,11 @@ test.py:4: AssertionError
 - 指定测试函数
   - `pytest /path/to/test/file.py:test_function`
 
-## 测试夹具（Fixtures）
+## 四、测试夹具（Fixtures）
 
 `pytest` 的[测试夹具](https://docs.pytest.org/en/latest/fixture.html)和 `unittest`、`nose`、`nose2`的风格迥异，它不但能实现 `setUp` 和 `tearDown`这种测试前置和清理逻辑，还其他非常多强大的功能。
 
-### 声明和使用
+### 4.1 声明和使用
 
 `pytest` 中的测试夹具更像是测试资源，你只需定义一个夹具，然后就可以在用例中直接使用它。得益于 `pytest` 的依赖注入机制，你无需通过`from xx import xx`的形式显示导入，只需要在测试函数的参数中指定同名参数即可，比如：
 
@@ -110,7 +110,7 @@ def test_ehlo(smtp_connection):
 
 上述示例中定义了一个测试夹具 `smtp_connection`，在测试函数 `test_ehlo` 签名中定义了同名参数，则 `pytest` 框架会自动注入该变量。
 
-### 共享
+### 4.2 共享
 
 在 `pytest` 中，同一个测试夹具可被多个测试文件中的多个测试用例共享。只需在包（Package）中定义 `conftest.py` 文件，并把测试夹具的定义写在该文件中，则该包内所有模块（Module）的所有测试用例均可使用 `conftest.py` 中所定义的测试夹具。
 
@@ -125,7 +125,7 @@ def test_ehlo(smtp_connection):
     `-- test_c.py
 ```
 
-### 生效级别
+### 4.3 生效级别
 
 `unittest` 和 `nose` 均支持测试前置和清理的生效级别：测试方法、测试类和测试模块。
 
@@ -149,7 +149,7 @@ def smtp_connection():
     return smtplib.SMTP("smtp.gmail.com", 587, timeout=5)
 ```
 
-### 测试前置和清理
+### 4.4 测试前置和清理
 
 `pytest` 的测试夹具也能够实现测试前置和清理，通过 `yield` 语句来拆分这两个逻辑，写法变得很简单，如：
 
@@ -180,7 +180,7 @@ def smtp_connection():
 
 `pytest` 的测试夹具除了文中介绍到的这些功能，还有诸如[参数化夹具](http://pytest.org/en/latest/fixture.html#parametrizing-fixtures)、[工厂夹具](http://pytest.org/en/latest/fixture.html#factories-as-fixtures)、[在夹具中使用夹具](http://pytest.org/en/latest/fixture.html#modularity-using-fixtures-from-a-fixture-function)等更多高阶玩法，详情请阅读 ["pytest fixtures: explicit, modular, scalable"](http://pytest.org/en/latest/fixture.html#pytest-fixtures-explicit-modular-scalable)。
 
-## 跳过测试和预计失败
+## 五、跳过测试和预计失败
 
 `pytest` 除了支持 `unittest` 和 `nosetest` 的跳过测试和预计失败的方式外，还在 `pytest.mark` 中提供对应方法：
 
@@ -210,7 +210,7 @@ def test_mark_xfail():
 
 关于跳过测试和预计失败的更多玩法，参见 ["Skip and xfail: dealing with tests that cannot succeed"](http://pytest.org/en/latest/skipping.html#skip-and-xfail-dealing-with-tests-that-cannot-succeed)
 
-## 子测试/参数化测试
+## 六、子测试/参数化测试
 
 `pytest` 除了支持 `unittest` 中的 `TestCase.subTest`，还支持一种更为灵活的子测试编写方式，也就是 `参数化测试`，通过 `pytest.mark.parametrize` 装饰器实现。
 
@@ -270,7 +270,7 @@ def test_foo(x, y):
 
 上述示例中会分别把 `x=0/y=2`、`x=1/y=2`、`x=0/y=3`和`x=1/y=3`带入测试函数，视作四个测试用例来执行。
 
-## 测试结果输出
+## 七、测试结果输出
 
 `pytest` 的测试结果输出相比于 `unittest` 和 `nose` 来说更为丰富，其优势在于：
 
@@ -279,13 +279,13 @@ def test_foo(x, y):
 - 测试进度展示
 - 测试结果输出布局更加友好易读
 
-## 插件体系
+## 八、插件体系
 
 `pytest` 的[插件](http://plugincompat.herokuapp.com/)十分丰富，而且即插即用，作为使用者不需要编写额外代码。关于插件的使用，参见["Installing and Using plugins"](http://pytest.org/en/latest/plugins.html)。
 
 此外，得益于 `pytest` 良好的架构设计和钩子机制，其插件编写也变得容易上手。关于插件的编写，参见["Writing plugins"](http://pytest.org/en/latest/writing_plugins.html#writing-plugins)。
 
-## 总结
+## 九、总结
 
 三篇关于 Python 测试框架的介绍到这里就要收尾了。写了这么多，各位看官怕也是看得累了。我们不妨罗列一个横向对比表，来总结下这些单元测试框架的异同：
 

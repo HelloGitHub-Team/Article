@@ -206,7 +206,7 @@ Traceback (most recent call last):
 AssertionError: 1 != 0
 ```
 
-## 六、测试结果输出
+## 七、测试结果输出
 
 基于简单示例小节中提到的例子，来说明下 `unittest` 在运行完测试后的结果输出。
 
@@ -284,7 +284,7 @@ FAILED (failures=1)
 在安装好第三方库后，你不能直接使用 `python -m unittest` 加上类似 `--html report.html` 的方式来生成 HTML 报告，而是需要自行编写少量代码来运行测试用例进而得到 HTML 报告。
 详情请查看 [HtmlTestRunner 使用说明](https://github.com/oldani/HtmlTestRunner#usage)。
 
-## 七、小结
+## 八、小结
 
 [unittest](https://docs.python.org/3/library/unittest.html) 作为 Python 标准库提供的单元测试框架，使用简单、功能强大，日常测试需求均能得到很好的满足。在不引入第三方库的情况下，是单元测试的不二之选。
 
