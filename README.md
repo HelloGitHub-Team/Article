@@ -21,7 +21,7 @@
    - 1.3 [深入 argparse（二）](contents/Python/cmdline/argparse-3.md)
    - 1.4 [使用 argparse 实现 git 命令](contents/Python/cmdline/argparse-4.md)
 2. [用 Python 生成有“灵魂”的二维码：QRcode](contents/Python/QRcode/content.md)
-3. 说说 Python 的单元测试框架
+3. 聊聊 Python 的单元测试框架
    - 3.1 [unittest](contents/Python/unittest/unittest.md)
    - 3.2 [nose 和它的继任者 nose2](contents/Python/unittest/nose.md)
    - 3.3 [pytest](contents/Python/unittest/pytest.md)

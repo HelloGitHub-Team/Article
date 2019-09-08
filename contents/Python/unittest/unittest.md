@@ -1,4 +1,4 @@
-# 说说 Python 的单元测试框架（一）：unittest
+# 聊聊 Python 的单元测试框架（一）：unittest
 
 ## 前言
 
@@ -11,12 +11,13 @@
 本文默认以 Python 3 为例进行介绍，若某些特性在 Python 2 中没有或不同，会特别说明。
 ```
 
-## 介绍
+## 一、介绍
 
 [unittest](https://docs.python.org/3/library/unittest.html) 单元测试框架最早受到 JUnit 的启发，和其他语言的主流单元测试框架有着相似的风格。
+
 它支持测试自动化，多个测试用例共享前置（setUp）和清理（tearDown）代码，聚合多个测试用例到测试集中，并将测试和报告框架独立。
 
-## 用例编写
+## 二、用例编写
 
 下面这段简单的示例来自于[官方文档](https://docs.python.org/3/library/unittest.html#basic-example)，用来测试三种字符串方法：`upper`、`isupper`、`split`：
 
@@ -54,7 +55,7 @@ if __name__ == '__main__':
 
 可能有人会好奇，为什么不使用内置断言语句 `assert`，而要额外提供这么多断言方法并使用呢？原因是通过使用 `unittest` 提供的断言方法，测试框架在运行结束后，能够聚合所有的测试结果并产生信息丰富的测试报告。而直接使用 `assert` 虽然也可以达到验证被测对象是否符合预期的目的，但在用例出错时，报错信息不够丰富。
 
-## 用例发现和执行
+## 三、用例发现和执行
 
 `unittest` 支持用例自动（递归）发现：
 
@@ -76,17 +77,17 @@ if __name__ == '__main__':
 - 指定测试文件路径（仅 Python 3）
   - `python -m unittest tests/test_something.py`
 
-## 测试夹具（Fixtures）
+## 四、测试夹具（Fixtures）
 
 测试夹具也就是测试前置（setUp）和清理（tearDown）方法。
 
-测试前置方法[setUp()](https://docs.python.org/3/library/unittest.html#unittest.TestCase.setUp)用来做一些准备工作，比如建立数据库连接。它会在用例执行前被测试框架自动调用。
+测试前置方法 [setUp()](https://docs.python.org/3/library/unittest.html#unittest.TestCase.setUp) 用来做一些准备工作，比如建立数据库连接。它会在用例执行前被测试框架自动调用。
 
-测试清理方法[tearDown()](https://docs.python.org/3/library/unittest.html#unittest.TestCase.tearDown)用来做一些清理工作，比如断开数据库连接。它会在用例执行完成（包括失败的情况）后被测试框架自动调用。
+测试清理方法 [tearDown()](https://docs.python.org/3/library/unittest.html#unittest.TestCase.tearDown) 用来做一些清理工作，比如断开数据库连接。它会在用例执行完成（包括失败的情况）后被测试框架自动调用。
 
 测试前置和清理方法可以有不同的执行级别。
 
-### 生效级别：测试方法
+### 4.1 生效级别：测试方法
 
 如果我们希望每个测试方法之前前后分别执行测试前置和清理方法，那么需要在测试类中定义好 [setUp()](https://docs.python.org/3/library/unittest.html#unittest.TestCase.setUp) 和 [tearDown()](https://docs.python.org/3/library/unittest.html#unittest.TestCase.tearDown)：
 
@@ -99,7 +100,7 @@ class MyTestCase(unittest.TestCase):
         pass
 ```
 
-### 生效级别：测试类
+### 4.2 生效级别：测试类
 
 如果我们希望单个测试类中只执行一次前置方法，再执行该测试类中的所有测试，最后执行一次清理方法，那么需要在测试类中定义好 [setUpClass()](https://docs.python.org/3/library/unittest.html#unittest.TestCase.setUpClass) 和 [tearDownClass()](https://docs.python.org/3/library/unittest.html#unittest.TestCase.tearDownClass)：
 
@@ -112,9 +113,9 @@ class MyTestCase(unittest.TestCase):
         pass
 ```
 
-### 生效级别：测试模块
+### 4.3 生效级别：测试模块
 
-如果我们希望单个测试模块中只执行一次前置方法，再执行该模块中所有测试类的所有测试，最后执行一次清理方法，那么需要在测试模块中定义好[setUpModule()](https://docs.python.org/3/library/unittest.html#setupmodule-and-teardownmodule) 和 [tearDownModule()](https://docs.python.org/3/library/unittest.html#setupmodule-and-teardownmodule)：
+如果我们希望单个测试模块中只执行一次前置方法，再执行该模块中所有测试类的所有测试，最后执行一次清理方法，那么需要在测试模块中定义好 [setUpModule()](https://docs.python.org/3/library/unittest.html#setupmodule-and-teardownmodule) 和 [tearDownModule()](https://docs.python.org/3/library/unittest.html#setupmodule-and-teardownmodule)：
 
 ```python
 def setUpModule():
@@ -124,7 +125,7 @@ def tearDownModule():
     pass
 ```
 
-## 跳过测试和预计失败
+## 五、跳过测试和预计失败
 
 `unittest` 支持直接跳过或按条件跳过测试，也支持预计测试失败：
 
@@ -161,7 +162,7 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(1, 0, "这个目前是失败的")
 ```
 
-## 子测试
+## 六、子测试
 
 有时候，你可能想编写这样的测试：在一个测试方法中传入不同的参数来测试同一段逻辑，但它将被视作一个测试，但是如果使用了[子测试](https://docs.python.org/3/library/unittest.html#distinguishing-test-iterations-using-subtests)，就能被视作 N（即为参数的个数）个测试。下面是一个示例：
 
@@ -205,7 +206,7 @@ Traceback (most recent call last):
 AssertionError: 1 != 0
 ```
 
-## 测试结果输出
+## 六、测试结果输出
 
 基于简单示例小节中提到的例子，来说明下 `unittest` 在运行完测试后的结果输出。
 
@@ -243,7 +244,7 @@ test_upper (tests.test.TestStringMethods) ... FAIL
 FAIL: test_upper (tests.test.TestStringMethods)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "/Users/prodesire/projects/tests/test.py", line 6, in test_upper
+  File "/Uvsers/prodesire/projects/tests/test.py", line 6, in test_upper
     self.assertEqual('foo'.upper(), 'FOO1')
 AssertionError: 'FOO' != 'FOO1'
 - FOO
@@ -279,10 +280,11 @@ FAILED (failures=1)
 ```
 
 如果想要生成 HTML 格式的报告，那么就需要额外借助第三方库（如 [HtmlTestRunner](https://github.com/oldani/HtmlTestRunner)）来操作。
+
 在安装好第三方库后，你不能直接使用 `python -m unittest` 加上类似 `--html report.html` 的方式来生成 HTML 报告，而是需要自行编写少量代码来运行测试用例进而得到 HTML 报告。
 详情请查看 [HtmlTestRunner 使用说明](https://github.com/oldani/HtmlTestRunner#usage)。
 
-## 小结
+## 七、小结
 
 [unittest](https://docs.python.org/3/library/unittest.html) 作为 Python 标准库提供的单元测试框架，使用简单、功能强大，日常测试需求均能得到很好的满足。在不引入第三方库的情况下，是单元测试的不二之选。
 
