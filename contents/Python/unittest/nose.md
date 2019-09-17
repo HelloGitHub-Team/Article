@@ -1,4 +1,4 @@
-# 说说 Python 的单元测试框架（二）：nose 和它的继任者 nose2
+# 聊聊 Python 的单元测试框架（二）：nose 和它的继任者 nose2
 
 ## 一、nose
 
@@ -115,22 +115,22 @@ def func(arg):
 
 其中，自带插件如下：
 
-- [AllModules](https://nose.readthedocs.io/en/latest/plugins/allmodules.html): 在所有模块中收集用例
-- [Attrib](https://nose.readthedocs.io/en/latest/plugins/attrib.html): 给用例打标签，并可运行含指定标签的用例
-- [Capture](https://nose.readthedocs.io/en/latest/plugins/capture.html): 捕获用例的标准输出
-- [Collect](https://nose.readthedocs.io/en/latest/plugins/collect.html): 快速收集用例
-- [Cover](https://nose.readthedocs.io/en/latest/plugins/cover.html): 统计代码覆盖率
-- [Debug](https://nose.readthedocs.io/en/latest/plugins/debug.html): 用例失败时进入 pdb 调试
-- [Deprecated](https://nose.readthedocs.io/en/latest/plugins/deprecated.html): 标记用例为弃用
-- [Doctests](https://nose.readthedocs.io/en/latest/plugins/deprecated.html): 运行文档用例
-- [Failure Detail](https://nose.readthedocs.io/en/latest/plugins/failuredetail.html): 断言失败时提供上下文信息
-- [Isolate](https://nose.readthedocs.io/en/latest/plugins/isolate.html): 保护用例避免受一些副作用的影响
-- [Logcapture](https://nose.readthedocs.io/en/latest/plugins/logcapture.html): 捕捉 logging 输出
-- [Multiprocess](https://nose.readthedocs.io/en/latest/plugins/multiprocess.html): 并行执行用例
-- [Prof](https://nose.readthedocs.io/en/latest/plugins/prof.html): 使用热点分析器进行分析
-- [Skip](https://nose.readthedocs.io/en/latest/plugins/skip.html): 标记用例为跳过
-- [Testid](https://nose.readthedocs.io/en/latest/plugins/testid.html): 为输出的每个用例名称添加测试 ID
-- [Xunit](https://nose.readthedocs.io/en/latest/plugins/xunit.html): 以 xunit 格式输出测试结果
+- [AllModules](https://nose.readthedocs.io/en/latest/plugins/allmodules.html)：在所有模块中收集用例
+- [Attrib](https://nose.readthedocs.io/en/latest/plugins/attrib.html)：给用例打标签，并可运行含指定标签的用例
+- [Capture](https://nose.readthedocs.io/en/latest/plugins/capture.html)：捕获用例的标准输出
+- [Collect](https://nose.readthedocs.io/en/latest/plugins/collect.html)：快速收集用例
+- [Cover](https://nose.readthedocs.io/en/latest/plugins/cover.html)：统计代码覆盖率
+- [Debug](https://nose.readthedocs.io/en/latest/plugins/debug.html)：用例失败时进入 pdb 调试
+- [Deprecated](https://nose.readthedocs.io/en/latest/plugins/deprecated.html)：标记用例为弃用
+- [Doctests](https://nose.readthedocs.io/en/latest/plugins/deprecated.html)：运行文档用例
+- [Failure Detail](https://nose.readthedocs.io/en/latest/plugins/failuredetail.html)：断言失败时提供上下文信息
+- [Isolate](https://nose.readthedocs.io/en/latest/plugins/isolate.html)：保护用例避免受一些副作用的影响
+- [Logcapture](https://nose.readthedocs.io/en/latest/plugins/logcapture.html)：捕捉 logging 输出
+- [Multiprocess](https://nose.readthedocs.io/en/latest/plugins/multiprocess.html)：并行执行用例
+- [Prof](https://nose.readthedocs.io/en/latest/plugins/prof.html)：使用热点分析器进行分析
+- [Skip](https://nose.readthedocs.io/en/latest/plugins/skip.html)：标记用例为跳过
+- [Testid](https://nose.readthedocs.io/en/latest/plugins/testid.html)：为输出的每个用例名称添加测试 ID
+- [Xunit](https://nose.readthedocs.io/en/latest/plugins/xunit.html)：以 xunit 格式输出测试结果
 
 而第三方库则多种多样，如用来生成 HTML 格式测试报告的 [nose-htmloutput](https://github.com/ionelmc/nose-htmloutput) 等，这里不再一一列出。
 
