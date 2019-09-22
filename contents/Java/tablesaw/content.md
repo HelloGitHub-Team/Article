@@ -1,4 +1,4 @@
-# 超级好用的 Java 数据可是库 Tablesaw
+# 超级好用的 Java 数据可视化库 Tablesaw
 
 > 本文适合刚学习完 Java 语言基础的人群，跟着本文可了解和使用 Tablesaw 项目。示例均在 Windows 操作系统下演示
 
