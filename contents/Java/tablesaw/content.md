@@ -1,5 +1,6 @@
 # 超级好用的 Java 数据可是库 Tablesaw
 
+> 本文适合刚学习完 Java 语言基础的人群，跟着本文可了解和使用 Tablesaw 项目。示例均在 Windows 操作系统下演示
 
 <p align="center">本文作者：HelloGitHub-<strong>秦人</strong></p>
 
@@ -9,11 +10,11 @@ Tablesaw是一款 Java 的数据可视化库。它主要包括两部分：一部
 
 > 项目源码地址：<https://github.com/jtablesaw/tablesaw> 
 
-![](images\1.png)
+![](./images/1.png)
 
 ## 一、项目结构
 
-### ![](images\2.png)
+### ![](./images/2.png)
 
 目录说明：
 
@@ -75,7 +76,7 @@ Tablesaw是一款 Java 的数据可视化库。它主要包括两部分：一部
 
 效果展示如下：
 
-![](images\3.png)
+![](./images/3.png)
 
 2.2.2 加载数据文件制作数据表格
 
@@ -97,11 +98,11 @@ Tablesaw是一款 Java 的数据可视化库。它主要包括两部分：一部
 
 bash.csv 文件内容如下：
 
-![1569125057213](images\4.png)  
+![](./images/4.png)  
 
 运行效果如下：
 
-![](images\5.png)
+![](./images/5.png)
 
 ### 2.3 数据可视化
 
@@ -116,11 +117,11 @@ bash.csv 文件内容如下：
 
  boston-robberies.csv 文件内容如下：
 
-![](images\6.png)
+![](./images/6.png)
 
 运行效果如下：
 
-![1569127204513](images\7.png)
+![](./images/7.png)
 
 Tablesaw 可以绘制出很多种类的图表，期待你的发掘。
 
