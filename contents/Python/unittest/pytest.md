@@ -1,8 +1,10 @@
-# 聊聊 Python 的单元测试框架（三）：pytest
+# 可能是 Python 中最火的第三方开源测试框架 pytest
 
 ## 一、介绍
 
-[pytest](https://github.com/pytest-dev/pytest) 是 Python 世界中最火的第三方单元测试框架。
+本篇文章是《聊聊 Python 的单元测试框架》的第三篇，前两篇分别介绍了标准库 unittest 和第三方单元测试框架 nose。作为本系列的最后一篇，压轴出场的是Python 世界中最火的第三方单元测试框架：pytest。
+
+> pytest 项目地址：https://github.com/pytest-dev/pytest
 
 它有如下主要特性：
 
