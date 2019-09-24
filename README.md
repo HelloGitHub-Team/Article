@@ -34,9 +34,9 @@
 #### JS 系列
 
 1. [功能强大的 JS 文件上传库：FilePond](contents/JavaScript/FilePond/content.md)
-2. Zdog系列
+2. Zdog 系列
    - [让你成为灵魂画手的 JS 引擎：Zdog](contents/JavaScript/Zdog/content.md)
-   - [教你利用代码画GitHub喵-Zdog](contents/JavaScript/Zdog_advance/content.md)
+   - [教你用开源 JS 库快速画出 GitHub 章鱼猫](contents/JavaScript/Zdog_advance/content.md)
 
 ## 贡献者
 

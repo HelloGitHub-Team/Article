@@ -1,4 +1,4 @@
-# 教你用开源 JS 框架快速画 GitHub 章鱼猫
+# 教你用开源 JS 库快速画出 GitHub 章鱼猫
 
 ![](images/1.png)
 
@@ -7,7 +7,6 @@
 > Zdog 项目地址：https://github.com/metafizzy/zdog
 
 在上一篇文章我们介绍了 Zdog 如何使用，接下来这篇文章我将带领各位利用 Zdog 画出一个 GitHub 章鱼猫（和官方的还是有些差别的）。
-
 
 ## 一、分析
 
@@ -419,9 +418,15 @@ const whiskersright = whiskersleft.copyGraph({
 
 ## 三、总结
 
-当我们对代码进行分析时，其实感觉并没有想象中的复杂，我们需要精心去进行分析。把需要的形状先构思好，然后再参考 zdog 文档，有没有快捷的方式获得你想要的形状。
+> 文中的代码已开源到 GitHub 地址：https://github.com/HelloGitHub-Team/Article/blob/master/contents/JavaScript/Zdog_advance/index.html
+
+当我们对代码进行分析时，其实感觉并没有想象中的复杂，我们需要精心去进行分析。把需要的形状先构思好，然后再参考 zdog 文档，有没有快捷的方式获得你想要的形状。有了这个库是不是对自己的画画能力又有了新的认识呢？这里是 HelloGitHub 扩充你的武器库从这里开始！
 
 阅读完本文后 “灵魂小画师” 是否从此诞生了呢？✌️
+
+![](images/9.gif)
+
+“旋转跳跃我闭着眼睛”（这段是图片描述）
 
 ## 四、参考资料
 
