@@ -15,7 +15,7 @@
 在上一篇文章中我们提到 `docopt` 是通过定义一个包含特定内容的字符串，也就是接口描述，来达到描述命令行功能的目的。
 那么接口描述的总体规则是这样的：
 
-- 位于关键字 `usage:` （大小写不敏感）和一个可见的空行之间的文本内容会被解释为一个个使用模式。
+- 位于关键字 `usage:`（大小写不敏感）和一个可见的空行之间的文本内容会被解释为一个个使用模式。
 - `useage:` 后的第一个词会被解释为程序的名称，比如下面就是一个没有命令行参数的示例程序：
 
 ```
@@ -33,7 +33,7 @@ Usage:
   cli <repeating-argument> <repeating-argument>...
 ```
 
-### 2.1 位置参数： <argument>
+### 2.1 位置参数：<argument>
 
 使用 `<` 和 `>` 包裹的参数会被解释为位置参数。
 
@@ -56,7 +56,7 @@ print(arguments)
  '<y>': '2'}
 ```
 
-### 2.2 选项参数： -o --option
+### 2.2 选项参数：-o --option
 
 以单个破折号（`-`）开头的的参数为短选项，以双破折号（`--`）开头的参数为长选项。
 
@@ -137,7 +137,7 @@ $ python3 cli.py delete -r
  'delete': True}
 ```
 
-### 2.4 可选元素： [optional elements]
+### 2.4 可选元素：[optional elements]
 
 以中括号“[]”包裹的元素（选项、参数和命令）均会被标记为可选。多个元素放在一对中括号中或各自放在中括号中是等价的。比如：
 
@@ -151,7 +151,7 @@ Usage: cli [command --option <argument>]
 Usage: cli [command] [--option] [<argument>]
 ```
 
-### 2.5 必填元素： (required elements)
+### 2.5 必填元素：(required elements)
 
 没被中括号“[]”包裹的所有元素默认都是必填的。但有时候使用小括号“()”将元素包裹住，用以标记必填是有必要的。
 比如，要将多个互斥元素进行分组：
@@ -166,9 +166,9 @@ Usage: my_program (--either-this <and-that> | <or-this>)
 Usage: my_program [(<one-argument> <another-argument>)]
 ```
 
-这个例子中，`<one-argument>` 和 `<another-argument>` 要么都出现，要么都不出现。
+这个例子中 `<one-argument>` 和 `<another-argument>` 要么都出现，要么都不出现。
 
-### 2.6 互斥参数： element|another
+### 2.6 互斥参数：element|another
 
 在 `argparse` 中要想实现互斥参数，还需要先调用 `parser.add_mutually_exclusive_group()` 添加互斥组，
 再在组里添加参数。而在 `docopt` 中就特别简单，直接使用 `|` 进行分隔：
@@ -197,7 +197,7 @@ Usage: my_program run [--fast]
 Usage: my_program (run [--fast] | jump [--high])
 ```
 
-### 2.7 可变参数列表： element...
+### 2.7 可变参数列表：element...
 
 可变参数列表也就是定义参数可以有多个值。在 `argparse` 中，我们通过 `parser.add_argument('--foo', nargs='?')` 来指定，其中 `nargs` 可以是数字、`?`、`+`、`*`来表示参数个数。
 
@@ -307,8 +307,8 @@ Options:
 Other: --bad  # 坏, 没有以 "-" 开头
 ```
 
-选项描述中，使用空格或“=”来连接选项和参数，以定义带选项的参数。参数可以使用`<Arg>`的形式，
-或是使用`ARG`大写字母的形式。可用逗号“,”来分隔长短选项。比如：
+选项描述中，使用空格或“=”来连接选项和参数，以定义带选项的参数。参数可以使用 `<Arg>` 的形式，
+或是使用 `ARG` 大写字母的形式。可用逗号“,”来分隔长短选项。比如：
 
 ```bash
 -o FILE --output=FILE       # 没有逗号 长选项使用 "=" 分隔
@@ -335,8 +335,10 @@ Other: --bad  # 坏, 没有以 "-" 开头
 
 ## 三、小结
 
-关于 `docopt` 的方方面面我们都了解的差不多了，回过头来看，对于命令行元信息的定义，它比 `argparse` 要来的更加简洁。
+关于 `docopt` 的方方面面我们都了解的差不多了，回过头来看。对于命令行元信息的定义，它比 `argparse` 要来的更加简洁。
+
 `argparse` 像是命令式编程，调用一个个的函数逐步将命令行元信息定义清楚；而 `docopt` 则像是声明式编程，通过声明定义命令行元信息。
+
 两者站在的维度不同，编程的套路也不尽相同，甚是有趣。
 
 了解了这么多，也该练练手了。在下篇文章中，我们仍然会以 `git` 命令作为实战项目，看看如何使用 `docopt` 来实现 `git` 命令。
