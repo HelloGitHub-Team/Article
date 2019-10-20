@@ -33,6 +33,7 @@
 
 1. [5 分钟搭建私人博客系统：Tale](contents/Java/Tale/content.md)
 2. [前后端分离的人力资源管理系统：微人事](contents/Java/vhr/content.md)
+3. [超级好用的 Java 数据可视化库：Tablesaw](contents/Java/tablesaw/content.md)
 
 #### JS 系列
 
