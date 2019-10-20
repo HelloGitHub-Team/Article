@@ -1,6 +1,6 @@
 # Python 命令行之旅：使用 docopt 实现 git 命令
 
-## 前言
+## 一、前言
 
 在前面两篇介绍 `docopt` 的文章中，我们全面了解了 `docopt` 的能力。按照惯例，我们要像使用 `argparse` 一样使用 `docopt` 来实现 git 命令。
 
@@ -11,7 +11,7 @@
 若你仍在使用 Python 2，请注意两者之间语法和库的使用差异哦~
 ```
 
-## git 常用命令
+## 二、git 常用命令
 
 当你写好一段代码或增删一些文件后，会用如下命令查看文件状态：
 
@@ -39,7 +39,7 @@ git push
 
 我们将使用 `docopt` 和 `gitpython` 库来实现这 4 个子命令。
 
-## 关于 gitpython
+## 三、关于 gitpython
 
 [gitpython](https://gitpython.readthedocs.io/en/stable/intro.html) 是一个和 `git` 仓库交互的 Python 第三方库。
 我们将借用它的能力来实现真正的 `git` 逻辑。
@@ -50,7 +50,7 @@ git push
 pip install gitpython
 ```
 
-## 思考
+## 四、思考
 
 在实现前，我们不妨先思考下会用到 `docopt` 的哪些功能？整个程序的结构是怎样的？
 
@@ -113,11 +113,11 @@ if __name__ == '__main__':
 
 下面我们将一步步地实现我们的 `git` 程序。
 
-## 实现
+## 五、实现
 
 假定我们在 [docopt-git.py](https://github.com/HelloGitHub-Team/Article/blob/master/contents/Python/cmdline/docopt-git.py) 文件中实现我们的 `git` 程序。
 
-### 定义接口描述
+### 5.1 定义接口描述
 
 根据我们的要求，可以很容易的定义出接口描述：
 
@@ -144,7 +144,7 @@ def cli():
     git = Git(os.getcwd())
 ```
 
-### status 子命令
+### 5.2 status 子命令
 
 如果 `args['status']` 为 `True`，说明输入了 status 子命令，那么就调用 `handle_status` 函数进行处理。
 
@@ -166,7 +166,7 @@ def handle_status(git):
 
 不难看出，我们最后调用了真正的 `git status` 来实现，并打印了输出。
 
-### add 子命令
+### 5.3 add 子命令
 
 如果 `args['add']` 为 `True`，说明输入了 add 子命令，那么就调用 `handle_add` 函数进行处理，需要传入 `args['<pathspec>']` 表示添加的路径。
 
@@ -186,7 +186,7 @@ def handle_add(git, pathspec):
     print(output)
 ```
 
-### commit 子命令
+### 5.4 commit 子命令
 
 如果 `args['commit']` 为 `True`，说明输入了 commit 子命令，那么就调用 `handle_commit` 函数进行处理，需要传入 `args['--message']` 表示提交的信息。
 
@@ -206,7 +206,7 @@ def handle_commit(git, msg):
     print(output)
 ```
 
-### push 子命令
+### 5.5 push 子命令
 
 如果 `args['push']` 为 `True`，说明输入了 commit 子命令，那么就调用 `handle_push` 函数进行处理。
 
@@ -230,7 +230,7 @@ def handle_push(git):
 
 想看整个源码，请戳 [docopt-git.py](https://github.com/HelloGitHub-Team/Article/blob/master/contents/Python/cmdline/docopt-git.py) 。
 
-## 小结
+## 六、小结
 
 本文简单介绍了日常工作中常用的 `git` 命令，然后提出实现它的思路，最终一步步地使用 `docopt` 和 `gitpython` 实现了 `git` 程序。
 
