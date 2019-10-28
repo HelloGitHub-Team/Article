@@ -1,4 +1,7 @@
 # 手绘风格的JS图表库-Chart.xkcd
+
+![](images/title.gif)
+
 <p align="center">本文作者：HelloGitHub-<strong>kalifun</strong></p>  
 今天给大家推荐一个手绘风格的 JS 图表库 —— Chart.xkcd。
 ## 一、介绍
