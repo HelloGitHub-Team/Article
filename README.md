@@ -41,6 +41,7 @@
 2. Zdog 系列
    - [让你成为灵魂画手的 JS 引擎：Zdog](contents/JavaScript/Zdog/content.md)
    - [教你用开源 JS 库快速画出 GitHub 章鱼猫](contents/JavaScript/Zdog_advance/content.md)
+3. [手绘风格的 JS 图表库：Chart.xkcd](contents/JavaScript/Chart.xkcd/content.md)
 
 ## 贡献者
 
