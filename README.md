@@ -25,6 +25,7 @@
    - 2.3 [使用 docopt 实现 git 命令](contents/Python/cmdline/docopt-3.md)
    - 3.1 [初探 click](contents/Python/cmdline/click-1.md)
    - 3.2 [深入 click（一）](contents/Python/cmdline/click-2.md)
+   - 3.2 [深入 click（二）](contents/Python/cmdline/click-3.md)
 2. [用 Python 生成有“灵魂”的二维码：QRcode](contents/Python/QRcode/content.md)
 3. 聊聊 Python 的单元测试框架
    - 3.1 [unittest](contents/Python/unittest/unittest.md)
