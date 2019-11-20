@@ -8,7 +8,7 @@ HelloGitHub 推出的[《讲解开源项目》](https://github.com/HelloGitHub-T
 
 > 项目源码地址：<https://github.com/zhoutaoo/SpringCloud> 
 
-![](./images/1.png)
+![](./images/0.png)
 
 ## 一、微服务的简介
 
@@ -20,7 +20,7 @@ HelloGitHub 推出的[《讲解开源项目》](https://github.com/HelloGitHub-T
 
 项目目录结构如下图：
 
-![](./images/2.png)    
+![](./images/1.png)    
 
 目录说明：
 
@@ -56,6 +56,8 @@ HelloGitHub 推出的[《讲解开源项目》](https://github.com/HelloGitHub-T
 - 分布式事务（常用的框架 Txlcn，Seata）
 - 文件服务
 - 业务服务
+
+![](./images/2.png)
 
 ### 2.3运行项目
 
