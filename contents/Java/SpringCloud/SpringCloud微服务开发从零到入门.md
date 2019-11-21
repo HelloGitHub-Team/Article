@@ -101,11 +101,13 @@ c.运行网关服务，认证服务，业务服务等
 
 ![](./images/3.png)
 
+**注意**：认证服务（auth），网关服务（gateway），组织管理服务（sysadmin）需要执行数据库初始化脚本。
+
 通过swager 接口测试，能访问如下地址，表示服务启动成功。
 
 <http://localhost:8445/swagger-ui.html> 
 
-说明：
+**说明：**
 
 - application.yml 文件主要配置 rabbitmq，redis， mysql 的连接信息。
 
@@ -218,7 +220,11 @@ docker-compose -f docker-compose.yml -f docker-compose.center.yml up -d bus-serv
 
 管理台服务 （monitor/admin ）
 
-#### 3.2.3运行效果
+#### 2.3.3一键运行
+
+linux和mac下可在项目根目录下执行 `./install.sh` 快速搭建开发环境。 
+
+#### 3.2.4运行效果
 
 ##### 1.nacos 服务中心
 
