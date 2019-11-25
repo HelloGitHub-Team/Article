@@ -26,6 +26,7 @@
    - 3.1 [初探 click](contents/Python/cmdline/click-1.md)
    - 3.2 [深入 click（一）](contents/Python/cmdline/click-2.md)
    - 3.2 [深入 click（二）](contents/Python/cmdline/click-3.md)
+   - 3.3 [深入 click（三）](contents/Python/cmdline/click-4.md)
 2. [用 Python 生成有“灵魂”的二维码：QRcode](contents/Python/QRcode/content.md)
 3. 聊聊 Python 的单元测试框架
    - 3.1 [unittest](contents/Python/unittest/unittest.md)
@@ -46,7 +47,6 @@
    - [教你用开源 JS 库快速画出 GitHub 章鱼猫](contents/JavaScript/Zdog_advance/content.md)
 3. [手绘风格的 JS 图表库：Chart.xkcd](contents/JavaScript/Chart.xkcd/content.md)
 4. [用这个库 3 分钟实现让你满意的表格功能：Bootstrap-Table](contents/JavaScript/Bootstrap_Table/content.md)
-
 
 ## 贡献者
 
