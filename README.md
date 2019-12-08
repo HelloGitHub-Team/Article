@@ -25,8 +25,9 @@
    - 2.3 [使用 docopt 实现 git 命令](contents/Python/cmdline/docopt-3.md)
    - 3.1 [初探 click](contents/Python/cmdline/click-1.md)
    - 3.2 [深入 click（一）](contents/Python/cmdline/click-2.md)
-   - 3.2 [深入 click（二）](contents/Python/cmdline/click-3.md)
-   - 3.3 [深入 click（三）](contents/Python/cmdline/click-4.md)
+   - 3.3 [深入 click（二）](contents/Python/cmdline/click-3.md)
+   - 3.4 [深入 click（三）](contents/Python/cmdline/click-4.md)
+   - 3.5 [深入 click（四）](contents/Python/cmdline/click-5.md)
 2. [用 Python 生成有“灵魂”的二维码：QRcode](contents/Python/QRcode/content.md)
 3. 聊聊 Python 的单元测试框架
    - 3.1 [unittest](contents/Python/unittest/unittest.md)
@@ -39,7 +40,6 @@
 2. [前后端分离的人力资源管理系统：微人事](contents/Java/vhr/content.md)
 3. [超级好用的 Java 数据可视化库：Tablesaw](contents/Java/tablesaw/content.md)
 4. [快速搭建 SpringCloud 微服务开发环境的脚手架](contents/Java/SpringCloud/content.md)
-
 
 #### JS 系列
 
