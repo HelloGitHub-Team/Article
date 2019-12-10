@@ -74,14 +74,15 @@ def cmd1(color):
 
 比如有一个命令行程序叫做 `foo-bar`，那么对应的环境变量名称为 `_FOO_BAR_COMPLETE`，然后在 `.bashrc` 中使用 `source` 导出即可：
 
-````bash
+```bash
 eval "$(_FOO_BAR_COMPLETE=source foo-bar)"
-···
+```
 
 或者在 `.zshrc` 中使用：
+
 ```bash
 eval "$(_FOO_BAR_COMPLETE=source_zsh foo-bar)"
-````
+```
 
 不过上面的方式总是在命令行程序启动时调用，这可能在有多个程序时减慢 shell 激活的速度。另一种方式是把命令放在文件中，就像这样：
 
