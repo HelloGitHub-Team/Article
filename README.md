@@ -29,6 +29,7 @@
    - 3.4 [深入 click（三）](contents/Python/cmdline/click-4.md)
    - 3.5 [深入 click（四）](contents/Python/cmdline/click-5.md)
    - 3.6 [使用 click 实现 git 命令](contents/Python/cmdline/click-6.md)
+   - 4.1 [初探 fire](contents/Python/cmdline/fire-1.md)
 2. [用 Python 生成有“灵魂”的二维码：QRcode](contents/Python/QRcode/content.md)
 3. 聊聊 Python 的单元测试框架
    - 3.1 [unittest](contents/Python/unittest/unittest.md)
