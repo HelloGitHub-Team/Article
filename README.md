@@ -54,6 +54,10 @@
 3. [手绘风格的 JS 图表库：Chart.xkcd](contents/JavaScript/Chart.xkcd/content.md)
 4. [用这个库 3 分钟实现让你满意的表格功能：Bootstrap-Table](contents/JavaScript/Bootstrap_Table/content.md)
 
+#### Rust 系列
+1. [Redis 一样简单的搜索服务](contents/Rust/Sonic/content.md)
+
+
 ## 贡献者
 
 <table>
