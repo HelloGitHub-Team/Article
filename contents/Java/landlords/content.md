@@ -2,17 +2,17 @@
 
 > 本文适合有 Java 基础知识的人群，跟着本文可使用和快速搭建命令行斗地主项目。
 
-![](images/0.png)
+![](images/cover.png)
 
 <p align="center">本文作者：HelloGitHub-<strong>秦人</strong></p>
 
-HelloGitHub 推出的[《讲解开源项目》](https://github.com/HelloGitHub-Team/Article)系列，今天给大家带来一款基于 Netty 实现的命令行斗地主开源项目—— [ratel](https://github.com/ainilili/ratel) 
+HelloGitHub 推出的[《讲解开源项目》](https://github.com/HelloGitHub-Team/Article)系列，今天给大家带来一款命令行斗地主开源项目—— [ratel](https://github.com/ainilili/ratel) 
 
 > 项目源码地址：https://github.com/ainilili/ratel
 
 ## 一、项目简介
 
-斗地主我想大家都会玩吧，今天分享一个命令行斗地主的开源项目！项目是基于 Netty 实现，Netty 是一个高性能、异步事件驱动的 NIO 框架。下面就让我们一起来把这个项目跑起来，。
+斗地主我想大家都会玩吧，今天分享一个 Java 命令行斗地主的开源项目！项目是基于 Netty 实现，Netty 是一个高性能、异步事件驱动的 NIO 框架。下面就让我们一起来把这个项目跑起来，然后看看它的代码。
 
 ## 二、项目结构
 
