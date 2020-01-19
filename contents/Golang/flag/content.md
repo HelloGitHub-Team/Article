@@ -30,7 +30,7 @@ Options:
 
 接下来我们就一起探究，`falg`是如何实现命令行参数解析的吧。
 
-我们先通过了解上面命令行进行分解，1.程序版本，2.Usage，3.Options。接下来我们主要针对`Usage`,`Options`这部分讲，我们是如何用`flag`实现`nginx -h`的。
+通过分析上面`nginx -h`得知，命令行有两大部分(`Usage`和`Options`)。接下来主要针对这两部分讲，我们是如何用`flag`实现`nginx -h`的。
 
 ### Options参数类型
 
@@ -64,10 +64,15 @@ func init() {
 
 `flag.Parse`对命令行参数进行解析，我们需要搞清楚Parse有哪些解析方式：
 
-- --flag value (需要注意两个--，后接空格)
-- -flag value（需要注意一个-，后接空格）
-- --flag=value（需要注意两个--，且使用的是=）
-- -flag=value（需要注意一个--，且使用的是=）
+`--flag value (需要注意两个--，后接空格)`
+
+`-flag value（需要注意一个-，后接空格）`
+
+`--flag=value（需要注意两个--，且使用的是=）`
+
+`-flag=value（需要注意一个--，且使用的是=）`
+
+
 
 下面我们看看实例，它是如何使用的：
 
