@@ -33,6 +33,7 @@
    - 4.2 [Python 命令行之旅：深入 fire（一）](contents/Python/cmdline/fire-2.md)
    - 4.3 [Python 命令行之旅：深入 fire（二）](contents/Python/cmdline/fire-3.md)
    - 4.4 [Python 命令行之旅：使用 fire 实现 git 命令](contents/Python/cmdline/fire-4.md)
+   - 5 [Python 命令行之旅：argparse、docopt、click 和 fire 总结篇](contents/Python/cmdline/summary.md)
 2. [用 Python 生成有“灵魂”的二维码：QRcode](contents/Python/QRcode/content.md)
 3. 聊聊 Python 的单元测试框架
    - 3.1 [unittest](contents/Python/unittest/unittest.md)
@@ -47,7 +48,6 @@
 4. [快速搭建 SpringCloud 微服务开发环境的脚手架](contents/Java/SpringCloud/content.md)
 5. [命令行版的斗地主你玩过没？](contents/Java/landlords/content.md)
 
-
 #### JS 系列
 
 1. [功能强大的 JS 文件上传库：FilePond](contents/JavaScript/FilePond/content.md)
@@ -58,8 +58,8 @@
 4. [用这个库 3 分钟实现让你满意的表格功能：Bootstrap-Table](contents/JavaScript/Bootstrap_Table/content.md)
 
 #### Rust 系列
-1. [Redis 一样简单的搜索服务](contents/Rust/Sonic/content.md)
 
+1. [Redis 一样简单的搜索服务](contents/Rust/Sonic/content.md)
 
 ## 贡献者
 
