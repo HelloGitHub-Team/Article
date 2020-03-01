@@ -47,6 +47,8 @@
 3. [超级好用的 Java 数据可视化库：Tablesaw](contents/Java/tablesaw/content.md)
 4. [快速搭建 SpringCloud 微服务开发环境的脚手架](contents/Java/SpringCloud/content.md)
 5. [命令行版的斗地主你玩过没？](contents/Java/landlords/content.md)
+6. [有了这个开源 Java 项目，开发出炫酷的小游戏好像不难？](contents/Java/FXGLGames/content.md)
+
 
 #### JS 系列
 
