@@ -29,27 +29,27 @@ OpenJFX 是一个开源的下一代客户端应用程序平台，适用于基于
 
 ### 2.2 下载项目
 
-下载项目到本地，使用`GitBash` 工具，执行如下命令：
+下载项目到本地，使用 `GitBash` 工具，执行如下命令：
 
 ```bash
 git clone https://github.com/goxr3plus/XR3Player.git
 
 ```
-将项目导入 `Idea` ,Maven会自动下载所需的依赖。等待几分钟后项目依赖包都可以下载下来。使用 `Idea` 自带的 Maven 构建工具，就可以将项目轻松打包。如下图：
+将项目导入 `Idea`，Maven 会自动下载所需的依赖。等待几分钟后项目依赖包都可以下载下来。使用 `Idea` 自带的 Maven 构建工具，就可以将项目轻松打包。如下图：
 ![](./images/1.png)
 
 **注意**
-项目有一个依赖 `jxbrowser-win64` 可能会下载失败，这个 `jar` 竟然有40Mb,建议手动下载后导入项目依赖。[jxbrowser-win64下载地址](https://jxbrowser.support.teamdev.com/support/discussions/topics/9000054587)
+项目有一个依赖 `jxbrowser-win64` 可能会下载失败，这个 `jar` 竟然有 40Mb,建议手动下载后导入项目依赖。[jxbrowser-win64 下载地址](https://jxbrowser.support.teamdev.com/support/discussions/topics/9000054587)
 
 
 ### 2.3 运行项目
 
 **创建入口类**
 
-打开`Run/Debug Configurations` 创建一个 `Application` ,并选择入口类，如下图：
+打开 `Run/Debug Configurations` 创建一个 `Application` ,并选择入口类，如下图：
 ![](./images/2.png)
 
-**VM options设置**
+**VM options 设置**
 
 `VM options` 添加下面配置参数,然后点击保存即可。
 
@@ -70,7 +70,7 @@ javafx.graphics/com.sun.javafx.scene=org.controlsfx.controls,
 javafx.graphics/com.sun.javafx.scene.traversal=org.controlsfx.controls
 
 ```
-然后点击 `Run Main`/`Debug Main`就可以本地运行项目了。如下图：
+然后点击 `Run Main`/`Debug Main` 就可以本地运行项目了。如下图：
 ![](./images/3.png)
 
 ## 三、音乐播放器使用
@@ -89,11 +89,11 @@ javafx.graphics/com.sun.javafx.scene.traversal=org.controlsfx.controls
 5.音乐播放器内嵌了浏览器，和在线音乐的功能。
 6.其他的功能期待你的发掘，如果你也喜欢这款音乐播放器的话。
 
-## 四、JavaFx工作原理
+## 四、JavaFx 工作原理
 
-JavaFX的原理是这样的(如下图)：舞台(Stage)，场景(Scene)，容器(Container)，布局(Layout )和控件(Controls)之间的关系：
+JavaFX 的原理是这样的（如下图）：舞台（Stage），场景（Scene），容器（Container），布局（Layout）和控件（Controls）之间的关系：
 ![](./images/9.png)
-在JavaFX中，Stage是应用程序窗口，其中包含称为Scene的空间。 Scene包含界面的组件，如UI空间（按钮，输入框，复选框），容器等。
+在 JavaFX 中，Stage 是应用程序窗口，其中包含称为 Scene 的空间。Scene 包含界面的组件，如 UI 空间（按钮，输入框，复选框），容器等。
 
 
 **创建 `JavaFx` 项目**
@@ -170,14 +170,14 @@ public class Main extends Application {
 
 ![](images/11.png)
 
-了解`Java Swing` 的伙伴应该很熟悉，两者的原理很相似。上面代码的意思是：创建一个面板，然后在面板上添加标签，输入框和按钮，并对按钮添加绑定事件，然后把这个面板添加到场景中，这个窗口就完成了。
+了解 `Java Swing` 的伙伴应该很熟悉，两者的原理很相似。上面代码的意思是：创建一个面板，然后在面板上添加标签，输入框和按钮，并对按钮添加绑定事件，然后把这个面板添加到场景中，这个窗口就完成了。
 
 
 ## 五、最后
 
-`Java` 桌面`DJ` 音乐播放器是真的香！不知道你对这款音乐播放器有什么感受，欢迎在评论区说说自己的想法。人们都喜欢美的好的事物，而今天的这个项目是通过 `Java` 代码撸出来的，难道你还不会不喜欢 `Java` 这门编程语言吗？ 有了成品的直观呈现，才能在视觉上产生更强的冲击，可能会更加能激发你的学习动力！ 如果通过我的内容分享，能让你对编程产生兴趣，我是真的开心。如果渐渐喜欢上开源项目，平时也喜欢 `coding`,并且愿意分享你的经验和成果，那就更完美了，编程使我快乐，内容分享让我们认识更多伙伴！
+`Java` 桌面 `DJ` 音乐播放器是真的香！不知道你对这款音乐播放器有什么感受，欢迎在评论区说说自己的想法。人们都喜欢美的好的事物，而今天的这个项目是通过 `Java` 代码撸出来的，难道你还不会不喜欢 `Java` 这门编程语言吗？ 有了成品的直观呈现，才能在视觉上产生更强的冲击，可能会更加能激发你的学习动力！ 如果通过我的内容分享，能让你对编程产生兴趣，我是真的开心。如果渐渐喜欢上开源项目，平时也喜欢 coding，并且愿意分享你的经验和成果，那就更完美了，编程使我快乐，内容分享让我们认识更多伙伴！
 
-教程至此，你应该也能快速运行`DJ`版音乐播放器了。编程是不是也特别有意思呢？手痒痒了那就赶紧安装这款音乐播放器吧，对源码感兴趣的朋友可以开始学习项目源码了～
+教程至此，你应该也能快速运行 `DJ` 版音乐播放器了。编程是不是也特别有意思呢？手痒痒了那就赶紧安装这款音乐播放器吧，对源码感兴趣的朋友可以开始学习项目源码了～
 
 ## 六、参考资料
 - [官方文档](https://openjfx.io/openjfx-docs/)
