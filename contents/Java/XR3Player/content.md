@@ -1,28 +1,28 @@
-#  Java 版 `DJ` 音乐播放器
+# 躁！DJ 风格 Java 桌面音乐播放器
 
-> 本文适合有 Java 基础知识的人群，跟着本文可学习和运行 `Java` 版桌面`DJ`音乐播放器。
+> 本文适合有 Java 基础知识的人群，跟着本文可学习和运行 `Java` 版桌面 `DJ` 音乐播放器。
 
-![](./images/0.jpg)
+![](./images/cover.jpg)
 
 <p align="center">本文作者：HelloGitHub-<strong>秦人</strong></p>
 
-HelloGitHub 推出的[《讲解开源项目》](https://github.com/HelloGitHub-Team/Article)系列，今天给大家带来一款开源 Java 版桌面 `DJ` 音乐播放器项目—— [XR3Player](https://github.com/goxr3plus/XR3Player)，它强大的功能和炫酷的展示效果，你肯定会喜欢上它的！ 
+HelloGitHub 推出的[《讲解开源项目》](https://github.com/HelloGitHub-Team/Article)系列，今天给大家带来一款开源 Java 版桌面 `DJ` 音乐播放器项目——XR3Player，它强大的功能和炫酷的展示效果，你肯定会喜欢上它的！
 
 > 项目源码地址：https://github.com/goxr3plus/XR3Player
 
-
 ## 一、项目介绍
 OpenJFX 是一个开源的下一代客户端应用程序平台，适用于基于 Java 构建的桌面、移动和嵌入式系统。
-本篇我们就重点讲一下一款 `Java` 版桌面`DJ`音乐播放器，先看运行效果吧！
+本篇我们就重点讲一下一款 `Java` 版桌面 `DJ` 音乐播放器，先看运行效果吧！
+
 ![](./images/0.gif)
-也可以直接下载音乐播放器安装包，[下载地址](https://xr3player.netlify.com/)<br/>
-更多`Java` 桌面程序可以从这里获取：[openjfx.io](https://openjfx.io/)
+
+也可以直接下载音乐播放器安装包：[下载地址](https://xr3player.netlify.com/)，更多 `Java` 桌面程序可以从这里获取：[openjfx.io](https://openjfx.io/)
 
 ## 二、运行项目
 
 ### 2.1 前提
 
-- 安装 Jdk11.2 或者更高版本，全称 Java Development Kit，它是 Java 的库函数，是编译、运行 Java 程序的工具包。
+- 安装 JDK11.2 或者更高版本，全称 Java Development Kit，它是 Java 的库函数，是编译、运行 Java 程序的工具包。
 - 安装 Maven3 环境，进行项目构建和项目依赖包管理。
 - 本地安装开发工具 IntelliJ IDEA。
 - 本地安装 `GitBash` 工具，主要用于下载项目。
@@ -33,20 +33,20 @@ OpenJFX 是一个开源的下一代客户端应用程序平台，适用于基于
 
 ```bash
 git clone https://github.com/goxr3plus/XR3Player.git
-
 ```
 将项目导入 `Idea`，Maven 会自动下载所需的依赖。等待几分钟后项目依赖包都可以下载下来。使用 `Idea` 自带的 Maven 构建工具，就可以将项目轻松打包。如下图：
 ![](./images/1.png)
 
 **注意**
-项目有一个依赖 `jxbrowser-win64` 可能会下载失败，这个 `jar` 竟然有 40Mb,建议手动下载后导入项目依赖。[jxbrowser-win64 下载地址](https://jxbrowser.support.teamdev.com/support/discussions/topics/9000054587)
+项目有一个依赖 `jxbrowser-win64` 可能会下载失败，这个 `jar` 竟然有 40Mb，建议手动下载后导入项目依赖。[jxbrowser-win64 下载地址](https://jxbrowser.support.teamdev.com/support/discussions/topics/9000054587)
 
 
 ### 2.3 运行项目
 
 **创建入口类**
 
-打开 `Run/Debug Configurations` 创建一个 `Application` ,并选择入口类，如下图：
+打开 `Run/Debug Configurations` 创建一个 `Application` ，并选择入口类，如下图：
+
 ![](./images/2.png)
 
 **VM options 设置**
@@ -68,9 +68,10 @@ javafx.base/com.sun.javafx.event=com.jfoenix
 javafx.graphics/com.sun.javafx.scene=org.controlsfx.controls,
 --add-exports
 javafx.graphics/com.sun.javafx.scene.traversal=org.controlsfx.controls
-
 ```
-然后点击 `Run Main`/`Debug Main` 就可以本地运行项目了。如下图：
+
+然后点击 `Run Main` 或 `Debug Main` 就可以本地运行项目了。如下图：
+
 ![](./images/3.png)
 
 ## 三、音乐播放器使用
@@ -78,28 +79,40 @@ javafx.graphics/com.sun.javafx.scene.traversal=org.controlsfx.controls
 项目运行起来长这样子，如下图：
 ![](./images/4.png)
 
-1.需要创建一个用户，点击登录就可以进入音乐播放器管理页面。
+1、需要创建一个用户，点击登录就可以进入音乐播放器管理页面。
+
 ![](./images/5.png)
-2.进入音乐播放器，需要创建自己的音乐播放列表，并导入本地音乐。
+
+2、进入音乐播放器，需要创建自己的音乐播放列表，并导入本地音乐。
+
 ![](./images/6.png)
-3.导入本地音乐后可选择，选择需要播放的音乐，这里直接拖动你想播放的音乐。
+
+3、导入本地音乐后可选择，选择需要播放的音乐，这里直接拖动你想播放的音乐。
+
 ![](./images/7.png)
-4.`DJ`版播放器可以同步播放两首歌曲，并可以分别控制音量和播放速度。
+
+4、`DJ` 版播放器可以同步播放两首歌曲，并可以分别控制音量和播放速度。
+
 ![](./images/8.png)
-5.音乐播放器内嵌了浏览器，和在线音乐的功能。
-6.其他的功能期待你的发掘，如果你也喜欢这款音乐播放器的话。
+
+5、音乐播放器内嵌了浏览器，和在线音乐的功能。
+
+6、其他的功能期待你的发掘，如果你也喜欢这款音乐播放器的话。
 
 ## 四、JavaFx 工作原理
 
 JavaFX 的原理是这样的（如下图）：舞台（Stage），场景（Scene），容器（Container），布局（Layout）和控件（Controls）之间的关系：
-![](./images/9.png)
-在 JavaFX 中，Stage 是应用程序窗口，其中包含称为 Scene 的空间。Scene 包含界面的组件，如 UI 空间（按钮，输入框，复选框），容器等。
 
+![](./images/9.png)
+
+在 JavaFX 中，Stage 是应用程序窗口，其中包含称为 Scene 的空间。Scene 包含界面的组件，如 UI 空间（按钮，输入框，复选框），容器等。
 
 **创建 `JavaFx` 项目**
 
-打开 `Idea` 开发工具，`File` ->`New` ->`Project...` ->`Java Fx` 创建项目，如下图：
+打开 `Idea` 开发工具，`File` -> `New` -> `Project...` -> `Java Fx` 创建项目，如下图：
+
 ![](images/10.png)
+
 `Idea` 会自动生成代码，这里我做了一些改动，代码如下：
 
 ```java

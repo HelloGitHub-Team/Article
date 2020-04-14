@@ -48,7 +48,7 @@
 4. [快速搭建 SpringCloud 微服务开发环境的脚手架](contents/Java/SpringCloud/content.md)
 5. [命令行版的斗地主你玩过没？](contents/Java/landlords/content.md)
 6. [有了这个开源 Java 项目，开发出炫酷的小游戏好像不难？](contents/Java/FXGLGames/content.md)
-7. [Java 版 DJ 音乐播放器](contents/Java/XR3Player/content.md)
+7. [躁！DJ 风格 Java 桌面音乐播放器](contents/Java/XR3Player/content.md)
 
 
 #### JS 系列
