@@ -62,7 +62,7 @@
 
 #### Rust 系列
 
-1. [Redis 一样简单的搜索服务](contents/Rust/Sonic/content.md)
+1. [开源轻便且无架构的搜索后端，跑起来就能搜！](contents/Rust/Sonic/content.md)
 
 ## 贡献者
 
