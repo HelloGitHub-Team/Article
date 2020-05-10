@@ -1,4 +1,4 @@
-# Redis 一样简单的搜索服务
+# 开源轻便且无架构的搜索后端，跑起来就能搜！
 
 ![](images/1.jpg)
 
@@ -7,7 +7,9 @@
 
 *When one builds a product, a good measure of success would not be how much time users spend on the product, but how much time users save by using it. Let search be at the core of any product for that purpose.*
 
-## 一、介绍
+
+
+## 一、Sonic简介
 
 > Sonic是一种快速，轻量级且无模式的搜索后端。它提取搜索文本和标识符元组，然后可以在几微秒的时间内对其进行查询。
 
@@ -15,33 +17,40 @@
 
 
 
-在某些用例中， Sonic 可以用作超繁重和功能齐全的搜索后端（例如 Elasticsearch ， Redis ）的简单替代方案。下面我们介绍我们是如何放弃功能强大的搜索后端而选择 sonic 的。
+在某些用例中， Sonic 可以用作超繁重和功能齐全的搜索后端（例如 Elasticsearch ）的简单替代方案。下面我们介绍我们是如何放弃功能强大的搜索后端而选择 sonic 的。
 
 ## 二、特点
 
-- `较完整的生态`：简单的协议( TCP )让它拥有主流语言的 Client ，这样使用操作门槛就降低了。
 - `部署简单`：支持 Docker ，可以抛弃那些复杂的部署流程。
-- `语言兼容`：与世界上80多种最常用的语言完全兼容。
-- `便携管理`：搜索字词存储在集合中，按桶分类。
-- `智能`:查询中的拼写错误更正，查询词自动补全;Sonic是无架构的（与Redis相同）。只需将非结构化文本数据推送到集合和存储桶中，然后再使用文本数据查询索引。
-- `标识符索引`： Sonic 实现了一个标识符索引，查询返回结果是一个可以被外部数据库解析的 ID 列表。
-- `自动提词`:将文本推入索引时，Sonic 会将句子拆分成单词，然后对每个单词进行哈希处理，然后再将它们存储并链接到结果对象。
+- `轻量`：1,000,000条动态长度的消息，占用磁盘为20MB（KV）+ 1.4MB（FST）。
+- `入手简单`：支持多语言连接库。简单的协议( TCP )让它拥有主流语言的 Client ，这样使用操作门槛就降低了。
 
-也许说完大家还是云里雾里的，这些特点对于简单来说并没提现啊？那我们系好安全带，马上发车，开启 Sonic 的入门之旅吧！
+## 三、5分钟上手Sonic
 
-## 三、快速入手
+>配置Sonic实例不需要花费很多时间。我鼓励您遵循此快速入门指南，以了解Sonic如何为您工作。您只需要Docker，NodeJS和一点点JavaScript知识（无需成为开发人员！）。
 
-下面我们通过一个完整的使用过程，让大家对 Sonic 有着更深的了解。
+### 3.1 前提
 
-### 从Docker Hub安装
+- Docker（建议最新版本）
+- Go（建议最新版本）
 
-您可能会发现通过 Docker 运行 Sonic 很方便。您可以在 Docker Hub 上以 valeriansaliou / sonic 的形式找到预构建的 Sonic 映像。
+假设您正在运行MacOS。此测试的所有路径均为MacOS路径。如果您正在运行Linux，则可以将/ home /用作测试路径。对于永久部署，您将使用正确的UNIX / etc /配置和/ var / lib /数据路径。
+
+如果您不愿意使用Docker运行Sonic，则可以尝试从Rust的Cargo上安装它，也可以自己编译。本指南没有详细说明如何执行此操作，因此，如果您打算以自己的方式进行操作，请参阅自述文件。
+
+### 3.2 下载程序
 
 ```
 docker pull valeriansaliou/sonic:v1.2.3
 ```
 
-### 配置文件
+通过 Docker 运行 Sonic 很方便。您可以在 Docker Hub 上以 valeriansaliou / sonic 的形式找到预构建的 Sonic 映像。
+
+### 3.3 配置文件
+
+```
+wget https://raw.githubusercontent.com/valeriansaliou/sonic/master/config.cfg
+```
 
 使用样本 [config.cfg](https://github.com/valeriansaliou/sonic/blob/master/config.cfg) 配置文件，并将其调整到您自己的环境。如果您希望微调配置，则可以阅读[详细配置文档](https://github.com/valeriansaliou/sonic/blob/master/CONFIGURATION.md)。
 
@@ -101,7 +110,7 @@ max_words = 250000			# 图形中可以同时保留的最大单词数，之后将
 
 将其保存为.cfg文件，尽可能不要放入中文命名的文件夹内。
 
-### 启动 Sonic
+### 3.4 启动Sonci
 
 ```
 docker run -p 1491:1491 -v /path/to/your/sonic/config.cfg:/etc/sonic.cfg -v /path/to/your/sonic/store/:/var/lib/sonic/store/ valeriansaliou/sonic:v1.2.3
@@ -112,17 +121,15 @@ docker run -p 1491:1491 -v /path/to/your/sonic/config.cfg:/etc/sonic.cfg -v /pat
 
 这样我们就完成了 Sonic 的服务端啦，想要将内容写入数据库，还需要借助 Sonic-Client。下面我将使用 [go-sonic](https://github.com/expectedsh/go-sonic)进行演示。
 
-### Sonic-Client
+## 四、Sonic 插入数据
 
-这个软件包实现了所有与 Sonic 一起使用的命令。
-
-#### 安装
+### 4.1 安装
 
 ```
 go get github.com/expectedsh/go-sonic
 ```
 
-#### 示例
+### 4.2 示例
 
 ```
 package main
@@ -159,15 +166,22 @@ func main() {
 }
 ```
 
+### 4.3 结果
+
 ```
 ["id:5hg67f8dg5","id:1m2n3b4vf6"]
 ```
 
 这样我们就完成了简单的搜索系统啦，我们可以利用的返回结果快速定位到数据库具体位置。
 
-## 四、总结
+## 五、总结
 
 在将其作为开源软件发布给广大公众时，我们希望为社区提供“构建自己的SaaS业务”生态系统中缺失的部分：Redis 搜索。它解决了一个古老的瘙痒；我等不及要看看人们将如何使用Sonic来构建！      --Valerian Saliou
 
 这是 Sonic 作者的说的话，我在想开源的意义大概也是如此吧。技术共享！
 
+## 六、参考文献
+
+[Sonic项目地址](https://github.com/valeriansaliou/sonic)
+
+[Sonic作者博客](https://journal.valeriansaliou.name/announcing-sonic-a-super-light-alternative-to-elasticsearch/)
