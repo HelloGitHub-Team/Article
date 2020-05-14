@@ -2,7 +2,7 @@
 
 > 本文适合有 Java 基础知识的人群，跟着本文可学习和使用 `Java` 搭建网盘。
 
-![](./images/0.jpg)
+![](./images/0.png)
 
 <p align="center">本文作者：HelloGitHub-<strong>秦人</strong></p>
 
