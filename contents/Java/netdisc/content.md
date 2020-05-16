@@ -17,9 +17,9 @@ kiftd是一款便捷、开源、功能完善的 JAVA 网盘/云盘系统。支�
 **技术栈**<br/>
 - JDK版本：1.8.0_131
 - 项目管理框架：Maven（m2e 1.8.0 for Eclipse）,Archetype：mavem-archetype-quickstart 1.1
-- Spring Boot:
-- MyBatis:
-- H2 DB:
+- Spring Boot: SpringBoot 基于 Spring 开发，旨在提高微服务的开发效率。
+- MyBatis: 一款优秀的持久层框架，它支持自定义SQL、存储过程以及高级映射。
+- H2 DB: 一款开源的嵌入式数据库引擎，采用java语言编写，不受平台的限制。
 
 ## 二、网盘搭建
 
@@ -98,7 +98,7 @@ git clone https://github.com/KOHGYLW/kiftd-source.git
 ![](./images/14.png)
 我们知道前台 `新建文件夹` 功能调用的后台接口是 `newFolder.ajax`
 **后端接口**</br>
-通过前台请求可知调用的后台接口为 `homeController/newFolder.ajax`。逐步打开代码实现，我们会看到下面这个方法。
+通过前台请求可知调用的后台接口为 `homeController/newFolder.ajax`。打开代码实现，我们会看到下面这个方法。
 ```java
 public String newFolder(final HttpServletRequest request) {
 		
@@ -142,8 +142,6 @@ public String newFolder(final HttpServletRequest request) {
 
 
 ## 四、功能说明
-先看一下网盘的效果:
-
 ### 4.1 上传
 1.点击 `操作`，可以上传文件和上传文件夹，如下图:
 ![](./images/7.png)
