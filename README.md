@@ -29,6 +29,7 @@
 6. [有了这个开源 Java 项目，开发出炫酷的小游戏好像不难？](contents/Java/FXGLGames/content.md)
 7. [躁！DJ 风格 Java 桌面音乐播放器](contents/Java/XR3Player/content.md)
 8. [和付费网盘说再见，跟着本文自己起个网盘](contents/Java/netdisc/content.md)
+9. [分布式任务调度平台 PowerJob](contents/Java/PowerJob/catalog.md)
 
 
 #### JS 系列
