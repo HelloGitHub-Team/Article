@@ -15,30 +15,9 @@
 
 #### Python 系列
 
-1. Python 命令行之旅
-   - 1.1 [初探 argparse](contents/Python/cmdline/argparse-1.md)
-   - 1.2 [深入 argparse（一）](contents/Python/cmdline/argparse-2.md)
-   - 1.3 [深入 argparse（二）](contents/Python/cmdline/argparse-3.md)
-   - 1.4 [使用 argparse 实现 git 命令](contents/Python/cmdline/argparse-4.md)
-   - 2.1 [初探 docopt](contents/Python/cmdline/docopt-1.md)
-   - 2.2 [深入 docopt](contents/Python/cmdline/docopt-2.md)
-   - 2.3 [使用 docopt 实现 git 命令](contents/Python/cmdline/docopt-3.md)
-   - 3.1 [初探 click](contents/Python/cmdline/click-1.md)
-   - 3.2 [深入 click（一）](contents/Python/cmdline/click-2.md)
-   - 3.3 [深入 click（二）](contents/Python/cmdline/click-3.md)
-   - 3.4 [深入 click（三）](contents/Python/cmdline/click-4.md)
-   - 3.5 [深入 click（四）](contents/Python/cmdline/click-5.md)
-   - 3.6 [使用 click 实现 git 命令](contents/Python/cmdline/click-6.md)
-   - 4.1 [初探 fire](contents/Python/cmdline/fire-1.md)
-   - 4.2 [Python 命令行之旅：深入 fire（一）](contents/Python/cmdline/fire-2.md)
-   - 4.3 [Python 命令行之旅：深入 fire（二）](contents/Python/cmdline/fire-3.md)
-   - 4.4 [Python 命令行之旅：使用 fire 实现 git 命令](contents/Python/cmdline/fire-4.md)
-   - 5 [Python 命令行之旅：argparse、docopt、click 和 fire 总结篇](contents/Python/cmdline/summary.md)
+1. [Python 命令行之旅](contents/Python/cmdline/catalog.md)
 2. [用 Python 生成有"灵魂"的二维码：QRcode](contents/Python/QRcode/content.md)
-3. 聊聊 Python 的单元测试框架
-   - 3.1 [unittest](contents/Python/unittest/unittest.md)
-   - 3.2 [nose 和它的继任者 nose2](contents/Python/unittest/nose.md)
-   - 3.3 [pytest](contents/Python/unittest/pytest.md)
+3. [聊聊 Python 的单元测试框架](contents/Python/unittest/catalog.md)
 
 #### Java 系列
 
@@ -93,6 +72,13 @@
           <img src="https://avatars1.githubusercontent.com/u/45623023?s=50&v=4" style="width: 50px;"><br>
           <sub>LITTLECHIEH</sub>
         </a><br>
+      </th>
+      <th align="center" style="width: 80px;">
+        <a href="https://github.com/KFCFans">
+          <img src="https://avatars3.githubusercontent.com/u/9402086?s=50&v=4" style="width: 50px;"><br>
+          <sub>Yukino</sub>
+        </a><br>
+      </th>
     </tr>
   </tbody>
 </table>
