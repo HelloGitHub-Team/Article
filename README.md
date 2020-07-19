@@ -30,6 +30,7 @@
 7. [躁！DJ 风格 Java 桌面音乐播放器](contents/Java/XR3Player/content.md)
 8. [和付费网盘说再见，跟着本文自己起个网盘](contents/Java/netdisc/content.md)
 9. [分布式任务调度平台 PowerJob](contents/Java/PowerJob/catalog.md)
+10. [带你上手阿里开源的 Java 诊断利器：Arthas](contents/Java/Arthas/content.md)
 
 
 #### JS 系列
