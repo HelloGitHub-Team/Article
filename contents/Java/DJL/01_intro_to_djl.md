@@ -95,11 +95,11 @@ Java版本的Notebook可以基本实现所有Jupyter在Python上的特性
 
 通过下面几个 Notebook , 可以帮助你快速了解DJL的用法以及新特性:
 
-- [使用ModelZoo进行目标检测](object_detection_with_model_zoo.ipynb)
-- [加载PyTorch预训练模型](load_pytorch_model.ipynb)
-- [加载Apache MXNet预训练模型](load_mxnet_model.ipynb)
-- [迁移学习案例](transfer_learning_on_cifar10.ipynb)
-- [问答系统案例](BERTQA.ipynb)
+- [使用ModelZoo进行目标检测](https://github.com/awslabs/djl/blob/master/jupyter/object_detection_with_model_zoo.ipynb)
+- [加载PyTorch预训练模型](https://github.com/awslabs/djl/blob/master/jupyter/load_pytorch_model.ipynb)
+- [加载Apache MXNet预训练模型](https://github.com/awslabs/djl/blob/master/jupyter/load_mxnet_model.ipynb)
+- [迁移学习案例](https://github.com/awslabs/djl/blob/master/jupyter/transfer_learning_on_cifar10.ipynb)
+- [问答系统案例](https://github.com/awslabs/djl/blob/master/jupyter/pytorch/BERTQA.ipynb)
 
 P.S: 我们甚至还准备了基于 Java 的深度学习书，现在还处于预览版阶段，敬请期待。
 
