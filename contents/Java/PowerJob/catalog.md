@@ -5,3 +5,4 @@
 - 3、[PowerJob 技术综述，能领悟多少就看你下多少功夫了～](3/content.md)
 - 4、[哇咔咔干货来啦：PowerJob 原理剖析之 Akka Toolkit](4/content.md)
 - 5、[趣讲 PowerJob 超强大的调度层，开始表演真正的技术了](5/content.md)
+- 6、[PowerJob 的自实现高可用方案，妙妙妙！](6/content.md)
