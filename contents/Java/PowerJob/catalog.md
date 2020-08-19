@@ -6,3 +6,4 @@
 - 4、[哇咔咔干货来啦：PowerJob 原理剖析之 Akka Toolkit](4/content.md)
 - 5、[趣讲 PowerJob 超强大的调度层，开始表演真正的技术了](5/content.md)
 - 6、[PowerJob 的自实现高可用方案，妙妙妙！](6/content.md)
+- 7、[感谢 Vue.js 拯救我这个前端渣渣，让 PowerJob 有了管理后台界面](7/content.md)
