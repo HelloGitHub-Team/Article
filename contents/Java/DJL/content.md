@@ -1,11 +1,11 @@
-# 完全基于 Java 的深度学习平台，亚马逊的大佬带你上手
+# 完全基于 Java 的开源深度学习平台，亚马逊的大佬带你上手
 > 本文适合有 Java 基础的人群
 
 ![](cover.jpeg)
 
 作者：**DJL-Lanking**
 
-HelloGitHub 推出的[《讲解开源项目》](https://github.com/HelloGitHub-Team/Article)系列。有幸邀请到了亚马逊 + Apache 的工程师：Lanking（https://github.com/lanking520），为我们讲解 DJL —— 完全由 Java 构建的深度学习平台。
+HelloGitHub 推出的[《讲解开源项目》](https://github.com/HelloGitHub-Team/Article)系列。有幸邀请到了亚马逊 + Apache 的工程师：Lanking（ https://github.com/lanking520 ），为我们讲解 DJL —— 完全由 Java 构建的深度学习平台。
 
 ## 介绍
 许多年以来，一直都没有为 Java 量身定制的深度学习开发平台。用户必须要进行繁杂的项目配置，构建 class 才能最终打造出属于 Java 的深度学习应用。在那之后，依旧要面临着依赖项匹配维护等各种麻烦的问题。为了解决这个这个痛点，亚马逊开源了 Deep Java Library (DJL)
