@@ -257,8 +257,8 @@ public class EasyExcelUtils {
 #### 2.4.3 最终展示效果
 最终的效果如下图：
 ![](./images/5.png)
-这样从想法到实践，我们就在实战中使用了 `Joup` 的基本操作。
-完整项目地址：https://github.com/hellowHuaairen/JsoupTest
+这样从想法到实践，我们就在实战中使用了 `Jsoup` 的基本操作。<br/>
+完整代码地址：https://github.com/hellowHuaairen/JsoupTest
 
 ## 五、最后
 
