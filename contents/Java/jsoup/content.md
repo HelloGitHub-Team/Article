@@ -79,6 +79,7 @@ Jsou p的工作原理，首先需要指定一个URL，框架发送 `http` 请求
 ![](./images/3.png)
 
 以上面例子为例：
+
 **发请求**
 ```java
 Document doc = Jsoup.connect("https://www.baidu.com/").get();
