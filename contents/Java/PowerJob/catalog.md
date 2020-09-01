@@ -7,3 +7,4 @@
 - 5、[趣讲 PowerJob 超强大的调度层，开始表演真正的技术了](5/content.md)
 - 6、[PowerJob 的自实现高可用方案，妙妙妙！](6/content.md)
 - 7、[感谢 Vue.js 拯救我这个前端渣渣，让 PowerJob 有了管理后台界面](7/content.md)
+- 8、[PowerJob 在线日志饱受好评的秘诀：小但实用的分布式日志系统](8/content.md)
