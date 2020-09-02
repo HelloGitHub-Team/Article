@@ -1,7 +1,7 @@
 # 完全基于 Java 的开源深度学习平台，亚马逊的大佬带你上手
 > 本文适合有 Java 基础的人群
 
-![](cover.jpeg)
+![](../cover.jpeg)
 
 作者：**DJL-Lanking**
 
