@@ -8,3 +8,4 @@
 - 6、[PowerJob 的自实现高可用方案，妙妙妙！](6/content.md)
 - 7、[感谢 Vue.js 拯救我这个前端渣渣，让 PowerJob 有了管理后台界面](7/content.md)
 - 8、[PowerJob 在线日志饱受好评的秘诀：小但实用的分布式日志系统](8/content.md)
+- 9、[Java 序列化界新贵 kryo 和熟悉的“老大哥”，就是 PowerJob 的序列化方案](9/content.md)
