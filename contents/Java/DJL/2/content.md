@@ -9,7 +9,7 @@ HelloGitHub 推出的[《讲解开源项目》](https://github.com/HelloGitHub-T
 
 ## 一、前言
 
-![](images/1.png)
+![](1.png)
 
 随着数据科学在生产中的应用逐步增加，使用 N维数组 灵活的表达数据变得愈发重要。我们可以将过去数据科学运算中的多维循环嵌套运算简化为简单几行。由于进一步释放了计算并行能力，这几行简单的代码运算速度也会比传统多维循环快很多。
 
@@ -258,7 +258,7 @@ ND: (9, 1) cpu() float64
 
 你也许会好奇 NDArray 究竟是如何在 DJL 之中构建的呢？接下来，我们会讲解一下 NDArray 在 DJL 内部中的架构。架构图如下：
 
-![](images/2.png)
+![](2.png)
 
 如上图所示 NDArray 有三个关键的层。
 
@@ -282,7 +282,7 @@ NDArray 的到来帮助 DJL 成功转变为 Java 在深度学习领域中最好�
 
 ## 关于 DJL
 
-![](images/../logo.png)
+![](../logo.png)
 
 Deep Java Library (DJL) 是一个基于 Java 的深度学习框架，同时支持训练以及推理。 DJL 博取众长，构建在多个深度学习框架之上 (TenserFlow、PyTorch、MXNet 等) 也同时具备多个框架的优良特性。你可以轻松使用 DJL 来进行训练然后部署你的模型。
 
