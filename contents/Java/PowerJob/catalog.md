@@ -10,3 +10,4 @@
 - 8、[PowerJob 在线日志饱受好评的秘诀：小但实用的分布式日志系统](8/content.md)
 - 9、[Java 序列化界新贵 kryo 和熟悉的“老大哥”，就是 PowerJob 的序列化方案](9/content.md)
 - 10、[PowerJob 应对庞大任务的锦囊妙计：MapReduce](10/content.md)
+- 11、[PowerJob 从 0 到 1.9k star 的经历](11/content.md)
