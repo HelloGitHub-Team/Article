@@ -174,7 +174,7 @@ public class ConsumerController {
 下面一张请求流转的时序图，这样理解清晰一些。   
 ![](./images/5.png)
 
-项目地址：
+项目地址：https://github.com/hellowHuaairen/wangzgSpringBootTest
 
 ## 三、最后
 
