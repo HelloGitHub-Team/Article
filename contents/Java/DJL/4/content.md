@@ -47,7 +47,9 @@ dependencies {
 
 NDArray 是 DJL 存储数据结构和数学运算的基本结构。一个 NDArray 表达了一个定长的多维数组。NDArray 的使用方法类似于 Python 中的 numpy.ndarray 。
 
-NDManager 是 NDArray 的老板。它负责管理 NDArray 的产生和回收过程，这样可以帮助我们更好的对 Java 内存进行优化。每一个 NDArray 都会是由一个 NDManager 创造出来，同时它们会在 NDManager 关闭时一同关闭。NDManager 和 NDArray都是由 Java 的 AutoClosable 构建，这样可以确保在运行结束时及时进行回收。想了解更多关于它们的用法和实践，请参阅这篇文章 (https://aws.amazon.com/cn/blogs/china/ndarray-java-based-n-dimensional-array-tool/)。
+NDManager 是 NDArray 的老板。它负责管理 NDArray 的产生和回收过程，这样可以帮助我们更好的对 Java 内存进行优化。每一个 NDArray 都会是由一个 NDManager 创造出来，同时它们会在 NDManager 关闭时一同关闭。NDManager 和 NDArray都是由 Java 的 AutoClosable 构建，这样可以确保在运行结束时及时进行回收。想了解更多关于它们的用法和实践，请参阅我们前一期文章：
+
+> HelloGitHub DJL: DJL 之 Java 玩转多维数组，就像 NumPy 一样
 
 ### Model
 
