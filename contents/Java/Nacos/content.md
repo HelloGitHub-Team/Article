@@ -21,10 +21,10 @@ HelloGitHub 推出的[《讲解开源项目》](https://github.com/HelloGitHub-T
 | Nacos      | 支持     |   支持   | 不依赖其他组件   |HTTP/动态DNS/UDP | 版本迭代中   |Dubbo、SpringCloud、K8S |极易，中文文档和社区，符合国人习惯
 
 
-`Nacos` 提供了一组简单易用的特性集，帮助开发者快速实现动态服务发现、服务配置、服务元数据及流量管理。
-`Nacos` 的主要特性：
-- 服务发现：Nacos 支持基于 DNS 和基于 RPC 的服务发现。服务提供者使用 原生SDK、OpenAPI、或一个独立的Agent TODO注册 Service 后，服务消费者可以使用DNS TODO 或HTTP&API查找和发现服务。
-- 服务健康监测：Nacos 提供对服务的实时的健康检查，阻止向不健康的主机或服务实例发送请求。
+提供了一组简单易用的特性集，帮助开发者快速实现动态服务发现、服务配置、服务元数据及流量管理。
+主要特性：
+- 服务发现：支持基于 DNS 和基于 RPC 的服务发现。服务提供者使用 原生SDK、OpenAPI、或一个独立的Agent TODO注册 Service 后，服务消费者可以使用DNS TODO 或HTTP&API查找和发现服务。
+- 服务健康监测：提供对服务的实时的健康检查，阻止向不健康的主机或服务实例发送请求。
 - 动态配置服务：动态配置服务可以让您以中心化、外部化和动态化的方式管理所有环境的应用配置和服务配置。
 - 动态 DNS 服务：动态 DNS 服务支持权重路由，使用者更容易地实现中间层负载均衡、更灵活的路由策略、流量控制以及数据中心内网的简单DNS解析服务。
 - 服务及其元数据管理：Nacos 能让使用者从微服务平台建设的视角管理数据中心的所有服务及元数据，包括管理服务的描述、生命周期、服务的静态依赖分析、服务的健康状态、服务的流量管理、路由及安全策略、服务的 SLA 以及最首要的 metrics 统计数据。
@@ -49,7 +49,8 @@ cd nacos/bin
 startup.cmd -m standalone #单机模式
 ```
 
-**访问首页**</br>
+**访问首页**
+
 nacos的访问地址：http://localhost:8848/nacos/
 默认账号密码：nacos nacos
 页面截图如下：
@@ -58,7 +59,9 @@ nacos的访问地址：http://localhost:8848/nacos/
 ### 2.2 配置中心
 
 **创建微服务项目**
-创建`SpringBoot`项目主要有三种方式：通过网站创建，`IntelliJ IDEA`的`Spring Initializr`工具创建，Maven 创建项目形式创建。<br/>
+
+创建 `SpringBoot` 项目主要有三种方式：通过网站创建，`IntelliJ IDEA` 的 `Spring Initializr` 工具创建，Maven 创建项目形式创建。
+
 项目的`pom` 文件内容如下：
 ```xml
     <dependency>
@@ -80,6 +83,7 @@ nacos的访问地址：http://localhost:8848/nacos/
     </dependency>
 ```
 **bootstrap.yml配置**
+
 ```yml
 spring:
   application:
@@ -93,13 +97,17 @@ spring:
   profiles:
     active: dev
 ```
-**Nacos配置**</br>
-`Nacos` 上创建配置文件名称格式：**${prefix}-${spring.profile.active}.${file-extension}**，如上一步`bootstrap.yml`的配置可知，我要创建的配置名为：`nacos-config-dev.yaml`,内容如下：
+**Nacos配置**
+
+`Nacos` 上创建配置文件名称格式：`${prefix}-${spring.profile.active}.${file-extension}`，如上一步`bootstrap.yml`的配置可知，我要创建的配置名为：`nacos-config-dev.yaml`,内容如下：
 ![](./images/3.png)
 
 **创建Controller**
-动态获取用户名称的功能为例</br>
+
+动态获取用户名称的功能为例
+
 创建一个对外接口`/username`,代码如下：
+
 ```java
 @RestController
 @RefreshScope
@@ -116,7 +124,8 @@ public class ConfigController {
 ```
 注意：`Controller`上要添加`@RefreshScope注解`，它实现了配置的热加载。
 
-**验证结果**</br>
+**验证结果**
+
 本地运行项目，可以看到项目的启动时，端口已变为我们在 `Nacos` 上配置的端口`8090`。
 ![](./images/4.png)
 
@@ -124,8 +133,10 @@ public class ConfigController {
 
 ### 2.3 注册中心
 
- 1. 创建服务提供者</br>
-创建微服务可参上面`配置中心`的创建方式，创建对外接口`/sayHello`，代码如下：
+ 1. 创建服务提供者
+
+创建微服务可参上面 **配置中心**的创建方式，创建对外接口 `/sayHello`，代码如下：
+
 ```java
 @RestController
 public class ProviderController {
@@ -140,10 +151,12 @@ public class ProviderController {
 启动服务，访问地址：http://localhost:8099/sayHello,可输出：
 `tom say: helloWord`,表示微服务以创建成功。
 
- 1. 创建服务消费者</br>
+ 2. 创建服务消费者
+   
 这里采用 `FeignClient` 的方式实现跨服务间调用（有兴趣的同学也可以研究一下RestTemplate的方式）。 
 
-**pom文件**</br>
+**pom文件**
+
 在nacos-consumer的pom文件要添加`Feigin-Client`的maven依赖
 ```xml
 <dependency>
@@ -151,7 +164,8 @@ public class ProviderController {
     <artifactId>spring-cloud-starter-openfeign</artifactId>
 </dependency>
 ```
-**添加注解**</br>
+**添加注解**
+
 在微服务启动类`*Application.java`添加注解`@EnableFeignClients`。
 
 **创建FeignClient**
@@ -165,7 +179,8 @@ public interface ProviderClient {
 ```
 说明：FeignClient注解传入的 `name` ,指定FeignClient的名称，如果项目使用了Ribbon，name属性会作为微服务的名称，用于服务发现。
 
-**创建ConsumerController**<br/>
+**创建ConsumerController**
+
 ```java
 @RestController
 public class ConsumerController {
