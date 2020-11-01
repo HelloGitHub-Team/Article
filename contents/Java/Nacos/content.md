@@ -209,4 +209,5 @@ public class ConsumerController {
 教程至此，你应该也能对 `Nacos` 有一些了解！光看不练假把式，最快的学习方式莫过于模仿，再通过举一反三才能融会贯通。每一种新工具都是对老工具的革新，有兴趣的小伙伴可以参考我上面的案例，在实践中会发现更多乐趣！
 
 ## 四、参考资料
-- [官方文档](https://nacos.io/zh-cn/docs/what-is-nacos.html): https://nacos.io/zh-cn/docs/what-is-nacos.html
+- 官方文档: [https://nacos.io/zh-cn/docs/what-is-nacos.html
+](https://nacos.io/zh-cn/docs/what-is-nacos.html)
