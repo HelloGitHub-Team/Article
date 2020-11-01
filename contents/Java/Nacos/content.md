@@ -40,7 +40,7 @@ HelloGitHub 推出的[《讲解开源项目》](https://github.com/HelloGitHub-T
 - 配置中心：通过在 `Nacos` 上配置用户名，在不重启微服务的情况下实现动态获取配置信息功能。
 - 注册中心：创建两个微服务：服务提供者和服务消费者，实现微服务间调用。消费者要调用提供者的接口，只需要声明提供者的微服务名称和接口的请求地址，`Nacos` 就可准确的找到到对应的接口。
 
-### 2.1运行`Nacos`
+### 2.1 运行`Nacos`
 
 下载地址：https://github.com/alibaba/nacos/releases
 ```bash
@@ -148,7 +148,7 @@ public class ProviderController {
     }
 }
 ```
-启动服务，访问地址：http://localhost:8099/sayHello,可输出：
+启动服务，访问地址：[http://localhost:8099/sayHello](http://localhost:8099/sayHello),可输出：
 `tom say: helloWord`,表示微服务以创建成功。
 
  2. 创建服务消费者
@@ -157,7 +157,7 @@ public class ProviderController {
 
 **pom文件**
 
-在nacos-consumer的pom文件要添加`Feigin-Client`的maven依赖
+在nacos-consumer的pom文件要添加 `Feigin-Client` 的maven依赖
 ```xml
 <dependency>
     <groupId>org.springframework.cloud</groupId>
@@ -166,7 +166,7 @@ public class ProviderController {
 ```
 **添加注解**
 
-在微服务启动类`*Application.java`添加注解`@EnableFeignClients`。
+在微服务启动类`*Application.java`添加注解 `@EnableFeignClients`。
 
 **创建FeignClient**
 ```java
@@ -194,13 +194,13 @@ public class ConsumerController {
     }
 }
 ```
-重启工程，在浏览器上访问http://localhost:8090/hi-feign，可以在浏览器上展示正确的响应，这时nacos-consumer调用nacos-provider服务成功。
+重启工程，在浏览器上访问[http://localhost:8090/hi-feign](http://localhost:8090/hi-feign)，可以在浏览器上展示正确的响应，这时nacos-consumer调用nacos-provider服务成功。
 
 
 下面一张请求流转的时序图，这样理解清晰一些。   
 ![](./images/5.png)
 
-项目地址：https://github.com/hellowHuaairen/wangzgSpringBootTest
+项目地址：[https://github.com/hellowHuaairen/wangzgSpringBootTest](https://github.com/hellowHuaairen/wangzgSpringBootTest)
 
 ## 三、最后
 
