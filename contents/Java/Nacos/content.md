@@ -17,7 +17,7 @@ HelloGitHub 推出的[《讲解开源项目》](https://github.com/HelloGitHub-T
 
 | 名称       | 配置中心  |  注册中心 |依赖 |访问协议|版本迭代 |集成支持 |上手程度 |
 | --------   | -----:   | :----: | :----:  |:----:  |:----:  |:----:  |:----:  |
-| Eureka     | 不支持    |   支持  | 依赖ZooKeeper  |HTTP  | 无版本升级    |SpringCloud集成 |容易，英文界面，不符合国人习惯
+| Eureka     | 不支持    |   支持  | 不依赖其他组件  |HTTP  | 无版本升级    |SpringCloud集成 |容易，英文界面，不符合国人习惯
 | Consul     | 支持      |   支持  | 不依赖其他组件  |HTTP/DNS | 版本迭代中   |SpringCloud、K8S |复杂，英文界面，不符合国人习惯
 | Nacos      | 支持     |   支持   | 不依赖其他组件   |HTTP/动态DNS/UDP | 版本迭代中   |Dubbo、SpringCloud、K8S |极易，中文文档和社区，符合国人习惯
 
