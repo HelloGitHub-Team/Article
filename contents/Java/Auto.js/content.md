@@ -1,4 +1,4 @@
-# 搞微服务用阿里开源的 Nacos 真香啊！
+# Auto.js 一款安卓平台上的 JavaScript 自动化工具
 
 > 本文适合有 Javascript 基础知识的人群
 
@@ -6,7 +6,7 @@
 
 <p align="center">本文作者：HelloGitHub-<strong>秦人</strong></p>
 
-HelloGitHub 推出的[《讲解开源项目》](https://github.com/HelloGitHub-Team/Article)系列，今天给大家带来一款支持无障碍服务的Android平台上的JavaScript IDE，它是一款自动化软件，根据脚本内容便可以自动地执行相关的操作。
+HelloGitHub 推出的[《讲解开源项目》](https://github.com/HelloGitHub-Team/Article)系列，今天给大家带来一款支持无障碍服务的Android平台上的JavaScript 自动化工具，它根据脚本内容自动执行相关的操作。
 
 > 项目源码地址：https://github.com/hyb1996/Auto.js
 
@@ -31,7 +31,7 @@ Auto.js可以做的事情很多。
 - 悬浮窗：提供了悬浮窗的相关函数，可以在屏幕上显示自定义悬浮窗，控制悬浮窗大小、位置等。
 - 文件系统：提供了一些常见的文件处理，包括文件读写、移动、复制、删掉等。
 - HTTP：提供一些进行http请求的函数。
-- 图片与颜色：Auto.js有两种方式表示一个颜色。一种是使用一个字符串，例如："#AARRGGBB"，另一种方式是使用一个16进制的32位整数，例如 0xFF112233表示颜色"#112233"。
+- 图片与颜色：Auto.js 有两种方式表示一个颜色。一种是使用一个字符串，例如："#AARRGGBB"，另一种方式是使用一个16进制的32位整数，例如 0xFF112233表示颜色"#112233"。
 - 画布：提供了使用画布进行2D画图的支持，可用于简单的小游戏开发或者图片编辑。
 - 按键模拟：按键模拟部分提供了一些模拟物理按键的全局函数，包括Home、音量键、照相键等。
 - 多媒体：目前仅支持音乐播放和媒体文件扫描。
@@ -44,22 +44,22 @@ Auto.js可以做的事情很多。
 - 定时器：暴露了一个全局的 API，用于在某个未来时间段调用调度函数。
 - 用户界面：提供了编写用户界面的支持。
 - 调用Java：支持调用Java接口。
-## 二、`Auto.js`官方实例
+## 二、`Auto.js`官方示例
 ### 2.1下载`Auto.js`
     百度网盘下载地址: https://pan.baidu.com/s/1unTJauIjyhSadyattWOh-Q 
     提取码: 3pyw 
 ### 2.2 环境配置
- 1.`VSCode`配置，安装插件
- 在VS Code中菜单"查看"->“扩展”->输入"Auto.js"或"hyb1996"搜索，即可看到"Auto.js-VSCodeExt"插件，安装即可。
+ 1.`VSCode` 配置，安装插件
+ 在 `VS Code` 中菜单 `查看`->`扩展`->输入 `Auto.js` 搜索，即可看到 `Auto.js-VSCodeExt`插件，安装即可。
 
- 快捷键Ctrl+Shift+P 或点击"查看"->"命令面板"可调出命令面板，执行`Auto.js: Start Server`.
+ 快捷键 Ctrl+Shift+P 或点击"查看"->"命令面板"可调出命令面板，执行 `Auto.js: Start Server`.
     
- 2.手机连接app设置
- 将手机连接到电脑启用的Wifi或者同一局域网中。在手机上的Auto.js的侧拉菜单中启用调试服务，并输入IP地址。如下图：
+ 2.手机连接 app 设置
+ 将手机连接到电脑启用的 `Wifi` 或者同一局域网中。在手机上的 `Auto.js` 的侧拉菜单中启用调试服务，并输入 `IP` 地址。如下图：
 
    ![](./images/01.png)
  3.运行示例
- vscode中创建一个`js`文件
+ 下面是`用户界面`的例子，会创建三个tab页，可以自由切换。内容如下：
 
  ```javascript
  "ui";
@@ -153,13 +153,14 @@ ui.menu.on("item_click", item => {
 })
 
  ```
-
- 快捷键Ctrl+Shift+P，执行`Auto.js: Run`.
+上面代码其实很简单，创建了页面元素，并给元素绑定了事件。
+使用快捷键 `Ctrl+Shift+P`，执行`Auto.js: Run`.
 
  运行效果如下：
 
 ![](./images/02.png)
 
+更多示例参考：[https://github.com/hyb1996/Auto.js/tree/master/app/src/main/assets/sample](https://github.com/hyb1996/Auto.js/tree/master/app/src/main/assets/sample)
 
 ## 三、实战-自动完成抖音评论
 
@@ -176,7 +177,7 @@ sleep(2000);
 back();  //后退
  ```
  ### 2.选择元素
- 如上面代码所示`id("aje").findOne().click()`, `aje`就是元素id。这和`Css`中id选择器器的用法是样。
+ 如上面代码所示`id("aje").findOne().click()`, `aje`就是元素id。这和`css`中 id 选择器的用法是样。
   1.`auto.js`要开启`悬浮窗`。
   
   ![](./images/1.png)
@@ -202,10 +203,7 @@ back();  //后退
 
 ## 四、最后
 
-
-要完成一个复杂系统往往需要很多微服务单元，而衔接每个微服务，完成微服务的统一管理就非常有必要，所以集成服务管理中心和配置中心的产品就的就应运而生，而 `Nacos` 是其中的佼佼者！
-
-教程至此，你应该也能对 `Nacos` 有一些了解！光看不练假把式，最快的学习方式莫过于模仿，再通过举一反三才能融会贯通。每一种新工具都是对老工具的革新，有兴趣的小伙伴可以参考我上面的案例，在实践中会发现更多乐趣！
+教程至此，你应该也能对 `Auto.js` 有一些了解！文档和教程特别丰富，支持的功能也很全,特别容易上手。本编只是抛砖引玉，`Auto.js`可以做很多事情：每天定时给微信特定好友发消息、百度地图签到、蚂蚁森林能量自动收取等。有兴趣的小伙伴可以试试。
 
 ## 五、参考资料
 - 官方文档: [https://hyb1996.github.io/AutoJs-Docs/](https://hyb1996.github.io/AutoJs-Docs/)
