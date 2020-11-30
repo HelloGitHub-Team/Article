@@ -173,7 +173,7 @@ sleep(2000);
 
 id("grg").findOne().click(); //打开评论输入框
 setText("你好！"); //设置评论内容
-id("ak7").findOne().click(); /发送评论
+id("ak7").findOne().click(); //发送评论
 sleep(2000);
 back(); //后退
 swipe(347,992,316,237,1500); //模拟向上滑动
