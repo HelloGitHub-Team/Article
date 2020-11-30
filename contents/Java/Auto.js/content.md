@@ -6,7 +6,7 @@
 
 <p align="center">本文作者：HelloGitHub-<strong>秦人</strong></p>
 
-HelloGitHub 推出的[《讲解开源项目》](https://github.com/HelloGitHub-Team/Article)系列，今天给大家带来一款支持无障碍服务的Android平台上的JavaScript 自动化工具，它根据脚本内容自动执行相关的操作。
+HelloGitHub 推出的[《讲解开源项目》](https://github.com/HelloGitHub-Team/Article)系列，今天给大家带来一款支持无障碍服务的Android平台上的JavaScript 自动化工具，它可以根据脚本内容自动执行相关的操作。
 
 > 项目源码地址：https://github.com/hyb1996/Auto.js
 
@@ -43,9 +43,9 @@ Auto.js 是一个安卓脚本框架，可以做很多事情，帮助我们手机
 ### 2.2 环境配置
  1.`VSCode` 配置，安装插件
 
- 在 `VS Code` 中菜单 `查看`->`扩展`->输入 `Auto.js` 搜索，即可看到 `Auto.js-VSCodeExt`插件，安装即可。
+ 在 `VS Code` 中菜单 `查看`->`扩展`->输入 `Auto.js` 搜索，即可看到 `Auto.js-VSCodeExt` 插件，安装即可。
 
- 快捷键 Ctrl+Shift+P 或点击"查看"->"命令面板"可调出命令面板，执行 `Auto.js: Start Server`.
+ 快捷键 Ctrl+Shift+P 或点击 `查看` -> `命令面板` 可调出命令面板，执行 `Auto.js: Start Server`.
     
  2.手机连接 app 设置
 
@@ -149,7 +149,7 @@ ui.menu.on("item_click", item => {
 })
 
  ```
-上面代码其实很简单，创建了页面元素，并给元素绑定了事件。
+代码很简单，创建了页面元素，并给元素绑定了事件。
 使用快捷键 `Ctrl+Shift+P`，执行`Auto.js: Run`.
 
  运行效果如下：
@@ -175,37 +175,37 @@ sleep(2000);
 back();  //后退
  ```
  ### 2.选择元素
- 如上面代码所示`id("aje").findOne().click()`, `aje`就是元素id。这和`css`中 id 选择器的用法是样。
+ 如上面代码所示`id("aje").findOne().click()`, `aje` 就是元素id。这和 `css` 中 `id` 选择器的用法是一样。
 
-  1.`Auto.js` 要开启 `悬浮窗 `。
+  1.`Auto.js` 开启 `悬浮窗 `。
   
-  ![](./images/1.png)
+  ![](./images/03.png)
 
   2.点击 `悬浮窗` -> `布局分析` -> `布局范围分析`
   
-  ![](./images/2.png)
+  ![](./images/04.png)
 
   3.选择对应的元素，自动生成代码
 
-  ![](./images/3.png)
+  ![](./images/05.png)
 
   前端的小伙伴应该看出来了，这就是类似于`Chrome`的`Debug`调试工具。
 
  ### 3.应用打包
 
- 前提：打包应用前，需要安装 `Auto.js` 的打包apk插件。
+ 前提：打包应用前，需要安装 `Auto.js` 的打包 `apk` 插件。
 
-1.打开 `Auto.js` app,选在对应的文件，选择 `更多`
+1.打开 `Auto.js` app,选在对应的文件，选择 `更多` ->`打包应用`
 
-   ![](./images/4.png)
+   ![](./images/06.png)
 
 2.选择打包应用的文件，打包后文件存储位置，包名，版本号等信息，点击 `✔`，即可完成打包。
 
-![](./images/5.png)
+![](./images/07.png)
 
 ## 四、最后
 
-教程至此，你应该也能对 `Auto.js` 有一些了解！文档和教程特别丰富，支持的功能也很全,特别容易上手。本编只是抛砖引玉，`Auto.js` 可以做很多事情：每天定时给微信特定好友发消息、百度地图签到、蚂蚁森林能量自动收取等。有兴趣的小伙伴可以试试。
+教程至此，你应该也能对 `Auto.js` 有一些了解！官方文档和教程特别丰富，支持的功能也很全,特别容易上手。本编只是抛砖引玉，`Auto.js` 可以做很多事情，例如：每天定时给微信特定好友发消息、百度地图签到、蚂蚁森林能量自动收取等。有兴趣的小伙伴可以试试。
 
 ## 五、参考资料
 - 官方文档: [https://hyb1996.github.io/AutoJs-Docs/](https://hyb1996.github.io/AutoJs-Docs/)
