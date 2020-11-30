@@ -164,20 +164,32 @@ ui.menu.on("item_click", item => {
 
 ### 1.代码如下：
  ```javascript
+"auto";
+
 launchApp("抖音");  //打开app
-sleep(2000);    //延迟2s
+sleep(2000);  //延迟2s
 id("aje").findOne().click(); //点击评论按钮
 sleep(2000);
-id("grg").findOne().click();  //打开评论输入框
-setText("你好你好！"); //设置评论内容
-id("ak7").findOne().click();  //发送评论
-sleep(2000);
-back();  //后退
- ```
- ### 2.选择元素
- 如上面代码所示`id("aje").findOne().click()`, `aje` 就是元素id。这和 `css` 中 `id` 选择器的用法是一样。
 
-  1.`Auto.js` 开启 `悬浮窗 `。
+id("grg").findOne().click(); //打开评论输入框
+setText("你好！"); //设置评论内容
+id("ak7").findOne().click(); /发送评论
+sleep(2000);
+back(); //后退
+swipe(347,992,316,237,1500); //模拟向上滑动
+ ```
+### 2.代码说明
+  1. launchApp: launchApp(appName),通过名称启动应用。如果该名称对应的应用不存在，则返回false; 否则返回true。如果该名称对应多个应用，则只启动其中某一个。
+  2. id: 空间id选择器，其他选择器有文本(text), 描述(desc), 类名(className)等。
+  3. findOne: 表示基于这个条件找到一个符合条件的控件。
+  4. click: 点击一个控件，前提是这个控件的clickable属性为true。
+  5. setText: 设置输入框内容。
+  6. swipe: swipe(x1, y1, x2, y2, duration)，模拟从坐标(x1, y1)滑动到坐标(x2, y2)，并返回是否成功。duration 是滑动时长，单位毫秒。只有滑动操作执行完成时脚本才会继续执行。
+  7. back: 模拟返回键返回值任务栏页面.
+ 
+ ### 3. debug调试
+  
+  1.`Auto.js` 开启 `悬浮窗 `
   
   ![](./images/03.png)
 
@@ -191,7 +203,7 @@ back();  //后退
 
   前端的小伙伴应该看出来了，这就是类似于`Chrome`的`Debug`调试工具。
 
- ### 3.应用打包
+ ### 4.应用打包
 
  前提：打包应用前，需要安装 `Auto.js` 的打包 `apk` 插件。
 
