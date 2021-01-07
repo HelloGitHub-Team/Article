@@ -32,7 +32,8 @@
 9. [分布式任务调度平台 PowerJob](contents/Java/PowerJob/catalog.md)
 10. [带你上手阿里开源的 Java 诊断利器：Arthas](contents/Java/Arthas/content.md)
 11. [用 Java 拿下 HTML 分分钟写个小爬虫](contents/Java/jsoup/content.md)
-12. [完全基于 Java 的开源深度学习平台](contents/Java/DJL/catalog.md)
+12. [不想加班开发管理后台了，试试这个 Java 开源项目吧！](contents/Java/eladmin/content.md)
+
 
 
 #### JS 系列
