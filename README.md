@@ -49,6 +49,10 @@
 
 1. [开源轻便且无架构的搜索后端，跑起来就能搜！](contents/Rust/Sonic/content.md)
 
+#### 工具系列
+
+1. [不想再看后端的脸色了？试试这个开源项目 2 分钟模拟一个后端 API](contents/Tool/moco/content.md)
+
 ## 贡献者
 
 <table>
