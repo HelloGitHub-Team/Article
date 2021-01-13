@@ -44,6 +44,8 @@
    - [教你用开源 JS 库快速画出 GitHub 章鱼猫](contents/JavaScript/Zdog_advance/content.md)
 3. [手绘风格的 JS 图表库：Chart.xkcd](contents/JavaScript/Chart.xkcd/content.md)
 4. [用这个库 3 分钟实现让你满意的表格功能：Bootstrap-Table](contents/JavaScript/Bootstrap_Table/content.md)
+5. [内容创作者不要再复制粘贴啦，一劳永逸自建个文章多发平台吧！](contents/JavaScript/ArtiPub/content.md)
+
 
 #### Rust 系列
 
