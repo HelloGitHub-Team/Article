@@ -34,8 +34,6 @@
 11. [用 Java 拿下 HTML 分分钟写个小爬虫](contents/Java/jsoup/content.md)
 12. [不想加班开发管理后台了，试试这个 Java 开源项目吧！](contents/Java/eladmin/content.md)
 
-
-
 #### JS 系列
 
 1. [功能强大的 JS 文件上传库：FilePond](contents/JavaScript/FilePond/content.md)
@@ -46,6 +44,9 @@
 4. [用这个库 3 分钟实现让你满意的表格功能：Bootstrap-Table](contents/JavaScript/Bootstrap_Table/content.md)
 5. [内容创作者不要再复制粘贴啦，一劳永逸自建个文章多发平台吧！](contents/JavaScript/ArtiPub/content.md)
 
+#### Go 系列
+
+1. [把“烦恼”放进看板，开源免费的项目管理工具来帮你啦！](contents/Golang/Taskcafe/content.md)
 
 #### Rust 系列
 
