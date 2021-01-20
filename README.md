@@ -33,6 +33,7 @@
 10. [带你上手阿里开源的 Java 诊断利器：Arthas](contents/Java/Arthas/content.md)
 11. [用 Java 拿下 HTML 分分钟写个小爬虫](contents/Java/jsoup/content.md)
 12. [不想加班开发管理后台了，试试这个 Java 开源项目吧！](contents/Java/eladmin/content.md)
+13. [把“烦恼”放进看板，开源免费的项目管理工具来帮你啦！](contents/Golang/Taskcafe/content.md)
 
 #### JS 系列
 
@@ -42,15 +43,15 @@
    - [教你用开源 JS 库快速画出 GitHub 章鱼猫](contents/JavaScript/Zdog_advance/content.md)
 3. [手绘风格的 JS 图表库：Chart.xkcd](contents/JavaScript/Chart.xkcd/content.md)
 4. [用这个库 3 分钟实现让你满意的表格功能：Bootstrap-Table](contents/JavaScript/Bootstrap_Table/content.md)
-5. [内容创作者不要再复制粘贴啦，一劳永逸自建个文章多发平台吧！](contents/JavaScript/ArtiPub/content.md)
-
-#### Go 系列
-
-1. [把“烦恼”放进看板，开源免费的项目管理工具来帮你啦！](contents/Golang/Taskcafe/content.md)
 
 #### Rust 系列
 
 1. [开源轻便且无架构的搜索后端，跑起来就能搜！](contents/Rust/Sonic/content.md)
+
+#### 工具系列
+
+1. [不想再等后端的接口了？帮你 2 分钟模拟个后端接口的开源项目](contents/Tool/moco/content.md)
+2. [记忆中的像素块褪色了吗？用开源体素编辑器重新做个 3D 的吧！](contents/Tool/goxel/content.md)
 
 ## 贡献者
 
@@ -103,3 +104,4 @@
 ## 声明
 
 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh"><img alt="知识共享许可协议" style="border-width: 0" src="https://licensebuttons.net/l/by-nc-nd/4.0/88x31.png"></a><br>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh">署名-非商业性使用-禁止演绎 4.0 国际 </a>进行许可。
+
