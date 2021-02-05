@@ -1,12 +1,10 @@
-#
+# 聊天记录里的文件又失效了？放过微信，试试这个吧
 
-[ 头图 ]
-
-
+![](images/0.jpg)
 
 <p align="center">本文作者：HelloGitHub-<strong>蔡文心</strong></p>
 
-这是 HelloGitHub 推出的[《讲解开源项目》](https://github.com/HelloGitHub-Team/Article)系列，今天给大家推荐一个 Go 开源的文件同步项目——Syncthing
+这是 HelloGitHub 推出的[《讲解开源项目》](https://github.com/HelloGitHub-Team/Article)系列，今天给大家推荐一个 Go 开源的文件同步项目—— Syncthing
 
 > 项目地址：https://github.com/syncthing/syncthing
 
@@ -68,10 +66,40 @@ Syncthing 支持非常多的平台，包括
 
 安装成功后，打开浏览器访问 **http://127.0.0.1:8384/** 进入 Syncthing。
 
-![浏览器](images/image-20210204165722804.png)
+![浏览器](images/3.png)
 
-<img src="images/5.jpeg" alt="手机" style="zoom:30%;" />
+<img src="images/4.jpeg" alt="手机" style="zoom:30%;" />
 
 ### 2.3 与手机关联
 
-在浏览器或者
+在浏览器或者手机中选择**添加远程设备**，比如在浏览器中点击【操作】→【显示 ID 】
+
+![](images/5.png)
+
+在手机上选择【设备】→【+】
+
+<img src="images/6.png" alt="image-20210205113923882" style="zoom:33%;" />
+
+扫描浏览器中的二维码，进行添加。如果电脑和手机在同一局域网中，也就是手机连接 wifi，那设备发现速度会比较快，手机使用移动数据的话发现速度会很慢需要等待几分钟，设备发现后在电脑上会出现确认框确认是否允许添加
+
+在共享中可以选择共享的文件夹
+
+![7](images/7.png)
+
+### 2.4 添加文件
+
+此时已经可以开始使用 Syncthing 了，Syncthing 会在电脑中创建一个文件夹作为同步目录
+
+![8](images/8.png)
+
+在手机中也是一样
+
+![](images/9.png)
+
+如果有文件被添加，则会同步至所有共享的设备
+
+## 三、最后
+
+在局域网情况下 Syncthing 的体验会好些，所以还是推荐手机连接 WIFI 使用。Syncthing 不仅可以同步文件，也能够对文件夹进行忽略、仅发送、仅接受和版本控制等操作，还能够接入多个设备。这些功能都可以在页面中发现并自己尝试。不用担心用不来，Syncthing 官网是英文的，但是在使用页面是有中文的，并且翻译的不错
+
+比起一些文件传输软件要登录、限制文件大小、要打开蓝牙来说 Syncthing 是不是方便很多。如果喜欢这篇文章的话请给我点个赞吧，这是我坚持下去的最大动力！
