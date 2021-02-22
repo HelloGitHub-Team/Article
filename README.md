@@ -44,6 +44,12 @@
 3. [手绘风格的 JS 图表库：Chart.xkcd](contents/JavaScript/Chart.xkcd/content.md)
 4. [用这个库 3 分钟实现让你满意的表格功能：Bootstrap-Table](contents/JavaScript/Bootstrap_Table/content.md)
 
+
+#### C++ 系列
+
+1. [刚学会 C++ 的小白用这个开源框架，做个 RPC 服务要多久？](contents/C++/rest_rpc/content.md)
+
+
 #### Rust 系列
 
 1. [开源轻便且无架构的搜索后端，跑起来就能搜！](contents/Rust/Sonic/content.md)
