@@ -251,8 +251,8 @@ rust/fd_help.rs
 选项 `-t` 或 ` --type <filetype>`，`fd` 提供了以下几种 `filetype` 选项
 
 -  f：file
-- d：directory
--  l：symlink
+-  d：directory
+-   l：symlink
 - x：executable
 - e：empty
 - s：socket
