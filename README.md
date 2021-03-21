@@ -50,6 +50,11 @@
 
 1. [刚学会 C++ 的小白用这个开源框架，做个 RPC 服务要多久？](contents/C++/rest_rpc/content.md)
 
+#### Go 系列
+
+1. [微信聊天记录里的文件又失效了？试试这个文件同步开源项目吧](contents/Golang/Syncthing/content.md)
+2. [把“烦恼”放进看板，开源免费的项目管理工具来帮你啦！](contents/Golang/Taskcafe/content.md)
+
 
 #### Rust 系列
 

@@ -1,10 +1,10 @@
-# 聊天记录里的文件又失效了？放过微信，试试这个吧
+# 微信聊天记录里的文件又失效了？试试这个文件同步开源项目吧
 
 ![](images/0.jpg)
 
 <p align="center">本文作者：HelloGitHub-<strong>蔡文心</strong></p>
 
-这是 HelloGitHub 推出的[《讲解开源项目》](https://github.com/HelloGitHub-Team/Article)系列，今天给大家推荐一个 Go 开源的文件同步项目—— Syncthing
+Hi，这是 HelloGitHub 推出的[《讲解开源项目》](https://github.com/HelloGitHub-Team/Article)系列，今天给大家推荐一款开源文件同步工具——Syncthing
 
 > 项目地址：https://github.com/syncthing/syncthing
 
@@ -14,9 +14,9 @@
 
 <img src="./images/1.jpg" style="zoom:40%;" />
 
-可是百度云这类云盘的下载速度实在是太 … 忄… 曼 … 了。
+可是 xx 云这类云盘的下载速度实在是太 … 忄… 曼 … 了。
 
-百度云：想快？给钱啊！
+xx 云：想快？给钱啊！
 
 你，不，我们：
 
