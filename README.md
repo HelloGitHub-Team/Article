@@ -18,6 +18,7 @@
 1. [Python 命令行之旅](contents/Python/cmdline/catalog.md)
 2. [用 Python 生成有"灵魂"的二维码：QRcode](contents/Python/QRcode/content.md)
 3. [聊聊 Python 的单元测试框架](contents/Python/unittest/catalog.md)
+4. [上线 Python 应用仅需一条命令的开源框架：Zappa](contents/Python/Zappa/content.md)
 
 #### Java 系列
 
