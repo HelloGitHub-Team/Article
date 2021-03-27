@@ -103,11 +103,11 @@ with alive_bar(10, title="HelloGithub") as bar:
 
 看多了传统的进度条样式想换换花样？没问题，alive-progress 不仅内置了多种进度条样式，还支持自定义格式。
 
-进度条可以自定义的样式分为两种：``bar`` 和 ``spinner ``，只需要在调用 ``alive_bar`` 的时候传入对应的参数即可
+进度条可以自定义的样式分为两种：``bar`` 和 ``spinner``，只需要在调用 ``alive_bar`` 的时候传入对应的参数即可。
 
 ![4](images/4.gif)
 
-以这个进度条为例，中间最长的是 ``bar``，旁边来回晃动的 ``www.HelloGithub.com``是 ``spinner``。
+以这个进度条为例，中间最长的是 ``bar``，旁边来回晃动的 ``www.HelloGithub.com`` 是 ``spinner``。
 
 alive-progress 内置了多种 bar 和 spinner 样式，只需要调用 ``show_bars`` 或者 ``show_spinners`` 即可快速预览相应的样式，例如：
 
@@ -154,10 +154,10 @@ from alive_progress import alive_bar
 import time
 
 with alive_bar(
-			title="HelloGithub", 
-			# 注意：这里 bar 被换成了unknow，内置样式名称与 spinner 的相同
-			unknown="stars", spinner="message_scrolling"
-			) as bar:
+            title="HelloGithub", 
+            # 注意：这里 bar 被换成了unknow，内置样式名称与 spinner 的相同
+            unknown="stars", spinner="message_scrolling"
+            ) as bar:
 
     for i in range(100):
         time.sleep(.1)
@@ -315,24 +315,15 @@ with alive_bar(
 ``unknown_bar_factory``：将 spinner 转换为能使用在未定义模式中的格式：
 
 ```python
-from alive_progress import alive_bar, unknown_bar_factory, frame_spinner_factory
+from alive_progress import alive_bar, unknown_bar_factory, bouncing_spinner_factory
 import time
 
-my_spinner = frame_spinner_factory(
-                                r'-----',
-                                r'1----',
-                                r'-2---',
-                                r'--3--',
-                                r'---4-',
-                                r'----5'
-                                )
+my_spinner = bouncing_spinner_factory("www.HelloGithub.com",15,hiding=False)
 
-
-my_unknown_bar = unknown_bar_factory(my_spinner)	# 传入一个 spinner 进行转换
+my_unknown_bar = unknown_bar_factory(my_spinner)	# 传入定义的 spinner
 with alive_bar(
             title="HelloGithub",
-            spinner=my_spinner,
-            unknown=my_unknown_bar	# 将 bar 换为自定义的 spinner 样式
+            unknown=my_unknown_bar
             ) as bar:
 
     while True:
@@ -340,7 +331,7 @@ with alive_bar(
         time.sleep(.1)
 ```
 
-![14](images/14.gif)
+![14](E:\Article\contents\Python\alive-progress\images\14.gif)
 
 ## 三、结尾
 
