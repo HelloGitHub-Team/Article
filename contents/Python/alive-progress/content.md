@@ -44,15 +44,15 @@ with alive_bar(100) as bar:	# 给 alive_bar 传入进度条总数目（这里是
         bar()
 ```
 
-> 请注意，如果无法正常显示动画则尝试在 alive_bar 中加上 force_tty=True 参数
+> 请注意，如果无法正常显示动画则尝试在 alive_bar 中加上 force_tty=True 参数。
 
-运行以上代码我们可以看到在终端中出现了一个还算华丽的动态进度条
+运行以上代码我们可以看到在终端中出现了一个还算华丽的动态进度条：
 
 ![7](images/1.gif)
 
-> 需要注意的是，alive-progress 并不像 tqdm 等进度条库一样会自动更新，只有我们程序调用了 bar 才会让进度条 +1
+> 需要注意的是，alive-progress 并不像 tqdm 等进度条库一样会自动更新，只有我们程序调用了 bar 才会让进度条 +1.
 
-当然，我们也可以不给进度条传入总数目这个参数，此时进度条将不显示进度，并进入**未定义**模式
+当然，我们也可以不给进度条传入总数目这个参数，此时进度条将不显示进度，并进入**未定义**模式：
 
 ![6](images/5.gif)
 
@@ -127,7 +127,7 @@ show_spinners() # 查看内置 spinner 样式
 
 ![3](images/2.gif)
 
-默认样式使用起来非常简单，例如我想使用 ``bubbles`` 这个 bar 和 ``message_scrolling`` 这个 spinner，直接传入对应名称即可
+默认样式使用起来非常简单，例如我想使用 ``bubbles`` 这个 bar 和 ``message_scrolling`` 这个 spinner，直接传入对应名称即可：
 
 ```python
 from alive_progress import alive_bar
@@ -261,7 +261,7 @@ with alive_bar(
 
 可以看到字符串 HelloGithub 挨个循环输出。
 
-``scrolling_spinner_factory``：将字符串滚动播出
+``scrolling_spinner_factory``：将字符串滚动播出：
 
 ```python
 from alive_progress import alive_bar, scrolling_spinner_factory
@@ -310,7 +310,7 @@ with alive_bar(
 
 ![1](images/13.gif)
 
-> 当然，也可以省略 left_chars 这个参数，其效果相当于 I love 将会像弹球一样左右弹动
+> 当然，也可以省略 left_chars 这个参数，其效果相当于 I love 将会像弹球一样左右弹动。
 
 ``unknown_bar_factory``：将 spinner 转换为能使用在未定义模式中的格式：
 
