@@ -47,7 +47,7 @@ with alive_bar(len(arr)) as bar:	# 给 alive_bar 传入进度条总数目（这�
         bar()
 ```
 
-> 请注意
+> 请注意，如果无法使用则在 alive_bar 中加上 force_tty=True 参数
 
 运行以上代码我们可以看到在终端中出现了一个还算华丽的动态进度条
 
