@@ -28,26 +28,23 @@ pip install alive-progress
 
 ### 1. 直接使用
 
-在循环中使用 alive-progress 最常见的用法，假设我们需要遍历一个数组，脚本可以这样写：
+在循环中使用 alive-progress 是最常见的用法，脚本可以这样写：
 
 ```python
 # 导入 alive-progress 库
 from alive_progress import alive_bar
 import time
 
-# arr 是我们需要遍历的数组
-arr = [1,3,5,7,9,11]
-
 # 使用 with 语句创建一个进度条
-with alive_bar(len(arr)) as bar:	# 给 alive_bar 传入进度条总数目（这里是 6）
-    for item in arr:
+with alive_bar(100) as bar:	# 给 alive_bar 传入进度条总数目（这里是 100）
+    for item in range(100):
         # 等待 1s
-        time.sleep(1)
+        time.sleep(.1)
         #更新进度条，进度 +1
         bar()
 ```
 
-> 请注意，如果无法使用则在 alive_bar 中加上 force_tty=True 参数
+> 请注意，如果无法正常显示动画则尝试在 alive_bar 中加上 force_tty=True 参数
 
 运行以上代码我们可以看到在终端中出现了一个还算华丽的动态进度条
 
@@ -157,10 +154,10 @@ from alive_progress import alive_bar
 import time
 
 with alive_bar(
-            title="HelloGithub", 
-    		# 注意：这里 bar 被换成了unknow，内置样式名称与 spinner 的相同
-            unknown="stars", spinner="message_scrolling"
-            ) as bar:
+			title="HelloGithub", 
+			# 注意：这里 bar 被换成了unknow，内置样式名称与 spinner 的相同
+			unknown="stars", spinner="message_scrolling"
+			) as bar:
 
     for i in range(100):
         time.sleep(.1)
@@ -271,9 +268,9 @@ from alive_progress import alive_bar, scrolling_spinner_factory
 import time
 
 my_spinner = scrolling_spinner_factory(
-    								chars="HelloGithub", # 想要播放的字符串
-    								length=15,	# spinner 区域宽度
-    								blank='.'	# 空白部分填充字符
+									chars="HelloGithub", # 想要播放的字符串
+									length=15,	# spinner 区域宽度
+									blank='.'	# 空白部分填充字符
 									)
 
 with alive_bar(
@@ -314,6 +311,36 @@ with alive_bar(
 ![1](images/13.gif)
 
 > 当然，也可以省略 left_chars 这个参数，其效果相当于 I love 将会像弹球一样左右弹动
+
+``unknown_bar_factory``：将 spinner 转换为能使用在未定义模式中的格式：
+
+```python
+from alive_progress import alive_bar, unknown_bar_factory, frame_spinner_factory
+import time
+
+my_spinner = frame_spinner_factory(
+                                r'-----',
+                                r'1----',
+                                r'-2---',
+                                r'--3--',
+                                r'---4-',
+                                r'----5'
+                                )
+
+
+my_unknown_bar = unknown_bar_factory(my_spinner)	# 传入一个 spinner 进行转换
+with alive_bar(
+            title="HelloGithub",
+            spinner=my_spinner,
+            unknown=my_unknown_bar	# 将 bar 换为自定义的 spinner 样式
+            ) as bar:
+
+    while True:
+        bar()
+        time.sleep(.1)
+```
+
+![14](images/14.gif)
 
 ## 三、结尾
 
