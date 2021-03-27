@@ -200,7 +200,7 @@ my_bar = standard_bar_factory(	# 以下参数均有默认值，不必一次全�
                             borders="<>",		# bar 两头的边界
                             background=".",		# 未加载部分用 "." 填充
                             tip=">",			# 指示进度方向的引导符号（分割 "#" 与 ".")
-    						errors="⚠❌" # 发生错误时显示的内容（未完成，溢出）	
+                            errors="⚠❌" # 发生错误时显示的内容（未完成，溢出）	
                             )
 ##-------自定义结束-------##
 
@@ -268,10 +268,10 @@ from alive_progress import alive_bar, scrolling_spinner_factory
 import time
 
 my_spinner = scrolling_spinner_factory(
-									chars="HelloGithub", # 想要播放的字符串
-									length=15,	# spinner 区域宽度
-									blank='.'	# 空白部分填充字符
-									)
+                                    chars="HelloGithub", # 想要播放的字符串
+                                    length=15,	# spinner 区域宽度
+                                    blank='.'	# 空白部分填充字符
+                                    )
 
 with alive_bar(
             title="HelloGithub",
@@ -331,7 +331,7 @@ with alive_bar(
         time.sleep(.1)
 ```
 
-![14](E:\Article\contents\Python\alive-progress\images\14.gif)
+![14](images/14.gif)
 
 ## 三、结尾
 
