@@ -86,8 +86,8 @@ with alive_bar(total, manual=True) as bar:	# total 可以不指定，这时候�
 from alive_progress import alive_bar
 import time
 
-# 定义标题（前缀字符）为 HelloGithub
-with alive_bar(10, title="HelloGithub") as bar:
+# 定义标题（前缀字符）为 HelloGitHub
+with alive_bar(10, title="HelloGitHub") as bar:
     for i in range(10):
         time.sleep(1)
 
@@ -107,7 +107,7 @@ with alive_bar(10, title="HelloGithub") as bar:
 
 ![4](images/4.gif)
 
-以这个进度条为例，中间最长的是 ``bar``，旁边来回晃动的 ``www.HelloGithub.com`` 是 ``spinner``。
+以这个进度条为例，中间最长的是 ``bar``，旁边来回晃动的 ``www.HelloGitHub.com`` 是 ``spinner``。
 
 alive-progress 内置了多种 bar 和 spinner 样式，只需要调用 ``show_bars`` 或者 ``show_spinners`` 即可快速预览相应的样式，例如：
 
@@ -136,7 +136,7 @@ import time
 # 直接传入对应名字即可
 with alive_bar(
             100,
-            title="HelloGithub", 
+            title="HelloGitHub", 
             bar="bubbles", spinner="message_scrolling"
             ) as bar:
 
@@ -154,7 +154,7 @@ from alive_progress import alive_bar
 import time
 
 with alive_bar(
-            title="HelloGithub", 
+            title="HelloGitHub", 
             # 注意：这里 bar 被换成了unknow，内置样式名称与 spinner 的相同
             unknown="stars", spinner="message_scrolling"
             ) as bar:
@@ -207,7 +207,7 @@ my_bar = standard_bar_factory(	# 以下参数均有默认值，不必一次全�
 ##--------动画演示-------##
 with alive_bar(
             10,
-            title="HelloGithub", 
+            title="HelloGitHub", 
             bar=my_bar, # 这里传入刚刚自定义的 bar
     		spinner="message_scrolling",
             manual=True
@@ -248,7 +248,7 @@ my_spinner = my_spinner = frame_spinner_factory(
                                 )	# 直接传入字符串
 
 with alive_bar(
-            title="HelloGithub",
+            title="HelloGitHub",
             spinner=my_spinner
             ) as bar:
 
@@ -259,7 +259,7 @@ with alive_bar(
 
 ![1](images/11.gif)
 
-可以看到字符串 HelloGithub 挨个循环输出。
+可以看到字符串 HelloGitHub 挨个循环输出。
 
 ``scrolling_spinner_factory``：将字符串滚动播出：
 
@@ -268,13 +268,13 @@ from alive_progress import alive_bar, scrolling_spinner_factory
 import time
 
 my_spinner = scrolling_spinner_factory(
-                                    chars="HelloGithub", # 想要播放的字符串
+                                    chars="HelloGitHub", # 想要播放的字符串
                                     length=15,	# spinner 区域宽度
                                     blank='.'	# 空白部分填充字符
                                     )
 
 with alive_bar(
-            title="HelloGithub",
+            title="HelloGitHub",
             spinner=my_spinner
             ) as bar:
 
@@ -294,12 +294,12 @@ import time
 my_spinner = bouncing_spinner_factory(
                                     right_chars="I love", # 从左边进入的字符串
                                     length=15, # spinner 区域长度
-                                    left_chars="HelloGithub", # 从右边进入的字符串
+                                    left_chars="HelloGitHub", # 从右边进入的字符串
                                     blank='.', 	# 空白区域填充字符
                                     )
 
 with alive_bar(
-            title="HelloGithub",
+            title="HelloGitHub",
             spinner=my_spinner
             ) as bar:
 
@@ -318,11 +318,11 @@ with alive_bar(
 from alive_progress import alive_bar, unknown_bar_factory, bouncing_spinner_factory
 import time
 
-my_spinner = bouncing_spinner_factory("www.HelloGithub.com",15,hiding=False)
+my_spinner = bouncing_spinner_factory("www.HelloGitHub.com",15,hiding=False)
 
 my_unknown_bar = unknown_bar_factory(my_spinner)	# 传入定义的 spinner
 with alive_bar(
-            title="HelloGithub",
+            title="HelloGitHub",
             unknown=my_unknown_bar
             ) as bar:
 
