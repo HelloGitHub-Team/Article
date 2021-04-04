@@ -259,7 +259,7 @@ with alive_bar(
 
 ![1](images/11.gif)
 
-可以看到字符串 HelloGitHub 挨个循环输出。
+可以看到字符串挨个循环输出。
 
 ``scrolling_spinner_factory``：将字符串滚动播出：
 
