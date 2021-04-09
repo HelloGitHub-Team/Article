@@ -92,7 +92,7 @@ with alive_bar(10, title="HelloGitHub") as bar:
         time.sleep(1)
 
         bar()   # 让进度 +1
-        bar.text("Doning Work #%d"%(i+1))   # 更新进度条后缀
+        bar.text("Processing Work #%d"%(i+1))   # 更新进度条后缀
 
         print("Work #%d finished"%i)        # 输出一行信息
 ```
