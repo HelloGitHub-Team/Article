@@ -6,17 +6,32 @@ HelloGitHub 推出的[《讲解开源项目》](https://github.com/HelloGitHub-T
 
 > 项目地址：https://github.com/AnthonySun256/easy_games
 
-作为 Python 新手，你是不是一直想写出一个自己的图形化程序但又不知从何下手？今天，我来教大家如何从零做起利用 Python 和 命令行 实现一个简易又不失美丽的小游戏——**贪吃蛇**.
+
+
+> 灵感来自：https://github.com/tancredi/python-console-snake
+
+作为 Python 新手，你是不是一直想写出一个自己的图形化程序但又不知从何下手？今天，我来教大家如何从零做起利用 Python 和 命令行 实现一个简易又不失美感的小游戏——**贪吃蛇**.
+
+![cover](images/cover.gif)
 
 本文分为两个部分：我们首先简单了解 Python 命令行图形化库 **curses** 接着解读 **snake** 相关代码。
 
-## 一、环境配置
+## 一、环境配置与使用
 
 Python 已经内置了 curses 库，但是对于 Windows 操作系统我们需要安装一个补丁以进行适配。
 
-Windows 下：
+Windows 下安装补全包：
 
 > pip install windows-curses
+
+游戏使用：
+
+```shell
+cd easy_games
+python snake
+```
+
+
 
 ## 二、初识 curses
 
@@ -217,21 +232,20 @@ class Snake(object):
 之后，我们从继续上到下实现，对照类图，我们接下来应该实现一下 ``update_snake_pos`` 即 更新蛇的位置，这部分非常简单：
 
 ```python
-    def update_snake_pos(self) -> None:
-        # 这个函数在文章下方，获得蛇在 x, y 方向上分别增加多少
-        dis_increment_factor = self.get_dis_inc_factor()
-        # 需要注意，这里要用深拷贝（import copy）
-        self.last_body = copy.deepcopy(self.body)
-		# 先移动蛇头，然后蛇身依次向前
-        for index, item in enumerate(self.body):
-            if index < 1:
-                item.x += dis_increment_factor.x
-                item.y += dis_increment_factor.y
-            else:  # 剩下的部分要跟着前一部分走
-                item.x = self.last_body[index - 1].x
-                item.y = self.last_body[index - 1].y
+def update_snake_pos(self) -> None:
+    # 这个函数在文章下方，获得蛇在 x, y 方向上分别增加多少
+    dis_increment_factor = self.get_dis_inc_factor()
+    # 需要注意，这里要用深拷贝（import copy）
+    self.last_body = copy.deepcopy(self.body)
+	# 先移动蛇头，然后蛇身依次向前
+    for index, item in enumerate(self.body):
+        if index < 1:
+            item.x += dis_increment_factor.x
+            item.y += dis_increment_factor.y
+        else:  # 剩下的部分要跟着前一部分走
+            item.x = self.last_body[index - 1].x
+            item.y = self.last_body[index - 1].y
 ```
-
 > 其实 last_body 可以只记录最后一次修改的身体，这里我偷了个懒
 
 在这里有一个细节，如果我们是第一次写这个函数，为了让蛇头能够正确的按照玩家操作移动，我们需要知道蛇头元素在 x, y 方向上各移动了多少。
@@ -273,22 +287,21 @@ def get_dis_inc_factor(self) -> Position:
 解决了移动问题，下一步就是考虑贪吃蛇如何吃到食物了，在这里我们用 ``check_eat_food`` 和 ``eat_food`` 两个函数完成：
 
 ```python
-    def eat_food(self, food) -> None:
-        self.body.append(self.last_body[-1])  # 长大一个元素
+def eat_food(self, food) -> None:
+    self.body.append(self.last_body[-1])  # 长大一个元素
 
-    def check_eat_food(self, foods: list) -> int:  # 返回吃到了哪个食物
-        # 遍历食物，看看当前食物和蛇头是不是重合，重合就是吃到
-        for index, food in enumerate(foods):
-            if food == self.body[0]:
-                # 吃到食物则调用 eat_food 函数，处理蛇身长大等操作
-                self.eat_food(food)
-                # 弹出吃掉的食物
-                foods.pop(index)
-                # 返回吃掉食物的序号，没吃则返回 -1
-                return index
-        return -1
+def check_eat_food(self, foods: list) -> int:  # 返回吃到了哪个食物
+    # 遍历食物，看看当前食物和蛇头是不是重合，重合就是吃到
+    for index, food in enumerate(foods):
+        if food == self.body[0]:
+            # 吃到食物则调用 eat_food 函数，处理蛇身长大等操作
+            self.eat_food(food)
+            # 弹出吃掉的食物
+            foods.pop(index)
+            # 返回吃掉食物的序号，没吃则返回 -1
+            return index
+    return -1
 ```
-
 在这里，``foods`` 是一个存储着所有食物位置信息的列表，每次蛇体移动后都会调用 `check_eat_food` 函数检查是不是吃到了某一个食物。
 
 > 可以发现，检查是不是吃到和”吃下去“ 这两个动作我分为了两个函数，以做到每个函数“一心一意”方便后期修改。
@@ -296,8 +309,8 @@ def get_dis_inc_factor(self) -> Position:
 现在，我们的蛇已经能跑能吃了。但是作为一只能照顾自己的贪吃蛇，我们还需要能够判断当前自身状态，比如最基本的我需要知道我刚刚是不是咬到自己了，只需要看看蛇头是不是移动到了身体里面：
 
 ```python
-    def check_eat_self(self) -> bool:
-        return self.body[0] in self.body[1:]  # 判断蛇头是不是和身体重合
+def check_eat_self(self) -> bool:
+    return self.body[0] in self.body[1:]  # 判断蛇头是不是和身体重合
 ```
 
 或者我想知道是不是跑得太快而撞了墙：
@@ -327,31 +340,30 @@ def check_hit_wall(self) -> bool:
 是不是觉得有些眼花缭乱以至于感觉无从下手？其实 ``Graphic`` 类方法虽多但是大多数方法只是执行一个**特定**的功能而已，而且**每次**更新游戏**只需要调用** ``draw_game`` 方法即可：
 
 ```python
-    def draw_game(self, snake: Snake, foods, lives, scores, highest_score) -> None:
-        # 清理窗口字符
-        self.window.erase()
-        # 绘制帮助信息
-        self.draw_help()
-        # 更新当前帧率
-        self.update_fps()
-        # 绘制帧率信息
-        self.draw_fps()
-        # 绘制生命、得分信息
-        self.draw_lives_and_scores(lives, scores, highest_score)
-        # 绘制边框
-        self.draw_border()
-        # 绘制食物
-        self.draw_foods(foods)
-        # 绘制蛇身体
-        self.draw_snake_body(snake)
-        # 更新界面
-        self.window.refresh()
-        # 更新界面
-        self.game_area.refresh()
-        # 延迟一段时间，以控制帧率
-        time.sleep(self.delay_time)
+def draw_game(self, snake: Snake, foods, lives, scores, highest_score) -> None:
+    # 清理窗口字符
+    self.window.erase()
+    # 绘制帮助信息
+    self.draw_help()
+    # 更新当前帧率
+    self.update_fps()
+    # 绘制帧率信息
+    self.draw_fps()
+    # 绘制生命、得分信息
+    self.draw_lives_and_scores(lives, scores, highest_score)
+    # 绘制边框
+    self.draw_border()
+    # 绘制食物
+    self.draw_foods(foods)
+    # 绘制蛇身体
+    self.draw_snake_body(snake)
+    # 更新界面
+    self.window.refresh()
+    # 更新界面
+    self.game_area.refresh()
+    # 延迟一段时间，以控制帧率
+    time.sleep(self.delay_time)
 ```
-
 > 遵循 从上到下设计，从下到上实现 的原则
 
 可以看出 ``draw_game`` 实际上已经完成了 ``Graphic`` 的所有功能。
@@ -359,166 +371,158 @@ def check_hit_wall(self) -> bool:
 再往下深入，我们可以发现类似 ``draw_foods`` ``draw_snake_body`` 实现基本一样，都是遍历坐标列表然后直接在相应位置上添加字符即可：
 
 ```python
-    def draw_snake_body(self, snake: Snake) -> None:
-        for item in snake.body:
-            self.game_area.addch(item.y, item.x,
-                                 game_config.game_themes["tiles"]["snake_body"],
-                                 self.C_snake)
+def draw_snake_body(self, snake: Snake) -> None:
+    for item in snake.body:
+        self.game_area.addch(item.y, item.x,
+                             game_config.game_themes["tiles"]["snake_body"],
+                             self.C_snake)
 
-    def draw_foods(self, foods) -> None:
-        for item in foods:
-            self.game_area.addch(item.y, item.x,
-                                 game_config.game_themes["tiles"]["food"],
-                                 self.C_food)
+def draw_foods(self, foods) -> None:
+    for item in foods:
+        self.game_area.addch(item.y, item.x,
+                             game_config.game_themes["tiles"]["food"],
+                             self.C_food)
 ```
-
 将其分开实现也是为了保持代码干净易懂以及方便后期修改。``draw_help`` ``draw_fps`` ``draw_lives_and_scores`` 也是分别打印了不同文字信息，没有任何新的花样。
 
 ``update_fps`` 实现了帧率的估算以及调节等待时间稳定帧率：
 
 ```python
-    def esp_fps(self) -> bool:  # 返回是否更新了fps
-        # 每 fps_update_interval 帧计算一次
-        if self.frame_count < self.fps_update_interval:
-            self.frame_count += 1
-            return False
-        # 计算时间花费
-        time_span = time.time() - self.last_time
-        # 重置开始时间
-        self.last_time = time.time()
-        # 估算帧率
-        self.true_fps = 1.0 / (time_span / self.frame_count)
-        # 重置计数
-        self.frame_count = 0
-        return True
-    
-	def update_fps(self) -> None:
-        # 如果重新估计了帧率
-        if self.esp_fps():
-            # 计算误差
-            err = self.true_fps - self.target_fps
-            # 调节等待时间，稳定fps
-            self.delay_time += 0.00001 * err
-```
+def esp_fps(self) -> bool:  # 返回是否更新了fps
+    # 每 fps_update_interval 帧计算一次
+    if self.frame_count < self.fps_update_interval:
+        self.frame_count += 1
+        return False
+    # 计算时间花费
+    time_span = time.time() - self.last_time
+    # 重置开始时间
+    self.last_time = time.time()
+    # 估算帧率
+    self.true_fps = 1.0 / (time_span / self.frame_count)
+    # 重置计数
+    self.frame_count = 0
+    return True
 
+def update_fps(self) -> None:
+    # 如果重新估计了帧率
+    if self.esp_fps():
+        # 计算误差
+        err = self.true_fps - self.target_fps
+        # 调节等待时间，稳定fps
+        self.delay_time += 0.00001 * err
+```
 ``draw_message_window`` 则实现了绘制胜利、失败的画面：
 
 ```python
-    def draw_message_window(self, texts: list) -> None:  # 接收一个 str 列表
-        text1 = "Press any key to continue."
-        nrows = 6 + len(texts)  # 留出行与行之间的空隙
-        ncols = max(*[len(len_tex) for len_tex in texts], len(text1)) + 20
-		# 居中显示窗口
-        x = (self.window.getmaxyx()[1] - ncols) / 2
-        y = (self.window.getmaxyx()[0] - nrows) / 2
-        pos = Position(int(x), int(y))
-        # 新建独立窗口
-        message_win = curses.newwin(nrows, ncols, pos.y, pos.x)
-        # 阻塞等待，实现任意键继续效果
-        message_win.nodelay(False)
-        # 绘制文字提示
-        # 底部文字居中
-        pos.y = nrows - 2
-        pos.x = self.get_middle(ncols, len(text1))
-        message_win.addstr(pos.y, pos.x, text1, self.C_default)
-		# 绘制其他信息
-        pos.y = 2
-        for text in texts:
-            pos.x = self.get_middle(ncols, len(text))
-            message_win.addstr(pos.y, pos.x, text, self.C_default)
-            pos.y += 1
-		# 绘制边框
-        message_win.border()
-		# 刷新内容
-        message_win.refresh()
-        # 等待任意按键
-        message_win.getch()
-        # 恢复非阻塞模式
-        message_win.nodelay(True)
-        # 清空窗口
-        message_win.clear()
-        # 删除窗口
-        del message_win
+def draw_message_window(self, texts: list) -> None:  # 接收一个 str 列表
+    text1 = "Press any key to continue."
+    nrows = 6 + len(texts)  # 留出行与行之间的空隙
+    ncols = max(*[len(len_tex) for len_tex in texts], len(text1)) + 20
+	# 居中显示窗口
+    x = (self.window.getmaxyx()[1] - ncols) / 2
+    y = (self.window.getmaxyx()[0] - nrows) / 2
+    pos = Position(int(x), int(y))
+    # 新建独立窗口
+    message_win = curses.newwin(nrows, ncols, pos.y, pos.x)
+    # 阻塞等待，实现任意键继续效果
+    message_win.nodelay(False)
+    # 绘制文字提示
+    # 底部文字居中
+    pos.y = nrows - 2
+    pos.x = self.get_middle(ncols, len(text1))
+    message_win.addstr(pos.y, pos.x, text1, self.C_default)
+	# 绘制其他信息
+    pos.y = 2
+    for text in texts:
+        pos.x = self.get_middle(ncols, len(text))
+        message_win.addstr(pos.y, pos.x, text, self.C_default)
+        pos.y += 1
+	# 绘制边框
+    message_win.border()
+	# 刷新内容
+    message_win.refresh()
+    # 等待任意按键
+    message_win.getch()
+    # 恢复非阻塞模式
+    message_win.nodelay(True)
+    # 清空窗口
+    message_win.clear()
+    # 删除窗口
+    del message_win
 ```
-
 这样，我们就实现了游戏动画的显示！
 
 ### 3.4 控制！
 
 到目前为止，我们实现了游戏内容绘制以及游戏角色实现，本节我们来学习 snake 的最后一个内容：**控制**。
 
-老规矩，敲代码之前我们应该先想一想：如果要写一个 control 的类，他应该都包含哪些方法呢？
+老规矩，敲代码之前我们应该先想一想：如果要写一个 ``control`` 类，他应该都包含哪些方法呢？
 
 ![image-20210517051941203](images/8.png)
 
-仔细思考也不难想到：应该有一个循环，只要没输或者没赢就移植进行游戏，每轮应该更新画面、蛇移动方向等等。这就是我们的 ``start``：
+仔细思考也不难想到：应该有一个循环，只要没输或者没赢就一直进行游戏，每轮应该更新画面、蛇移动方向等等。这就是我们的 ``start``：
 
 ```python
-    def start(self) -> None:
-        # 重置游戏
-        self.reset()
-		# 游戏运行标志
-        while self.game_flag:
-			# 绘制游戏
-            self.graphic.draw_game(self.snake, self.foods, self.lives, self.scores, self.highest_score)
-			# 读取按键控制
-            if not self.update_control():
-                continue
-            # 控制游戏速度
-            if time.time() - self.start_time < 1/game_config.snake_config["speed"]:
-                continue
-            self.start_time = time.time()
-            # 更新蛇
-            self.update_snake()
+def start(self) -> None:
+    # 重置游戏
+    self.reset()
+	# 游戏运行标志
+    while self.game_flag:
+		# 绘制游戏
+        self.graphic.draw_game(self.snake, self.foods, self.lives, self.scores, self.highest_score)
+		# 读取按键控制
+        if not self.update_control():
+            continue
+        # 控制游戏速度
+        if time.time() - self.start_time < 1/game_config.snake_config["speed"]:
+            continue
+        self.start_time = time.time()
+        # 更新蛇
+        self.update_snake()
 ```
-
 只要我们写出了 ``start`` 对于剩下的结构也就能轻松的实现，比如读取按键控制就是最基本的比较数字是不是一样大：
 
 ```python
+def update_control(self) -> bool:
+    key = self.graphic.game_area.getch()
 
-    def update_control(self) -> bool:
-        key = self.graphic.game_area.getch()
-
-        # 不允许 180度 转弯
-        if key == curses.KEY_UP and self.snake.direction != game_config.D_Down:
-            self.snake.direction = game_config.D_Up
-        elif key == curses.KEY_DOWN and self.snake.direction != game_config.D_Up:
-            self.snake.direction = game_config.D_Down
-        elif key == curses.KEY_LEFT and self.snake.direction != game_config.D_Right:
-            self.snake.direction = game_config.D_Left
-        elif key == curses.KEY_RIGHT and self.snake.direction != game_config.D_Left:
-            self.snake.direction = game_config.D_Right
-        # 是不是要退出
-        elif key == game_config.keys['Q']:
-            self.game_flag = False
-            return False
-       	# 是不是重新开始
-        elif key == game_config.keys['R']:
-            self.reset()
-            return False
-
-        return True
+    # 不允许 180度 转弯
+    if key == curses.KEY_UP and self.snake.direction != game_config.D_Down:
+        self.snake.direction = game_config.D_Up
+    elif key == curses.KEY_DOWN and self.snake.direction != game_config.D_Up:
+        self.snake.direction = game_config.D_Down
+    elif key == curses.KEY_LEFT and self.snake.direction != game_config.D_Right:
+        self.snake.direction = game_config.D_Left
+    elif key == curses.KEY_RIGHT and self.snake.direction != game_config.D_Left:
+        self.snake.direction = game_config.D_Right
+    # 判断是不是退出
+    elif key == game_config.keys['Q']:
+        self.game_flag = False
+        return False
+    # 判断是不是重开
+    elif key == game_config.keys['R']:
+        self.reset()
+        return False
 ```
 
 更新蛇的状态时只需要判断是不是死亡、胜利、吃到东西就可：
 
 ```python
-    def update_snake(self) -> None:
-        self.snake.update_snake_pos()
-        index = self.snake.check_eat_food(self.foods)
-        if index != -1:
-            # 吃到食物加 1 分
-            self.scores += 1
-            if len(self.snake.body) >= (self.snake.window_size.x - 2) * (self.snake.window_size.y - 2):  
-                # 蛇身已经填满游戏区域
-                self.win()
-            else:
-                # 再放一个食物
-                self.span_food()
-		# 看看自己还活着不
-        if not self.snake.check_alive():
-            # 死了就判断是不是 Game_over
-            self.game_over()
+def update_snake(self) -> None:
+    self.snake.update_snake_pos()
+    index = self.snake.check_eat_food(self.foods)
+    if index != -1:  # 如果吃到食物
+        # 得分 +1
+        self.scores += 1
+        # 如果填满了游戏区域就胜利
+        if len(self.snake.body) >= (self.snake.window_size.x - 2) * (self.snake.window_size.y - 2):  # 蛇身已经填满游戏区域
+            self.win()
+        else:
+            # 再放置一个食物
+            self.span_food()
+	# 如果死了，就看看是不是游戏结束
+    if not self.snake.check_alive():
+        self.game_over()
 ```
 
 ### 3.5 直接使用
@@ -541,6 +545,6 @@ g.quit()
 
 ## 五、参考
 
-[curses 接口文档](https://docs.python.org/zh-cn/3/library/curses.html)
+curses 接口文档：https://docs.python.org/zh-cn/3/library/curses.html
 
-[python-console-snake](https://github.com/tancredi/python-console-snake)
+python-console-snake：https://github.com/tancredi/python-console-snake
