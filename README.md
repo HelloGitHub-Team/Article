@@ -21,6 +21,8 @@
 4. [上线 Python 应用仅需一条命令的开源框架：Zappa](contents/Python/Zappa/content.md)
 5. [让你的程序炫起来！少有人知道但超酷的 Python 进度条开源库](contents/Python/alive-progress/content.md)
 6. [一款开源在线文档，助道友领悟 Django 之“道”](contents/Python/MrDoc/content.md)
+7. [用 Python 写个贪吃蛇，保姆级教程！](contents/Python/snake/content.md)
+
 
 #### Java 系列
 
