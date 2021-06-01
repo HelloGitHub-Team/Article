@@ -333,7 +333,8 @@ https://share.streamlit.io/[user name]/[repo name]/[branch name]/[app path]
 到此，Streamlit 的基本接口和用法都已经遍历到了，更多详情还需要友友们在实践中探索，并将指令成功“嵌入”到自己的项目中。很多命令在文档的 API cheat sheet 中都可以快速搜索到，希望很快就能够在 Streamlit Gallery 上把玩到大家丰富的 apps ~。最后，您的关注和宝贵三连「收藏、点赞、在看」，是对我们 HelloGitHub 莫大的支持，我们将会为您源源不断推送新鲜有趣的项目。
 
 参考资料：
-[1] https://towardsdatascience.com/coding-ml-tools-like-you-code-ml-models-ddba3357eace
-[2] https://docs.streamlit.io/
-[3] https://share.streamlit.io/
-[4] https://streamlit.io/gallery
+
+- [Turn Python Scripts into Beautiful ML Tools](https://towardsdatascience.com/coding-ml-tools-like-you-code-ml-models-ddba3357eace)
+- [Streamlit Docs](https://docs.streamlit.io/)
+- [Streamlit Sharing](https://share.streamlit.io/)
+- [Streamlit Gallery](https://streamlit.io/gallery)
