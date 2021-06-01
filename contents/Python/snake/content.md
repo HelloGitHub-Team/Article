@@ -1,22 +1,26 @@
-# 自己动手实现超简单的贪吃蛇
+# 一起用 Python 写个贪吃蛇？
 
-> 本文适合有 Python 基础的朋友
+> 本文基于 Windows 环境开发，适合 Python 新手
 
-HelloGitHub 推出的[《讲解开源项目》](https://github.com/HelloGitHub-Team/Article)系列，本期介绍新手练手级项目——**snake**.
+HelloGitHub 推出的[《讲解开源项目》](https://github.com/HelloGitHub-Team/Article)系列，本期介绍 Python 练手级项目——贪吃蛇！
+
+原本想推荐一个贪吃蛇的开源项目：python-console-snake，但由于该项目最近一次更新是 8 年前，而且在运行的时候出现了诸多问题。索性我就动手用 Python 重新写了一个贪吃蛇游戏。
 
 > 项目地址：https://github.com/AnthonySun256/easy_games
 
+下面我们就一起用 Python 实现一个简单有趣的命令行**贪吃蛇**小游戏，启动命令：
 
+```shell
+git clone https://github.com/AnthonySun256/easy_games
+cd easy_games
+python snake
+```
 
-> 灵感来自：https://github.com/tancredi/python-console-snake
+![](images/cover.gif)
 
-作为 Python 新手，你是不是一直想写出一个自己的图形化程序但又不知从何下手？今天，我来教大家如何从零做起利用 Python 和 命令行 实现一个简易又不失美感的小游戏——**贪吃蛇**.
+本文包含设计和讲解，整体分为两个部分：第一部分是关于 Python 命令行图形化库 curses 接着是 snake 相关代码。
 
-![cover](images/cover.gif)
-
-本文分为两个部分：我们首先简单了解 Python 命令行图形化库 **curses** 接着解读 **snake** 相关代码。
-
-## 一、环境配置与使用
+## 一、初识 curses
 
 Python 已经内置了 curses 库，但是对于 Windows 操作系统我们需要安装一个补丁以进行适配。
 
@@ -24,24 +28,13 @@ Windows 下安装补全包：
 
 > pip install windows-curses
 
-游戏使用：
-
-```shell
-cd easy_games
-python snake
-```
-
-
-
-## 二、初识 curses
-
 curses 是一个应用广泛的图形函数库，可以在终端内绘制简单的用户界面。
 
 在这里我们只进行简单的介绍，只学习贪吃蛇需要的功能
 
 > 如果您已经接触过 curses，请跳过此部分内容。
 
-### 2.1. 简单使用
+### 1.1 简单使用
 
 Python 内置了 curses 库，其使用方法非常简单，以下脚本可以显示出当前按键对应编号：
 
@@ -72,21 +65,21 @@ while True:
     time.sleep(0.1)
 ```
 
-![动画](images/1.gif)
+![](images/1.gif)
 
 > 您也可以尝试把 nodelay(True) 改为 nodelay(False) 后再次运行，这时候程序会阻塞在 stdscr.getch() 只有当您按下按键后才会继续执行。
 
-### 2.2. 整点花样
+### 1.2 整点花样
 
 您也许会觉得上面的例子太菜了，随便用几个 print 都能达到相同的效果，现在我们来整点花样以实现一些使用普通输出无法达到的效果。
 
-#### 2.2.1. 新建一个子窗口
+#### 1.2.1 新建一个子窗口
 
 说再多的话也不如一张图来的实际：
 
-![image-20210514101239973](images/2.png)
+![](images/2.png)
 
-如果我们想要实现图中 **Game over!** 窗口，可以使用 ``newwin`` 方法：
+如果我们想要实现图中 **Game over!** 窗口，可以使用 `newwin` 方法：
 
 ```python
 import curses
@@ -121,17 +114,17 @@ time.sleep(2)
 curses.endwin()
 ```
 
-![动画](images/3.gif)
+![](images/3.gif)
 
-除了 ``curses.newwin`` 新建一个**独立**的窗口，我们还能在任意窗口上使用 ``subwin`` 或者 ``subpad`` 方法新建**子窗口**，例如 ``stdscr.subwin`` ``stdscr.subpad`` ``new_win.subwin`` ``new_win.subpad`` 等等，其使用方法与本节中创建的 ``new_win`` 或者 ``stdscr`` **没有区别**，只是新建窗口使用**独立**的缓存区，而子窗口和父窗口**共享**缓存区。
+除了 `curses.newwin` 新建一个**独立**的窗口，我们还能在任意窗口上使用 `subwin` 或者 `subpad` 方法新建**子窗口**，例如 `stdscr.subwin`、 `stdscr.subpad`、`new_win.subwin`、`new_win.subpad` 等等，其使用方法与本节中创建的 `new_win` 或者 `stdscr` **没有区别**，只是新建窗口使用**独立**的缓存区，而子窗口和父窗口**共享**缓存区。
 
 > 如果某个窗口会在使用后删除，最好使用 newwin 方法新建独立窗口，以防止删除子窗口造成父窗口的缓存内容出现问题。
 
-#### 2.2.2 给点颜色
+#### 1.2.2 上点颜色
 
 白与黑的搭配看久了也会显得单调，curses 提供了内置颜色可以让我们自定义前后背景。
 
-在使用彩色模式之前我们需要先使用使用 ``curses.start_corlor()`` 进行初始化操作：
+在使用彩色模式之前我们需要先使用使用 `curses.start_corlor()` 进行初始化操作：
 
 ```python
 import curses
@@ -152,11 +145,11 @@ curses.endwin()
 
 > 需要注意的是，0号 位置颜色是默认黑白配色，无法修改
 
-![image-20210514231309512](images/4.png)
+![](images/4.png)
 
-#### 2.2.3 给点细节
+#### 1.2.3 给点细节
 
-在此部分最后的最后，我们来说说如何给文字加一点文字效果:
+在此部分最后的最后，我们来说说如何给文字加一点文字效果：
 
 ```python
 import curses
@@ -170,13 +163,13 @@ stdscr.addstr(1, 1, "www.HelloGitHub.com")
 stdscr.getch()
 ```
 
-![image-20210514234714457](images/5.png)
+![](images/5.png)
 
-## 三、贪吃蛇
+## 二、贪吃蛇
 
-前面说了这么多，现在终于到了我们的主菜，在这部分，我将一步步教给大家如何从零开始做出一个简单却又不失细节的贪吃蛇。
+前面说了这么多，现在终于到了我们的主菜。在这部分，我将一步步教给大家如何从零开始做出一个简单却又不失细节的贪吃蛇。
 
-### 3.1 设计
+### 2.1 设计
 
 对于一个项目来讲，相比于尽快动手写下第一行代码不如先花点时间进行一些必要的设计，毕竟结构决定功能，一个项目没有一个良好的结构是没有前途的。
 
@@ -188,19 +181,19 @@ stdscr.getch()
 
 每一块都被做成了单独的对象，通过相互配合实现游戏。下面让我们来分别看看应该如何实现。
 
-### 3.2 蛇语者
+### 2.2 蛇语者
 
 对于贪吃蛇游戏里面的蛇来讲，它可以做的事情有三种：移动，死亡（吃到自己，撞墙）和吃东西
 
 围绕着这三个功能，我们可以首先写出一个简陋的蛇，其类图如图所示：
 
-![image-20210517002332160](images/6.png)
+![](images/6.png)
 
 这个蛇可以检查自己是不是死亡，是不是吃了东西，以及更新自己的位置信息。
 
-其中，``body`` 和 ``last_body`` 是列表，分别存储当前蛇身坐标和上一步蛇身坐标，默认列表第一个元素是蛇头。``direction`` 是当前行进方向，``window_size`` 是蛇可以活动的区域大小。
+其中，`body` 和 `last_body` 是列表，分别存储当前蛇身坐标和上一步蛇身坐标，默认列表第一个元素是蛇头。`direction` 是当前行进方向，`window_size` 是蛇可以活动的区域大小。
 
-``rest`` 方法用于重置蛇的状态，它与 ``__init__`` 共同负责蛇的初始化工作：
+`rest` 方法用于重置蛇的状态，它与 `__init__` 共同负责蛇的初始化工作：
 
 ```python
 class Snake(object):
@@ -229,7 +222,7 @@ class Snake(object):
 >
 > 在最开始我们可能只是模糊的感觉应该有这几个属性，但是对于其中的内容和初始化方法又不完全清楚，这是正常的。我们需要做的就是继续实现需要的功能，在实践中添加和完善最初的构想。
 
-之后，我们从继续上到下实现，对照类图，我们接下来应该实现一下 ``update_snake_pos`` 即 更新蛇的位置，这部分非常简单：
+之后，我们从继续上到下实现，对照类图，我们接下来应该实现一下 `update_snake_pos` 即 更新蛇的位置，这部分非常简单：
 
 ```python
 def update_snake_pos(self) -> None:
@@ -260,9 +253,9 @@ elif self.direction == RIGHT:
     ....
 ```
 
-但是这样的问题在于，如果我们的需求更改（比如我现在说蛇可以一次走两个格子，或者吃了特殊道具，x, y 方向上走的距离不一样等等）直接修改这样的代码会让人很痛苦。
+但是这样的问题在于，如果我们的需求更改（比如我现在说蛇可以一次走两个格子，或者吃了特殊道具 x, y 方向上走的距离不一样等等）直接修改这样的代码会让人很痛苦。
 
-所以在这里更好的解决办法是使用一个 ``dis_increment_factor`` 存储蛇再 x 和 y 上各移动多少，并且新建一个函数 ``get_dis_inc_factor`` 进行判断：
+所以在这里更好的解决办法是使用一个 `dis_increment_factor` 存储蛇再 x 和 y 上各移动多少，并且新建一个函数 `get_dis_inc_factor` 进行判断：
 
 ```python
 def get_dis_inc_factor(self) -> Position:
@@ -284,7 +277,7 @@ def get_dis_inc_factor(self) -> Position:
 
 > 当然了，这么做或许有点多余，但是努力做到一个函数只做一件事情能帮助化简我们的代码，降低写出又臭又长还难调试代码的可能性。
 
-解决了移动问题，下一步就是考虑贪吃蛇如何吃到食物了，在这里我们用 ``check_eat_food`` 和 ``eat_food`` 两个函数完成：
+解决了移动问题，下一步就是考虑贪吃蛇如何吃到食物了，在这里我们用 `check_eat_food` 和 `eat_food` 两个函数完成：
 
 ```python
 def eat_food(self, food) -> None:
@@ -302,11 +295,11 @@ def check_eat_food(self, foods: list) -> int:  # 返回吃到了哪个食物
             return index
     return -1
 ```
-在这里，``foods`` 是一个存储着所有食物位置信息的列表，每次蛇体移动后都会调用 `check_eat_food` 函数检查是不是吃到了某一个食物。
+在这里，`foods` 是一个存储着所有食物位置信息的列表，每次蛇体移动后都会调用 `check_eat_food` 函数检查是不是吃到了某一个食物。
 
-> 可以发现，检查是不是吃到和”吃下去“ 这两个动作我分为了两个函数，以做到每个函数“一心一意”方便后期修改。
+> 可以发现，检查是不是「吃到」和「吃下去」这两个动作我分为了两个函数，以做到每个函数「一心一意」方便后期修改。
 
-现在，我们的蛇已经能跑能吃了。但是作为一只能照顾自己的贪吃蛇，我们还需要能够判断当前自身状态，比如最基本的我需要知道我刚刚是不是咬到自己了，只需要看看蛇头是不是移动到了身体里面：
+现在，我们的蛇已经**能跑能吃**了。但是作为一只能照顾自己的贪吃蛇，我们还需要能够**判断当前自身状态**，比如最基本的我需要知道我刚刚是不是咬到自己了，只需要看看蛇头是不是移动到了身体里面：
 
 ```python
 def check_eat_self(self) -> bool:
@@ -327,17 +320,17 @@ def check_hit_wall(self) -> bool:
 
 这些功能都是简单得不能再简单了，但是要相信自己，就是这么简单的几行代码就能实现一个听你指挥能做出复杂动作的**蛇**
 
-> 完整代码见文章开头处的 项目地址
+> 完整代码：https://github.com/AnthonySun256/easy_games
 
-### 3.3 命令行？画板！
+### 2.3 命令行？画板！
 
-上一节中我们实现了游戏里的第一位角色：**蛇**。为了将它显示出来我们现在需要将我们的命令行改造成一块”画板“。
+上一节中我们实现了游戏里的第一位角色：**蛇**。为了将它显示出来我们现在需要将我们的命令行改造成一块「画板」。
 
-在动手之前我们同样思考：我们需要”画“哪些东西在我们的命令行上？我们直接给出类图：
+在动手之前我们同样思考：我们需要画哪些东西在我们的命令行上？直接上类图：
 
-![image-20210517044811138](images/7.png)
+![](images/7.png)
 
-是不是觉得有些眼花缭乱以至于感觉无从下手？其实 ``Graphic`` 类方法虽多但是大多数方法只是执行一个**特定**的功能而已，而且**每次**更新游戏**只需要调用** ``draw_game`` 方法即可：
+是不是觉得有些眼花缭乱以至于感觉无从下手？其实 `Graphic` 类方法虽多但是大多数方法只是执行一个**特定**的功能而已，而且**每次**更新游戏**只需要调用** `draw_game` 方法即可：
 
 ```python
 def draw_game(self, snake: Snake, foods, lives, scores, highest_score) -> None:
@@ -364,11 +357,11 @@ def draw_game(self, snake: Snake, foods, lives, scores, highest_score) -> None:
     # 延迟一段时间，以控制帧率
     time.sleep(self.delay_time)
 ```
-> 遵循 从上到下设计，从下到上实现 的原则
+> 遵循**从上到下设计，从下到上实现**的原则
 
-可以看出 ``draw_game`` 实际上已经完成了 ``Graphic`` 的所有功能。
+可以看出 `draw_game` 实际上已经完成了 `Graphic` 的所有功能。
 
-再往下深入，我们可以发现类似 ``draw_foods`` ``draw_snake_body`` 实现基本一样，都是遍历坐标列表然后直接在相应位置上添加字符即可：
+再往下深入，我们可以发现类似 `draw_foods`、`draw_snake_body` 实现基本一样，都是遍历坐标列表然后直接在相应位置上添加字符即可：
 
 ```python
 def draw_snake_body(self, snake: Snake) -> None:
@@ -383,9 +376,9 @@ def draw_foods(self, foods) -> None:
                              game_config.game_themes["tiles"]["food"],
                              self.C_food)
 ```
-将其分开实现也是为了保持代码干净易懂以及方便后期修改。``draw_help`` ``draw_fps`` ``draw_lives_and_scores`` 也是分别打印了不同文字信息，没有任何新的花样。
+将其分开实现也是为了保持代码干净易懂以及方便后期修改。`draw_help`、`draw_fps`、`draw_lives_and_scores` 也是分别打印了不同文字信息，没有任何新的花样。
 
-``update_fps`` 实现了帧率的估算以及调节等待时间稳定帧率：
+`update_fps` 实现了帧率的估算以及调节等待时间稳定帧率：
 
 ```python
 def esp_fps(self) -> bool:  # 返回是否更新了fps
@@ -411,7 +404,7 @@ def update_fps(self) -> None:
         # 调节等待时间，稳定fps
         self.delay_time += 0.00001 * err
 ```
-``draw_message_window`` 则实现了绘制胜利、失败的画面：
+`draw_message_window` 则实现了绘制胜利、失败的画面：
 
 ```python
 def draw_message_window(self, texts: list) -> None:  # 接收一个 str 列表
@@ -452,15 +445,15 @@ def draw_message_window(self, texts: list) -> None:  # 接收一个 str 列表
 ```
 这样，我们就实现了游戏动画的显示！
 
-### 3.4 控制！
+### 2.4 控制！
 
 到目前为止，我们实现了游戏内容绘制以及游戏角色实现，本节我们来学习 snake 的最后一个内容：**控制**。
 
-老规矩，敲代码之前我们应该先想一想：如果要写一个 ``control`` 类，他应该都包含哪些方法呢？
+老规矩，敲代码之前我们应该先想一想：如果要写一个 `control` 类，他应该都包含哪些方法呢？
 
-![image-20210517051941203](images/8.png)
+![](images/8.png)
 
-仔细思考也不难想到：应该有一个循环，只要没输或者没赢就一直进行游戏，每轮应该更新画面、蛇移动方向等等。这就是我们的 ``start``：
+仔细思考也不难想到：应该有一个循环，只要没输或者没赢就一直进行游戏，每轮应该更新画面、蛇移动方向等等。这就是我们的 `start`：
 
 ```python
 def start(self) -> None:
@@ -525,9 +518,9 @@ def update_snake(self) -> None:
         self.game_over()
 ```
 
-### 3.5 直接使用
+### 2.5 直接使用
 
-为了让这个包能够直接使用 ``python snake`` 就能直接开始游戏，我们来看一下 ``__main__.py`` ：
+为了让这个包能够直接使用 `python snake` 就能直接开始游戏，我们来看一下 `__main__.py`：
 
 ```python
 import game
@@ -537,14 +530,9 @@ g.start()
 g.quit()
 ```
 
-当我们尝试直接运行一个包时，Python 自动从 ``__main__.py`` 中开始执行，对于我们写好的代码，只需三行即可开始游戏！
+当我们尝试直接运行一个包时，Python 从 `__main__.py` 中开始执行，对于我们写好的代码，只需三行即可开始游戏！
 
-## 四、结尾
+## 三、结尾
+到这里如何编写一个贪吃蛇游戏就结束啦！实际上**编写一个小游戏不难，对于新手来讲难点在于如何去组织程序的结构**。我所实现的只是其中的一种方法，每个人对于游戏结构理解不同所写出的代码也会不同。但无论怎样，我们都应该遵循一个目标：**尽量遵循代码规范，养成良好的风格**。这样不仅利于别人阅读你的代码，也利于自己排查 bug、增加新的功能。
 
-到这里如何编写一个贪吃蛇游戏就结束了，实际上编写一个小游戏不难，难的是对于新手来讲如何去组织程序的结构。我所实现的只是其中的一种方法，每个人对于游戏结构理解不同所写出的代码也会不同。但无论怎样，我们都应该遵循一个目标：尽量遵循代码规范，养成良好的风格，这样不仅利于别人阅读你的代码也利于自己排查 bug，更新新的功能。
-
-## 五、参考
-
-curses 接口文档：https://docs.python.org/zh-cn/3/library/curses.html
-
-python-console-snake：https://github.com/tancredi/python-console-snake
+最后，感谢您的阅读。这里是 HelloGitHub 分享 GitHub 上有趣、入门级的开源项目。您的每个点赞、留言、分享都是对我们最大的鼓励，笔芯～
