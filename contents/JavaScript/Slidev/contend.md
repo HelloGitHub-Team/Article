@@ -2,7 +2,9 @@
 
 ![](images/1.png)
 
-哈喽，各位，有没有觉得今天的头图看着有些不一样呀，这是我在 github 上发现的开源项目—— Slidev。
+<p align="center">本文作者：HelloGitHub-<strong>蔡文心</strong></p>
+
+哈喽呀~各位，有没有注意到今天的头图呀(我从官网偷来的)，这是我在 github 上发现的开源项目—— Slidev。
 
 > https://cn.sli.dev/
 
