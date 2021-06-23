@@ -22,6 +22,8 @@
 5. [让你的程序炫起来！少有人知道但超酷的 Python 进度条开源库](contents/Python/alive-progress/content.md)
 6. [一款开源在线文档，助道友领悟 Django 之“道”](contents/Python/MrDoc/content.md)
 7. [用 Python 写个贪吃蛇，保姆级教程！](contents/Python/snake/content.md)
+8. [就算不会 Web 开发，也能让数据“动”起来的开源项目！](contents/Python/Streamlit/content.md)
+
 
 
 #### Java 系列
