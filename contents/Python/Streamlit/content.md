@@ -1,22 +1,28 @@
-# 机器学习和数据分析的福音——快速构建交互可视化 Web 页面
+# 就算不会 Web 开发，也能让数据“动”起来的开源项目！
 
 > 本文面向有 Python 基础的小伙伴，有 Web 基础的更好
 
+![](cover.jpeg)
+
 作者：HelloGitHub-吱吱
 
-这里是 **HelloGitHub 推出的[《讲解开源项目》](https://github.com/HelloGitHub-Team/Article)系列**，今天要向小伙伴们介绍一个 Python 库 Streamlit。
+这里是 **HelloGitHub 推出的[《讲解开源项目》](https://github.com/HelloGitHub-Team/Article)系列**，今天要向小伙伴们介绍的是一个能够快速地把数据制作成可视化、交互页面的 Python 框架：Streamlit，分分钟让你的数据动起来！
 
-犹记得在做机器学习和数据分析方面的毕设时，曾经为了制作精美的图表而抓耳挠腮，曾经为了在页面可视化、交互式展示数据而绞尽脑汁。现在摆在我们面前的是一个能够快速可视化数据并且制作成交互页面的 Python 框架，只需几分钟，就可以快速构建和部署功能强大的数据应用程序，写到这里 Streamlit 的高傲已经尽数体现了。
+> 项目地址：https://github.com/streamlit/streamlit
+
+犹记得我在做机器学习和数据分析方面的毕设时，曾经为了制作精美的图表而抓耳挠腮，曾经为了在页面可视化、交互式展示数据而绞尽脑汁。现在摆在我们面前的是一个能够快速可视化数据并且制作成交互页面的 Python 框架，只需几分钟，就可以快速构建和部署功能强大的数据应用程序，写到这里 Streamlit 的高傲已经尽数体现了。
 
 > Streamlit - The **fastest** way to build and share data apps 👊
 
-![来自 Streamlit Gallery 的风格迁移项目](img/1.gif)
+![](img/1.gif)
+
+下面我们就一起来上手这个强大的 Python 数据可视化框架吧！
 
 ## 一、浅尝~~辄止~~
 
 1、本地实验环境：`Python 3.6 - Python 3.8`。
 
-2、安装 Streamlit，体验官方提供的 hello world 小 demo。
+2、安装 Streamlit 体验官方提供的 hello world 小 demo。
 
 ```shell
 pip install streamlit
@@ -50,7 +56,7 @@ import streamlit as st
 2、通过如下命令启动项目，`Ctrl + c` 即可结束项目。
 
 ```python
-# filename 自己的 Py 文件名称
+# filename 自己的 py 文件名称
 streamlit run [filename]
 ```
 
@@ -318,7 +324,7 @@ with col3:
 
 2、在 `https://streamlit.io/sharing` 上注册账号并且申请邀请「Request an invite!」。收到邀请电子邮件后，即可使用该平台部署管理。
 
-3、选择 `New app`，在 `Deploy an app` 中填入相应信息即可。
+3、选择 `New app` 在 `Deploy an app` 中填入相应信息即可。
 
 ![](img/7.png)
 
@@ -330,9 +336,13 @@ https://share.streamlit.io/[user name]/[repo name]/[branch name]/[app path]
 
 ## 三、精益求精
 
-到此，Streamlit 的基本接口和用法都已经遍历到了，更多详情还需要友友们在实践中探索，并将指令成功“嵌入”到自己的项目中。很多命令在文档的 API cheat sheet 中都可以快速搜索到，希望很快就能够在 Streamlit Gallery 上把玩到大家丰富的 apps ~。最后，您的关注和宝贵三连「收藏、点赞、在看」，是对我们 HelloGitHub 莫大的支持，我们将会为您源源不断推送新鲜有趣的项目。
+到此，Streamlit 框架的基本接口和用法都已经讲完啦！更多详情还需要友友们在实践中探索，并将指令成功“嵌入”到自己的项目中。
 
-参考资料：
+很多命令在文档的「API cheat sheet」中都可以快速搜索到，希望很快就能够在 Streamlit Gallery 上看到大家分享的应用，可以留言给我地址我会去把玩的~。
+
+最后，您的关注和宝贵三连「收藏、点赞、在看」，是对我们 HelloGitHub 莫大的支持，我们将会为您源源不断推送新鲜、有趣的开源项目。
+
+参考：
 
 - [Turn Python Scripts into Beautiful ML Tools](https://towardsdatascience.com/coding-ml-tools-like-you-code-ml-models-ddba3357eace)
 - [Streamlit Docs](https://docs.streamlit.io/)
