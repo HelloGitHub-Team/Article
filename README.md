@@ -50,7 +50,7 @@
    - [教你用开源 JS 库快速画出 GitHub 章鱼猫](contents/JavaScript/Zdog_advance/content.md)
 3. [手绘风格的 JS 图表库：Chart.xkcd](contents/JavaScript/Chart.xkcd/content.md)
 4. [用这个库 3 分钟实现让你满意的表格功能：Bootstrap-Table](contents/JavaScript/Bootstrap_Table/content.md)
-
+5. [实现工具自由，开源的桌面工具箱](contents/JavaScript/rubick/content.md)
 
 #### C++ 系列
 
@@ -64,7 +64,7 @@
 
 #### Rust 系列
 
-1. [开源轻便且无架构的搜索后端，跑起来就能搜！](contents/Rust/Sonic/content.md)
+1. [开源的傻瓜搜索引擎，帮你快速实现搜索功能](contents/Rust/MeiliSearch/content.md)
 
 #### 工具系列
 
