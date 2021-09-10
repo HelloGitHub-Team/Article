@@ -75,7 +75,7 @@
 #### 其它
 
 1. [开源的 Web 框架哪个快？我在 GitHub 找到了答案](contents/Other/web-frameworks/content.md)
-
+2. [这款打怪升级的像素小游戏，7 年前在 GitHub 社区出生，如今在谷歌商店有 8 万人给了满分](contents/Other/shattered-pixel-dungeon/content.md)
 
 ## 贡献者
 
