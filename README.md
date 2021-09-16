@@ -51,6 +51,7 @@
 3. [手绘风格的 JS 图表库：Chart.xkcd](contents/JavaScript/Chart.xkcd/content.md)
 4. [用这个库 3 分钟实现让你满意的表格功能：Bootstrap-Table](contents/JavaScript/Bootstrap_Table/content.md)
 5. [实现工具自由，开源的桌面工具箱](contents/JavaScript/rubick/content.md)
+6. [任由文字肆意流淌，更自由的开源 Markdown 编辑器](contents/JavaScript/milkdown/content.md)
 
 #### C++ 系列
 
