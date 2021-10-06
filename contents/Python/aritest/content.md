@@ -24,7 +24,19 @@ $ pip install -U airtest
 
 > 下载地址： https://airtest.netease.com/home/
 
-## 二、简单使用
+## 二、应用前景
+
+对于编写 UI 的朋友，airtest 支持多个平台，甚至包括利用 chrome 模拟点击网页。个人开发者运用虚拟机配合 airtest 及其测试报告能够加速我们 UI 的调试速度——毕竟测试界面的每个按钮是否有效是一个机械性的任务，时间长了难免会影响心情，不应该浪费我们宝贵的时间。
+
+当然，airtest 对于普通开发者来讲能做到最有意思的事情就是做 **游戏自动化**。例如，在游戏中经常会有许多固定模式的日常任务，通过 airtest 我们可以让这些枯燥的日常任务自动执行从而节省时间。对于阴阳师等游戏配合游戏自带的自动战斗经过调试我们甚至可以做到**全自动游玩**，让玩家彻底解放双手！
+
+![image-20211006214347722](images/15.png)
+
+> 图片源自 airtest 官网
+
+
+
+## 三、简单使用
 
 ### 1. 启用开发者模式
 
@@ -104,13 +116,39 @@ Airtest 可以非常方便的生成测试报告，只需要点击 IDE 上方的�
 
 即可自动生成全面的测试报告：![2](./images/13.png)
 
-## 三、结语
+### 5. Poco 工具
+
+在实际应用中，有些时候是图片识别无法完成或者存在困难的，这时我们可以利用 Poco 工具直接识别 UI 框架定位元素
+
+一个很简单的例子，自动打开 HG 的微信小程序并分享机器学习的内容：
+
+```python
+from airtest.core.api import *
+from poco.drivers.android.uiautomation import AndroidUiautomationPoco
+
+poco = AndroidUiautomationPoco()
+
+auto_setup(__file__)
+
+poco(text="HelloGitHub").click()
+poco(text="#机器学习").click()
+poco(text="tutorials").click()
+poco("android.widget.Button").click()
+```
+
+利用 IDE 的 Poco 录制功能可以很方便的自动生成上述代码，实际效果如下：
+
+![动画](images/14.gif)
+
+在应用当中巧妙地利用 Poco 可以节省很多图片识别时间以及应用背景不同时程序的稳定性。
+
+## 四、结语
 
 到这里 Airtest 的演示就结束啦！本文仅仅演示了 Airtest 最基本的功能。在实际使用当中，Airtest 不仅可以用于游戏自动化，还可以实现不同设备同时进行测试，但对于使用者而言有一定的上手门槛。
 
 最后，感谢您的阅读。这里是 HelloGitHub 分享 GitHub 上有趣、入门级的开源项目。您的每个点赞、留言、分享都是对我们最大的鼓励!
 
-## 四、参考资料
+## 五、参考资料
 
 Airtest 官方教程：https://airtest.doc.io.netease.com/tutorial/1_quick_start_guide/
 
