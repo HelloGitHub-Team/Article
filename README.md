@@ -23,8 +23,7 @@
 6. [一款开源在线文档，助道友领悟 Django 之“道”](contents/Python/MrDoc/content.md)
 7. [用 Python 写个贪吃蛇，保姆级教程！](contents/Python/snake/content.md)
 8. [就算不会 Web 开发，也能让数据“动”起来的开源项目！](contents/Python/Streamlit/content.md)
-
-
+9. [这款开源测试神器，圆了我玩游戏不用动手的梦想](contents/Python/airtest/content.md)
 
 #### Java 系列
 
