@@ -52,9 +52,11 @@
 5. [实现工具自由，开源的桌面工具箱](contents/JavaScript/rubick/content.md)
 6. [任由文字肆意流淌，更自由的开源 Markdown 编辑器](contents/JavaScript/milkdown/content.md)
 
-#### C++ 系列
+#### C/C++ 系列
 
 1. [刚学会 C++ 的小白用这个开源框架，做个 RPC 服务要多久？](contents/C++/rest_rpc/content.md)
+
+2. [重玩 40 年前的经典游戏小蜜蜂，这次通关了源码](contents/C/si78c/content.md)
 
 #### Go 系列
 
