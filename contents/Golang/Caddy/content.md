@@ -194,7 +194,7 @@ $ caddy run # 启动 Caddy
 
 ``http://localhost:4000/public/HG.html``
 
-可以发现我们的访问的实际上还是 `http://localhost:3000/public/HG.html``
+可以发现我们的访问的实际上还是 ``http://localhost:3000/public/HG.html``
 
 ![image-20220124153958149](./images/5.png)
 
@@ -214,11 +214,11 @@ Caddy 的 REST API 提供了以下几种配置指令：
 
 - **[POST /load](https://caddyserver.com/docs/api#post-load)** 设置或替换活动配置
 - **[POST /stop](https://caddyserver.com/docs/api#post-stop)** 停止活动配置并退出进程
-- **[GET /config/[path\]](https://caddyserver.com/docs/api#get-configpath)** 导出指定路径的配置
-- **[POST /config/[path\]](https://caddyserver.com/docs/api#post-configpath)** 设置或替换对象；追加到数组
-- **[PUT /config/[path\]](https://caddyserver.com/docs/api#put-configpath)** 创建新对象；插入数组
-- **[PATCH /config/[path\]](https://caddyserver.com/docs/api#patch-configpath)** 替换现有对象或数组元素
-- **[DELETE /config/[path\]](https://caddyserver.com/docs/api#delete-configpath)** 删除指定路径的值
+- **[GET /config/\[path\]](https://caddyserver.com/docs/api#get-configpath)** 导出指定路径的配置
+- **[POST /config/\[path\]](https://caddyserver.com/docs/api#post-configpath)** 设置或替换对象；追加到数组
+- **[PUT /config/\[path\]](https://caddyserver.com/docs/api#put-configpath)** 创建新对象；插入数组
+- **[PATCH /config/\[path\]](https://caddyserver.com/docs/api#patch-configpath)** 替换现有对象或数组元素
+- **[DELETE /config/\[path\]](https://caddyserver.com/docs/api#delete-configpath)** 删除指定路径的值
 - **[在 JSON 中使用`@id`](https://caddyserver.com/docs/api#using-id-in-json)** 轻松遍历配置结构
 - **[GET /reverse_proxy/upstreams](https://caddyserver.com/docs/api#get-reverse-proxyupstreams)** 返回配置的代理上游的当前状态
 
@@ -251,11 +251,11 @@ $ curl localhost:2019/load \
 
 可以看到我们我们刚刚配置的 app：
 
-![image-20220124160859515](/media/anthony/新加卷/Article/contents/Golang/Caddy/images/7.png)
+![image-20220124160859515](./images/7.png)
 
 访问 ``localhost:2019/config`` 可以看到我们刚刚上传的配置：
 
-![image-20220124161011985](/media/anthony/新加卷/Article/contents/Golang/Caddy/images/8.png)
+![image-20220124161011985](./images/8.png)
 
 其他的指令同理，在命令行中运行
 
