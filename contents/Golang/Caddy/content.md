@@ -182,21 +182,21 @@ $ caddy run # 启动 Caddy
 
 即可看到我们配置的服务器效果
 
-![localhost:3000](/media/anthony/新加卷/Article/contents/Golang/Caddy/images/2.png)
+![localhost:3000](./images/2.png)
 
 ``http://localhost:3000/public/HG.html``
 
-![image-20220124153434506](/media/anthony/新加卷/Article/contents/Golang/Caddy/images/3.png)
+![image-20220124153434506](./images/3.png)
 
 输入用户名 HG 密码 HelloGitHub 后即可访问页面
 
-![image-20220124153636161](/media/anthony/新加卷/Article/contents/Golang/Caddy/images/4.png)
+![image-20220124153636161](./images/4.png)
 
 ``http://localhost:4000/public/HG.html``
 
 可以发现我们的访问的实际上还是 `http://localhost:3000/public/HG.html``
 
-![image-20220124153958149](/media/anthony/新加卷/Article/contents/Golang/Caddy/images/5.png)
+![image-20220124153958149](./images/5.png)
 
 
 
@@ -204,7 +204,7 @@ $ caddy run # 启动 Caddy
 
 默认情况下，Caddy 会使用 ``localhost:2019``  作为 REST API 默认地址（该功能可以通过配置被禁止），直接访问 ``localhost:2019/config`` 可以查看我们当前站点的配置信息：
 
-![image-20220124154705368](/media/anthony/新加卷/Article/contents/Golang/Caddy/images/6.png)
+![image-20220124154705368](./images/6.png)
 
 可以看到 Caddy 将我们的之前所写的 Caddyfile 文件转为了 Json 格式。
 
