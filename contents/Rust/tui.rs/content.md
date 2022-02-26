@@ -8,7 +8,7 @@ HelloGitHub 推出的[《讲解开源项目》](https://github.com/HelloGitHub-T
 
 你一定有过这样的纠结：我的程序需要一个界面，但使用诸如 Qt 等框架又比较繁琐。现在 **tui.rs** 来了，它是 Rust 下的命令行 UI 库，不仅上手方便内置多种组件，而且效果炫酷支持跨平台使用（一份代码可以无缝运行在 Linux/Windows/Mac）之上！让我们看看示例效果：
 
-![img](E:\Article\contents\Rust\tui.rs\images\demo.gif)
+![img](images/demo.gif)
 
 下面将详细简介，如何玩转这个库！
 
@@ -130,7 +130,7 @@ fn ui<B: Backend>(f: &mut Frame<B>, app: &mut App) {
 }
 ```
 
-![image-20220226184137749](E:\Article\contents\Rust\tui.rs\images\2.png)
+![image-20220226184137749](images/2.png)
 
 **这些代码可能看起来不少，但大部分都是固定的模板，不需要我们每次的重新构思**。下面，就让我们来详细了解其中的细节
 
@@ -142,7 +142,7 @@ fn ui<B: Backend>(f: &mut Frame<B>, app: &mut App) {
 
 
 
-![未命名绘图](E:\Article\contents\Rust\tui.rs\images\1.png)
+![未命名绘图](images/1.png)
 
 其模块可以大致分为：
 
