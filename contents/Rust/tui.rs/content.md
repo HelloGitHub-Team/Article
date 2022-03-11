@@ -1,20 +1,32 @@
-# Rust 超好用的跨平台命令行界面库
+# 打造你的秘密武器，推荐一款超好用的跨平台命令行界面库
 
-HelloGitHub 推出的[《讲解开源项目》](https://github.com/HelloGitHub-Team/Article)系列，本期介绍让你快速拥有完美命令行界面的跨平台 Rust 库—— **tui.rs**
+![](cover.jpeg)
+
+<p align="center">本文作者：HelloGitHub-<strong>Anthony</strong></p>
+
+命令行工具是程序员的秘密武器，它们安装简单、启动速度快、界面简洁，一条指令或者快捷键即可完成操作，用完即走深藏不露。
+
+![](images/1.png)
+
+而最趁手的莫过于自己亲手打造的！本期 [《讲解开源项目》](https://github.com/HelloGitHub-Team/Article) 就介绍一个让你快速拥有完美命令行界面的跨平台库—— **tui.rs**
+
+![](images/2.gif)
 
 > 项目地址：https://github.com/fdehau/tui-rs
 >
 > 官方文档：https://docs.rs/tui/latest/tui/index.html
 
-你一定有过这样的纠结：我的程序需要一个界面，但使用诸如 Qt 等框架又比较繁琐。现在 **tui.rs** 来了，它是 Rust 下的命令行 UI 库，不仅上手方便内置多种组件，而且效果炫酷支持跨平台使用（一份代码可以无缝运行在 Linux/Windows/Mac）之上！让我们看看示例效果：
+你一定有过这样的纠结：我的程序需要一个界面，但使用诸如 Qt 等框架又比较繁琐。现在 **tui.rs** 来了，它是 Rust 下的命令行 UI 库，不仅上手方便内置多种组件，而且效果炫酷支持跨平台使用。
 
-![img](images/demo.gif)
+![](images/3.gif)
 
-下面将详细简介，如何玩转这个库！
+轻松实现一份代码可以无缝运行在 Linux/Windows/Mac 之上！
+
+接下来你不仅可以快速上手 **tui.rs**，还会收获多款基于它构建的神兵利器！
 
 ## 一、安装
 
-和所有其他 Rust 依赖的安装方法一样，直接在 `cargo.toml` 中添加依赖即可：
+**tui.rs** 采用 Rust 语言编写，和所有其他 Rust 依赖的安装方法一样，直接在 `cargo.toml` 中添加依赖即可：
 
 ```toml
 [dependencies]
@@ -130,7 +142,7 @@ fn ui<B: Backend>(f: &mut Frame<B>, app: &mut App) {
 }
 ```
 
-![image-20220226184137749](images/2.png)
+![](images/4.png)
 
 **这些代码可能看起来不少，但大部分都是固定的模板，不需要我们每次的重新构思**。下面，就让我们来详细了解其中的细节
 
@@ -140,9 +152,7 @@ fn ui<B: Backend>(f: &mut Frame<B>, app: &mut App) {
 
 一个使用 ``tui.rs`` 程序的一生大概是这样的：
 
-
-
-![未命名绘图](images/1.png)
+![](images/5.png)
 
 其模块可以大致分为：
 
@@ -206,7 +216,7 @@ fn run_app<B: Backend>(terminal: &mut Terminal<B>, mut app: App) -> io::Result<(
 }
 ```
 
-对于功能简单的界面来讲，这个函数作用不大。但如果我们的程序需要更新一些组件状态（比如列表选中项、用户输入、外界数据交互等）则应在此通统一处理。
+对于功能简单的界面来讲，这个函数作用不大。但如果我们的程序需要更新一些组件状态（比如列表选中项、用户输入、外界数据交互等）则应在此统一处理。
 
 之后，我们会使用 ``terminal.draw()`` 方法绘制界面，其接受一个闭包：
 
@@ -243,8 +253,43 @@ fn ui<B: Backend>(f: &mut Frame<B>, app: &mut App) {
 
 需要注意到是，**在此我们只关心 UI 组件的显示方式和内容，有关程序逻辑的内容应放在 ``run_app`` 中处理**以免打乱程序架构或影响 UI 绘制效果（你总不希望 UI 绘制到一半的时候因为进行了某些 IO 操作而卡住了对吧？）
 
-## 三、结尾
-
 到这里对于 ``tui.rs`` 的介绍就结束了，实际上使用 ``tui.rs`` 编写 UI 界面很简单，**只要根据创作模板结合官方例子一步步构建**，任何人都可以很快上手。
 
-最后，感谢您的阅读。这里是 HelloGitHub 分享 GitHub 上有趣、入门级的开源项目。您的每个点赞、留言、分享都是对我们最大的鼓励!
+## 三、更多实用工具
+
+下面将介绍介绍几款基于 `tui.rs` 构建的流行开源项目，它们无一例外是命令行工具里的“神兵利器“！
+
+### 3.1 实时股票数据
+
+支持查看不同时间维度以及交易量等数据，股票实时数据来自雅虎。
+
+![](images/6.jpeg)
+
+> 地址：https://github.com/tarkah/tickrs
+
+### 3.2 文件传输工具
+
+支持 SCP/SFTP/FTP/S3 功能丰富的终端文件传输工具。
+
+![](images/7.gif)
+
+> 地址：https://github.com/veeso/termscp
+
+
+### 3.3 网络监控工具
+
+用于按进程、连接、远程 IP、主机名显示当前网络利用率。
+
+![](images/8.jpeg)
+
+> 地址：https://github.com/imsnif/bandwhich
+
+限于篇幅这里就不介绍其它开源项目了，感兴趣的小伙伴可以去项目首页寻找。
+
+## 四、最后
+
+以上就是本文的所有内容，希望您从中有所收获。
+
+最后，感谢您的阅读！！！
+
+这里是 HelloGitHub 分享 GitHub 上有趣、入门级的开源项目。您的每个点赞、留言、分享都是对我们最大的鼓励！
