@@ -4,8 +4,6 @@
 
 ![](./cover.jpeg)
 
-<p align="center">本文作者：HelloGitHub-<strong>老荀</strong></p>
-
 HelloGithub 之前发了一个文章 [打造你的秘密武器，推荐一款超好用的跨平台命令行界面库](https://github.com/HelloGitHub-Team/Article/blob/master/contents/Rust/tui.rs/content.md)
 
 我本身对 Rust 就很有兴趣，又对充满极客气息的终端界面没有抵抗力，双剑合璧，我决心去研究下怎么把玩 [tui-rs](https://github.com/fdehau/tui-rs) 这个磨人的小妖精。
