@@ -68,7 +68,7 @@
 
 1. [开源的傻瓜搜索引擎，帮你快速实现搜索功能](contents/Rust/MeiliSearch/content.md)
 2. [打造你的秘密武器，推荐一款超好用的跨平台命令行界面库](contents/Rust/tui.rs/content.md)
-    1. [使用 `tui-rs` 开发一个入门项目：todo list](contents/Rust/todolist-tui.rs/content.md)
+    1. [使用 `tui-rs` 开发一个入门项目：todo list](contents/Rust/todolist-tuirs/content.md)
 
 
 #### 工具系列
