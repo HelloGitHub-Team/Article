@@ -52,19 +52,24 @@
 5. [实现工具自由，开源的桌面工具箱](contents/JavaScript/rubick/content.md)
 6. [任由文字肆意流淌，更自由的开源 Markdown 编辑器](contents/JavaScript/milkdown/content.md)
 
-#### C++ 系列
+#### C/C++ 系列
 
 1. [刚学会 C++ 的小白用这个开源框架，做个 RPC 服务要多久？](contents/C++/rest_rpc/content.md)
+2. [重玩 40 年前的经典游戏小蜜蜂，这次通关了源码](contents/C/si78c/content.md)
 
 #### Go 系列
 
 1. [微信聊天记录里的文件又失效了？试试这个文件同步开源项目吧](contents/Golang/Syncthing/content.md)
 2. [把“烦恼”放进看板，开源免费的项目管理工具来帮你啦！](contents/Golang/Taskcafe/content.md)
+3. [开源 Web 服务器后起之秀，自带免费 HTTPS 开箱即用](contents/Golang/Caddy/content.md)
 
 
 #### Rust 系列
 
 1. [开源的傻瓜搜索引擎，帮你快速实现搜索功能](contents/Rust/MeiliSearch/content.md)
+2. [打造你的秘密武器，推荐一款超好用的跨平台命令行界面库](contents/Rust/tui.rs/content.md)
+    1. [使用 `tui-rs` 开发一个入门项目：todo list](contents/Rust/todolist-tuirs/content.md)
+
 
 #### 工具系列
 
