@@ -1,6 +1,6 @@
 # 想学嵌入式？我教你啊
 
-![Arduino Board](E:\Article\contents\Other\Arduino\Arduino introduce\images\cover.png)
+![Arduino Board](images/cover.png)
 
 本文作者 HelloGitHub-Anthony
 
