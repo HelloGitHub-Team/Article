@@ -1,47 +1,53 @@
-# 解锁！浏览 HelloGitHub.com 的新姿势
+# 解锁！玩转 HelloGitHub 的新姿势
 
 > 本文不会涉及太多技术细节和源码，请放心食用
 
-<img src="./images/cover.jpg" style="zoom:80%;" />
+![](./images/cover.png)
 
-大家好，我是 HelloGitHub 老荀，好久不见！
+大家好，我是 HelloGitHub 的老荀，好久不见啊！
 
-在完成 [HZK](https://github.com/HelloGitHub-Team/HelloZooKeeper) 系列之后，我就很少“露面了”，但是我对开源和 HelloGitHub 的热情并没有丝毫的减少，逮着机会就来输出一波，防止被大家遗忘。
+我在完成 [HelloZooKeeper](https://mp.weixin.qq.com/mp/appmsgalbum?action=getalbum&__biz=MzA5MzYyNzQ0MQ==&scene=1&album_id=1709315979568037891&count=3&from=singlemessage#wechat_redirect) 系列之后，就很少“露面了”。但是我对开源和 HelloGitHub 的热情并没有丝毫的减少。这不，逮着个机会就来输出一波，防止被大家遗忘😂。
+
+![](./images/0.png)
 
 这次带来的是我写的一款在终端浏览 HelloGitHub 的工具：hg-tui，让你双手不离开键盘就能畅游在 HG 的开源世界。功能如下：
 
 - 色彩丰富、平铺展示
-- 通过关键字搜索月刊往期的项目
+- 关键字搜索月刊往期的项目
 - 类 Vim 的快捷键操作方式
 - 一键直达开源项目首页
 - 支持 Linux、macOS、Windows
 
 > 地址：https://github.com/kaixinbaba/hg-tui
 
-下面我将分享 hg-tui 开源项目的缘起、构思、开发的全部流程，最后还会分享我通过这个项目对开源的一些感悟。
+下面我将分享自己发起这个开源项目的缘起、构思、再到开发的全部过程，最后分享一下，我通过做这个项目对开源的一些感悟。
 
 ## 一、起因
 
-我前端时间一直在学 Rust，前段时间看到 HG 讲解 tui-rs 的文章。
+我本职是做 Java 开发，但架不住 Rust 太有意思了！所以最近在学 Rust 恰好前段时间看到 HG 讲解 tui.rs 的[文章](https://mp.weixin.qq.com/s/Bm0Hoy5kCvHqrwUwv_CVag)。
 
-看完后手痒的厉害，就写了一篇 tui-rs 入门文章，但感觉还不过瘾就像写一个项目练手。
+看完后手痒的厉害，就写了一篇 tui.rs 入门文章，但感觉还不过瘾就想写一个项目练手。
 
-因为我平时经常上 hellogithub.com 划水、找开源项目，所以就决定用 tui-rs 做一个终端浏览 hellogithub.com 的工具。
+因为我平时经常上 HelloGitHub 找开源项目，所以就决定用 `tui.rs` 做一个终端浏览 HelloGitHub 官网的工具。
+
+> 官网：https://hellogithub.com/
 
 ## 二、构思
 
 首先我希望这个应用能有以下功能：
 
-- 有搜索框，可以按关键词搜索 hellogithub 中的任意项目
+- 有搜索框，可以按关键词搜索 HelloGitHub 中的任意项目
 - 通过表格按列展示搜索结果
 - 既然是终端应用，那操作方式肯定是使用键盘方式，快捷键我采用了一些大家熟知的 Vim 快捷键
 - 浏览项目的途中，可以随时在浏览器中打开当前浏览的项目
 
-有了这些主要功能点的思路，下面就要想想怎么设计一个界面了，我本职工作是一条后端 🐶，一碰到画界面就头疼，几经周折，大概把界面设计成了这样：
+有了这些主要功能点的思路，下面就要想想怎么设计一个界面了，我本职工作后端一碰到画界面就头疼，几经周折大概把界面设计成了这样：
 
 ![](./images/1.png)
 
-又因为是 TUI 界面层级不能太深，所以再多弄个详情页面（用来浏览文字明细）或者弹窗页面（提示消息）就差不多了，我又想到了 GitHub 为每一种编程语言都设计了一种颜色，我可以把这些颜色应用在我的项目里，让整个终端界面看起来没那么单调，色彩更丰富。我这里展示下目前的成品效果图
+又因为是 TUI 界面层级不能太深，所以再多弄个详情页面（用来浏览文字明细）或者弹窗页面（提示消息）就差不多了。
+
+我又想到了 GitHub 为每一种编程语言都设计了一种颜色，我也可以把这些颜色应用在我的项目里，让整个终端界面看起来没那么单调，色彩更丰富。效果如下：
 
 主界面：
 
@@ -55,7 +61,7 @@
 
 ![](./images/4.png)
 
-最后为了向 TUI 妥协，按期数或类别搜索，我是通过使用搜索前缀来和普通关键词搜索作出区别
+最后为了向 TUI 妥协，按期数或类别搜索，我是通过使用搜索前缀来和普通关键词搜索作出区别。
 
 上面展示的这些差不多已经是这个项目的全部了
 
@@ -67,7 +73,7 @@
 
 下面这些是我这个项目中使用到的：
 
-- 基础设施： `anyhow`、`thiserror`、`lazy_static`、`better-panic`
+- 基础设施：`anyhow`、`thiserror`、`lazy_static`、`better-panic`
 - 绘制 UI：`tui`、`crossterm`
 - HTTP client：`reqwest`
 - 缓存：`cached`
@@ -75,22 +81,22 @@
 - 工具：`regex`、`crossbeam-channel`
 - 命令行：`clap`
 
-Rust 虽然还是编程界的小学生（2011 年启动），但是经过了这些年的发展，生态已经逐渐完善（和几位大哥还是差很多），加上 Rust 是系统级的语言，所以我相信未来 Rust 一定能成为多面手。
+虽然 Rust 还是编程界的小学生（2011 年启动），但是经过了这些年的发展，生态已经逐渐完善，工具库已经很丰富了。再加上 Rust 是系统级的语言，值得投入时间学习！
 
 ### 3.2 项目结构
 
-项目目录规划（非全部）
+项目结构规划（非全部）
 
 ```rust
 src
 ├── app.rs		// 统一管理整个应用的状态
 ├── cli.rs		// 命令行解析
 ├── draw.rs		// 绘制 UI
-├── events.rs		// UI 事件、输入事件、通知
-├── fetch.rs		// HTTP 请求
+├── events.rs	// UI 事件、输入事件、通知
+├── fetch.rs	// HTTP 请求
 ├── main.rs		// 入口
-├── parse.rs		// HTML 解析
-├── utils.rs		// 工具
+├── parse.rs	// HTML 解析
+├── utils.rs	// 工具
 └── widget 		// 自定义组件
     ├── ...
 ```
@@ -99,36 +105,29 @@ src
 
 当然这些文件也不是在项目之初就已经一股脑的建立好的，都是在完善功能的路上一点点添加进来的～
 
-### 3.3 代码片段
+### 3.3 主要代码
 
-因为是基于 `tui-rs` 开发的应用，所以主流程肯定是遵循该库的设计的，首先需要定义一个 `App` 用来保存整个项目的状态信息
+因为是基于 `tui.rs` 开发的应用，所以主流程肯定是遵循该库的设计的，首先需要定义一个 `App` 用来保存整个项目的状态信息。
 
 ```rust
 pub struct App {
     /// 用户输入框
     pub input: InputState,
-
     /// 内容展示
     pub content: ContentState,
-
     /// 弹窗提示
     pub popup: PopupState,
-
     /// 状态栏
     pub statusline: StatusLineState,
-
     /// 模式
     pub mode: AppMode,
-
     /// 项目明细子页面
     pub project_detail: ProjectDetailState,
-		
   	...
 }
-
 ```
 
-每一个状态字段其实就是对应一个自定义组件，要在 `tui-rs` 中实现自定义组件（实现方式也是我自己的理解）也很简单，只要三步，我以 `Input` 组件为例
+每一个状态字段,其实就是对应一个自定义组件.要在 `tui.rs` 中实现自定义组件（实现方式也是我自己的理解）也很简单只要三步，我以 `Input` 组件为例。
 
 ```rust
 /// 用户输入框组件，组件本身没有字段，是一个无状态的对象
@@ -157,7 +156,7 @@ impl StatefulWidget for Input {
 }
 ```
 
-只要是面向用户的应用都会处理各种各样的用户输入（事件），Rust 中一般都使用 channel 来解耦处理各种各样的事件，再利用 Rust 强大的枚举支持，定义各种各样的事件（用户输入和非用户输入）
+只要是面向用户的应用，都会处理各种各样的用户输入（事件）。Rust 中一般都使用 channel 来解耦处理各种各样的事件，再利用 Rust 强大的枚举支持，定义各种各样的事件（用户输入和非用户输入）即可。
 
 ```rust
 /// 定义事件枚举
@@ -165,7 +164,6 @@ impl StatefulWidget for Input {
 pub enum HGEvent {
     /// 用户事件（键盘事件）
     UserEvent(KeyEvent),
-
     /// 应用内部组件的通知事件
     NotifyEvent(Notify),
 }
@@ -174,13 +172,10 @@ pub enum HGEvent {
 pub enum Notify {
     /// 重绘界面
     Redraw,
-
     /// 退出应用
     Quit,
-
     /// 弹出窗口展示消息
     Message(Message),
-
     /// tick，比如一些数据需要每隔一段时间自动更新的（比如：显示的时间）
     Tick,
 }
@@ -189,14 +184,12 @@ pub enum Notify {
 #[derive(Debug, Clone, PartialEq)]
 pub enum Message {
     Error(String),
-
     Warn(String),
-
     Tips(String),
 }
 ```
 
-为了区分用户事件和通知，我使用了两个不同的 channel 分别处理这两类
+为了区分用户事件和通知，我使用了两个不同的 channel 分别处理这两类：
 
 ```rust
 lazy_static! {
@@ -205,13 +198,12 @@ lazy_static! {
 }
 ```
 
-又因为不同的事件处理，并不应该互相阻塞，所以整个应用采用了最基础的多线程模型来提高性能，这里使用的也是标准库的多线程
+又因为不同的事件处理，并不应该互相阻塞，所以整个应用采用了最基础的多线程模型来提高性能，这里使用的也是标准库的多线程。
 
 ```rust
 pub fn handle_key_event(event_app: Arc<Mutex<App>>) {
     let (sender, receiver) = unbounded();
     ...
-
     std::thread::spawn(move || loop {
         // 单独一个线程接收用户事件
         if let Ok(Event::Key(event)) = crossterm::event::read() {
@@ -227,50 +219,32 @@ pub fn handle_key_event(event_app: Arc<Mutex<App>>) {
 }
 ```
 
-其他剩下的就是本应用的业务逻辑，具体的代码可以直接看仓库 [https://github.com/kaixinbaba/hg-tui](https://github.com/kaixinbaba/hg-tui) 
+其他剩下的就是业务逻辑，完整的代码可以直接看仓库 [https://github.com/kaixinbaba/hg-tui](https://github.com/kaixinbaba/hg-tui) 
 
-## 四、感悟
+## 四、心路历程
 
-我一开始启动项目的时候，初衷很简单，仅仅是为了做个实际的项目把玩一下 `tui-rs`
+一开始我做 `hg-tui` 项目的时候，仅仅是为了做个实际的项目把玩一下 `tui.rs` 这个框架，做好之后问题层出不穷，但我深知没有与生俱来的完美，只有不断的迭代才能让它越来越好，经过 100 多次的提交后，现在用着感觉顺手多了。**毕竟作者是项目的第一个用户，自己用着不舒服其他人就更不喜欢了！**
 
-- 作为项目的第一个用户
-    - 自己既是产品也是开发，能让自己站在用户的角色考虑
-- 开源就是以开放的态度接受别人的建议
-- 没有与生俱来的完美，不断迭代让它越来越好（1 个月 100+ commit）
-- GitHub Action 真的是一个强大的功能（其实这次是我第一次认真研究 GitHub Action 功能）
-- homebrew 对项目 star 还有要求（吐槽），希望大家看到这里的话能给个 star✨
+我想着既然要让别人用，**一定要容易安装**。接着我做了基于 GitHub Action 自动编译和发布，支持 Windows、Linux、macOS [直接下载](https://github.com/kaixinbaba/hg-tui/releases)就能用。
 
----
+![](./images/5.png)
 
-仔细想想这可能是我写的第一个拥有完整功能的 Rust TUI 项目，从有想法到完成开发前后差不多用了三周不到的时间，期间碰到了各种各样的问题，我整理了一下：
+我还做了对 homebrew 安装的支持，但因为 Star 数不够没有收录到 homecore 要求：30 forks、30 watchers、75 stars
 
-- tui-rs 如何使用，为了看懂她的模板流程，我基本看完了 tui-rs 本身的所有源码（源码很少说实话，并不是一件难事）
-- 查看其他使用的 tui-rs 的项目，学习她们是如何使用 tui-rs 的（源码真的是宝藏，没什么问题是看源码解决不了的，看了不下数十个项目，如果你有兴趣的话，这里是[地址](https://github.com/fdehau/tui-rs#apps-using-tui)）
-- 在生态中寻找合适的 Rust crate 来处理我当前的场景并学会使用她（Rust 的文档功能实在是太强了）
-- 和 Rust 编译器斗智斗勇（Rust 编译器是我见过最强大的，一定要灵活运用搜索引擎，最后实在不行可以去 Rust 社区提问一把，Rust 的社区真的是很热情）
-- 尽量编写符合 Rust 的代码风格项目（我写每一种编程语言都会去寻找她的最佳工程实践学习并遵守她，古话说得好，没有规矩不成方圆）
+![](./images/6.png)
 
----
+希望大家看到这里的话能给个 star✨
 
-...
+> 地址：https://github.com/kaixinbaba/hg-tui
 
-她从出生那一刻起，身体里流淌的就是开源的血。
+## 五、最后
 
-软件世界里的开源，就像金庸世界中的侠客。每一个开源贡献者都是我心目中行走江湖的英雄，我心中那一点点的英雄主义和理想主义，羡慕着他们的同时也希望能像他们一样，为开源的世界贡献出自己的一点点微不足道的热情。
+`hg-tui` 它从出生那一刻起，体内流淌的就是开源的血。
 
-每一个开源项目可能都只是起源于作者的一个小小的灵光乍现，也可能只是为了解决自己实际工作生活中的小小痛点，但是随着功能的逐步完善，每一个小小的项目最终都可能成长成璀璨夺目的明星项目，然后为其他人甚至整个行业带来了生产力效率的提升，这可能也是每一个开源作者最终所期待的吧～
+它很小甚至是微不足道，我本不想开源，但[蛋蛋](https://github.com/521xueweihan)的一段话让我改变了主意：**开源不是完结，仅仅只是开始**。
 
-我的这个项目说实话很小，无论是代码量还是功能上，所以导致我一开始并不想写这样一篇文章去介绍她，[蛋蛋](https://github.com/521xueweihan)却用了一段话打动了我，其中印象最深的一句话是：**任何一个开源项目都是从小项目开始的。完成一个开源项目并不难，十年如一日的维护才是最难的**。
+一个开源项目可能只是作者的一个灵光乍现，也可能只是为了解决自己实际工作生活中的小小痛点，没准用完就丢到角落里了。但开源出来或许就能找到有相同需求的人，从而延续这个项目的生命，或许这就是开源的本意吧。
 
-我最近也看了一个开源斗士的故事，故事不短很打动我，链接在[这里](https://gitstats.chenjiandongx.me/#/)，我想可能若干年后，我在工作中已经不写代码了，但是我相信我也会在生活之余写写自己的小玩意～
+以上就是我做这个项目的全部心得和收获，如果你们对 `hg-tui` 有什么建议和问题，欢迎给我提 [issue](https://github.com/kaixinbaba/hg-tui/issues)
 
----
-
-如果你们有什么好的建议，欢迎给我提 [issue](https://github.com/kaixinbaba/hg-tui/issues)
-
-最后如果你喜欢本文章和本项目的话，欢迎点赞，star～爱你们哟～
-
-![](./images/5.jpeg)
-
-
-
+最后，如果你喜欢本文和项目的话，欢迎点赞和 Star 爱你们哟～
