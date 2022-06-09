@@ -70,9 +70,9 @@
 
 1. [开源的傻瓜搜索引擎，帮你快速实现搜索功能](contents/Rust/MeiliSearch/content.md)
 2. [打造你的秘密武器，推荐一款超好用的跨平台命令行界面库](contents/Rust/tui.rs/content.md)
-    1. [用 `tui.rs` 做一个入门项目：todo 列表](contents/Rust/todolist-tuirs/content.md)
 3. [开源的文件搜索神器，终于不用再记 find 命令了](contents/Rust/fd/content.md)
 4. [解锁！玩转 HelloGitHub 的新姿势](contents/Rust/hg-tui/content.md)
+
 
 #### 工具系列
 
@@ -84,6 +84,7 @@
 
 1. [开源的 Web 框架哪个快？我在 GitHub 找到了答案](contents/Other/web-frameworks/content.md)
 2. [这款打怪升级的像素小游戏，7 年前在 GitHub 社区出生，如今在谷歌商店有 8 万人给了满分](contents/Other/shattered-pixel-dungeon/content.md)
+3. [想做钢铁侠？听说很多大佬都是用它入门的](contents/Other/Arduino/1/content.md)
 
 ## 贡献者
 
