@@ -20,7 +20,7 @@
 
 其使用方法和前文介绍过的组件类似，只需要用到 **VCC** (3.3v)、**GND**、**TX**、**RX** 四根线即可和 **Arduino** 进行通信。笔者这里使用的是 **ESP-01** + 转接板，转接板实现了 5v -> 3.3v 的变压 和 **Rx** **Tx** 接口的引出，方便后续使用，读者可以根据情况购买：
 
-<img src="E:\Article\contents\Other\Arduino\Arduino senior\images\1.png" alt="image-20220621212338197" style="zoom: 25%;" />
+<img src="images/1.png" alt="image-20220621212338197" style="zoom: 25%;" />
 
 网上的 **ESP-01(s)** 模块在出厂时都应该已经内置了 **AT** 指令固件，在使用时只需要向模块发送 AT 指令即可进行 网络连接、数据接法等 操作。
 
@@ -100,7 +100,7 @@ void loop()
 
 烧录后连接模块，重启 Arduino 后在路由器管理界面即可看到模块连接到 WIFI：
 
-![image-20220621224947325](E:\Article\contents\Other\Arduino\Arduino senior\images\2.png)
+![image-20220621224947325](images/2.png)
 
 ## 二、OneNet 平台配置
 
@@ -110,45 +110,45 @@ OneNet 是由中国移动打造的PaaS物联网开放平台，我们可以通过
 
 打开 OneNet 官网 https://open.iot.10086.cn/ 点击右上角的注册按钮注册账号（这里可以不进行实名认证）：
 
-![image-20220621225703271](E:\Article\contents\Other\Arduino\Arduino senior\images\3.png)
+![image-20220621225703271](images/3.png)
 
-![image-20220621225822656](E:\Article\contents\Other\Arduino\Arduino senior\images\4.png)
+![image-20220621225822656](images/4.png)
 
 ### 2.2 云端配置
 
 登陆账号，点击控制台按钮：
 
-![image-20220621230008277](E:\Article\contents\Other\Arduino\Arduino senior\images\5.png)
+![image-20220621230008277](images/5.png)
 
 进入后点击 **全部产品服务** -> **多协议接入**
 
-![image-20220621230040652](E:\Article\contents\Other\Arduino\Arduino senior\images\6.png)
+![image-20220621230040652](images/6.png)
 
 在 **多协议接入** 界面选择 **TCP 透传** -> **添加产品**
 
-![image-20220621230225738](E:\Article\contents\Other\Arduino\Arduino senior\images\7.png)
+![image-20220621230225738](images/7.png)
 
 > TCP 透传协议官方介绍：https://open.iot.10086.cn/doc/v5/develop/detail/496
 
 在弹出的侧边栏填写相关信息（产品行业 和 类别 随便填写即可）后点击确定：
 
-![image-20220621230501548](E:\Article\contents\Other\Arduino\Arduino senior\images\8.png)
+![image-20220621230501548](images/8.png)
 
 之后点击我们刚刚创建的产品：
 
-![image-20220621230552149](E:\Article\contents\Other\Arduino\Arduino senior\images\9.png)
+![image-20220621230552149](images/9.png)
 
 点击左侧栏的设备列表：
 
-![image-20220621230652364](E:\Article\contents\Other\Arduino\Arduino senior\images\10.png)
+![image-20220621230652364](images/10.png)
 
 在新出现的页面中点击 **添加设备** :
 
-![image-20220621230735986](E:\Article\contents\Other\Arduino\Arduino senior\images\11.png)
+![image-20220621230735986](images/11.png)
 
 填写相关信息后点击 **添加**：
 
-![image-20220621230921016](E:\Article\contents\Other\Arduino\Arduino senior\images\12.png)
+![image-20220621230921016](images/12.png)
 
 接下来，我们配置 云端 的数据解析脚本，这里我们直接拿官方脚本来改即可。
 
@@ -156,11 +156,11 @@ OneNet 是由中国移动打造的PaaS物联网开放平台，我们可以通过
 
 我们直接下载 样例 脚本：
 
-![image-20220621231251308](E:\Article\contents\Other\Arduino\Arduino senior\images\13.png)
+![image-20220621231251308](images/13.png)
 
 找到 **sample.lua** 
 
-![image-20220621231347608](E:\Article\contents\Other\Arduino\Arduino senior\images\14.png)
+![image-20220621231347608](images/14.png)
 
 找到 **device_timer_init** 函数（303 行），修改为如下内容：
 
@@ -195,11 +195,11 @@ end
 
 将该文件保存后，回到刚刚打开过的 **设备列表** 点击 **上传解析脚本** ：
 
-![image-20220621232021726](E:\Article\contents\Other\Arduino\Arduino senior\images\15.png)
+![image-20220621232021726](images/15.png)
 
 在弹出的侧边栏选择文件并给该脚本一个名称后点击上传：
 
-![image-20220621232122318](E:\Article\contents\Other\Arduino\Arduino senior\images\16.png)
+![image-20220621232122318](images/16.png)
 
 至此，云端配置完毕。
 
@@ -209,7 +209,7 @@ end
 
 烧录代码，并重启 **ESP-01** 模块，稍等片刻刷新设备列表即可看到我们的设备在线：
 
-![image-20220622104013467](E:\Article\contents\Other\Arduino\Arduino senior\images\17.png)
+![image-20220622104013467](images/17.png)
 
 ## 三、上传数据
 
@@ -314,17 +314,17 @@ void loop()
 
 将 WIFI 名称密码 和 产品 ID 进行更改后烧录代码，稍等片刻查看 OneNet 平台设备信息即可看到我们室内的温湿度信息：
 
-![image-20220622123850578](E:\Article\contents\Other\Arduino\Arduino senior\images\18.png)
+![image-20220622123850578](images/18.png)
 
 并且注意观察，Arduino 上内置 LED 灯也会在大概 10s 左右 闪烁一次。
 
 此外，我们也可以手动下发开关灯指令，点击 设备界面 中 下发指令 选项卡：
 
-![image-20220622124311283](E:\Article\contents\Other\Arduino\Arduino senior\images\19.png)
+![image-20220622124311283](images/19.png)
 
 点击 下发指令 按钮，在弹出的 侧边栏 中输入 open 或 close 控制 灯光开关：
 
-![image-20220622124408130](E:\Article\contents\Other\Arduino\Arduino senior\images\20.png)
+![image-20220622124408130](images/20.png)
 
 即可看到 Arduino 内置 LED 灯的开关效果！
 
