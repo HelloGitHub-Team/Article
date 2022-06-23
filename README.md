@@ -85,8 +85,9 @@
 1. [开源的 Web 框架哪个快？我在 GitHub 找到了答案](contents/Other/web-frameworks/content.md)
 2. [这款打怪升级的像素小游戏，7 年前在 GitHub 社区出生，如今在谷歌商店有 8 万人给了满分](contents/Other/shattered-pixel-dungeon/content.md)
 3. [想做钢铁侠？听说很多大佬都是用它入门的](contents/Other/Arduino/)
-  - [Arduino 第一篇](contents/Other/Arduino/1/content.md)
-  - [Arduino 第二篇](contents/Other/Arduino/2/content.md)
+    - [Arduino 第一篇](contents/Other/Arduino/1/content.md)
+    - [Arduino 第二篇](contents/Other/Arduino/2/content.md)
+    - [Arduino 第三篇](contents/Other/Arduino/3/content.md)
 
 ## 贡献者
 
