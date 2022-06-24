@@ -9,9 +9,15 @@
   <a href="https://weibo.com/hellogithub"><img src="https://img.shields.io/badge/%E6%96%B0%E6%B5%AA-Weibo-red.svg?style=popout-square" alt="Sina Weibo"></a>
 </p>
 
-## 目录
+## 介绍
 
-讲解开源项目系列，[创作须知和流程](创作须知.md)。本系列文章旨在让对开源项目感兴趣的人不再畏惧、让开源项目的发起者不再孤单。跟着我们的文章，你会发现编程的乐趣、使用和发现参与开源项目如此简单。欢迎联系我们给我们投稿，让更多人爱上开源、贡献开源～ ​
+这里是 [HelloGitHub](https://github.com/521xueweihan/HelloGitHub) 的讲解开源项目系列，本系列文章旨在让对**开源项目感兴趣的人不再畏惧**，让开源项目的**发起者不再孤单**。
+
+跟着我们的文章，你会发现编程的乐趣、使用和发现参与开源项目如此简单。<a href="mailto:595666367@qq.com">加入我们</a>让更多人爱上开源、贡献开源～ ​
+
+<details>
+<summary>点击展开目录</summary>
+
 
 #### Python 系列
 
@@ -89,6 +95,8 @@
     - [Arduino 第二篇](contents/Other/Arduino/2/content.md)
     - [Arduino 第三篇](contents/Other/Arduino/3/content.md)
 
+</details>
+
 ## 贡献者
 
 <table>
@@ -124,13 +132,19 @@
           <sub>Yukino</sub>
         </a><br>
       </th>
+      <th align="center" style="width: 80px;">
+        <a href="https://github.com/AnthonySun256">
+          <img src="https://avatars.githubusercontent.com/u/60809120?s=50v=4" style="width: 50px;"><br>
+          <sub>Anthony</sub>
+        </a><br>
+      </th>
     </tr>
   </tbody>
 </table>
 
-## 公众号
+## 联系我
 
-希望 HG 这个平台能让好的项目被更多人了解、使用、参与。只要你的项目够好，HelloGitHub 会全力、无偿推荐。关注公众号，直接留言给我们投稿吧！
+希望 HG 这个平台能让好的项目被更多人了解、使用、参与。<a href="mailto:595666367@qq.com">联系我</a>分享你的项目吧！
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/521xueweihan/img/master/hellogithub/logo/weixin.png" style="max-width:70%;"><br>
