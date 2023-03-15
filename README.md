@@ -58,6 +58,7 @@
 5. [实现工具自由，开源的桌面工具箱](contents/JavaScript/rubick/content.md)
 6. [任由文字肆意流淌，更自由的开源 Markdown 编辑器](contents/JavaScript/milkdown/content.md)
 7. [支持中文！秒建 wiki 知识库的开源项目](contents/JavaScript/wiki/content.md)
+8. [谁会拒绝一款开源的 3D 博客呢？](contents/JavaScript/folio-2019/content.md)
 
 
 #### C/C++ 系列
@@ -147,7 +148,7 @@
 希望 HG 这个平台能让好的项目被更多人了解、使用、参与。<a href="mailto:595666367@qq.com">联系我</a>分享你的项目吧！
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/521xueweihan/img/master/hellogithub/logo/weixin.png" style="max-width:70%;"><br>
+  <img src="https://raw.githubusercontent.com/521xueweihan/img_logo/master/logo/weixin.png" style="max-width:70%;"><br>
 欢迎关注 HelloGitHub 公众号，获取更多开源项目的资料和内容。
 </p>
 
